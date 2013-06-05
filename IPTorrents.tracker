@@ -47,17 +47,6 @@
 		<linepatterns>
 			<extract>
 				<!--[Movie/XXX] Audrey Bitoni HD Pack FREELEECH - http://www.iptorrents.com/details.php?id=789421 - 14.112 GB-->
-				<regex value="^\[([^\]]*)](.*)(FREELEECH)\s*-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
-				<vars>
-					<var name="category"/>
-					<var name="torrentName"/>
-					<var name="$freeleech"/>
-					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
-					<var name="torrentSize"/>
-				</vars>
-			</extract>
-			<extract>
 				<!--[Movies/XviD] The First Men In The Moon 2010 DVDRip XviD-VoMiT - http://www.iptorrents.com/details.php?id=396589 - 716.219 MB-->
 				<regex value="^\[([^\]]*)](.*)-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
 				<vars>
@@ -73,8 +62,10 @@
 			<var name="freeleech">
 				<string value="false"/>
 			</var>
-			<setregex srcvar="$freeleech" regex="FREELEECH" varName="freeleech" newValue="true"/>
-		
+
+			<setregex srcvar="torrentName" regex="FREELEECH" varName="freeleech" newValue="true"/>
+			<varreplace name="torrentName" srcvar="torrentName" regex="FREELEECH\s*" replace=""/>
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
