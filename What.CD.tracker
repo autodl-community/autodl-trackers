@@ -117,6 +117,13 @@
 				</extract>
 			</extractone>
 
+			<extract srcvar="$releaseTags" optional="true">
+				<regex value="([\d\.]+)%"/>
+				<vars>
+					<var name="logScore"/>
+				</vars>
+			</extract>
+
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="format" regex="^(?:MP3|FLAC|Ogg Vorbis|AAC|AC3|DTS)$"/>
 
@@ -130,13 +137,9 @@
 				<setvarif varName="cue" value="Cue" newValue="true"/>
 				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
 
-				<setvarif varName="$logpercent" regex="^[\d\.]+%$"/>
-
 				<!--Ignored-->
 				<regex value="^(?:5\.1 Audio|\.m4a|Various.*|~.*|&gt;.*)$"/>
 			</extracttags>
-
-			<varreplace name="logScore" srcvar="$logpercent" regex="%" replace=""/>
 
 			<var name="torrentUrl">
 				<string value="https://"/>
