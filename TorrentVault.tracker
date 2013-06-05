@@ -38,7 +38,7 @@
 	<servers>
 		<server
 			network="TV"
-			serverNames="irc.wwtnetwork.net"
+			serverNames="irc.torrentvault.org"
 			channelNames="#tv,#tv-spam"
 			announcerNames="InfoVault"
 			/>

@@ -39,34 +39,35 @@
 			network="NExTGen"
 			serverNames="irc.nxtgn.org"
 			channelNames="#Announce"
-			announcerNames="King"
+			announcerNames="James"
 			/>
 	</servers>
 
 	<parseinfo>
-		<linepatterns>
-			<extract>
-				<!--~ [ TORRENT ] ~ [ UPLOADED ] ~[ HD ] ~ [ Surrogates.2009.MULTi.COMPLETE.BLURAY-SURROGATES ] ~ [ http://nxtgn.org/details.php?id=746 ] ~-->
-				<regex value="^\s*~\s*\[ TORRENT \]\s*~\s*\[ UPLOADED \]\s*~\s*\[([^\]]*)\]\s*~\s*\[(.*)\]\s*~\s*\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
-				<vars>
-					<var name="category"/>
-					<var name="torrentName"/>
+			<linepatterns>
+				<extract>
+					<!--~ [ DSB ] ~ [ Game.of.Thrones.S03D01.Retail.DKSubs.NTSC.DVDR-DSB ] ~ [ 4.414 GB ] ~ [ http://nxtgn.org/details.php?id=309699 ] ~-->
+					<regex value="^~\s*\[\s([^\]]*)\]\s~\s\[\s([^\]]*)\]\s~\s\[\s([^\]]*)\]\s~\s\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\ ]"/>
+					<vars>
+						<var name="category"/>
+						<var name="torrentName"/>
+						<var name="size"/>
+						<var name="$baseUrl"/>
+						<var name="$torrentId"/>
+					</vars>
+				</extract>
+			</linepatterns>
+			<linematched>
+				<var name="torrentUrl">
+					<string value="http://"/>
 					<var name="$baseUrl"/>
+					<string value="download.php?id="/>
 					<var name="$torrentId"/>
-				</vars>
-			</extract>
-		</linepatterns>
-		<linematched>
-			<var name="torrentUrl">
-				<string value="http://"/>
-				<var name="$baseUrl"/>
-				<string value="download.php?id="/>
-				<var name="$torrentId"/>
-				<string value="&amp;passkey="/>
-				<var name="passkey"/>
-			</var>
-		</linematched>
-		<ignore>
-		</ignore>
+					<string value="&amp;passkey="/>
+					<var name="passkey"/>
+				</var>
+			</linematched>
+			<ignore>
+			</ignore>
 	</parseinfo>
 </trackerinfo>
