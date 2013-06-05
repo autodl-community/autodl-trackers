@@ -51,7 +51,7 @@
 					<vars>
 						<var name="category"/>
 						<var name="torrentName"/>
-						<var name="size"/>
+						<var name="torrentSize"/>
 						<var name="$baseUrl"/>
 						<var name="$torrentId"/>
 					</vars>
