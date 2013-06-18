@@ -26,16 +26,13 @@
 <trackerinfo
 	type="ptm"
 	shortName="PTM"
-	longName="PreToMe"
+	longName="pretome"
 	siteName="pretome.info">
 
 	<settings>
-		<description text="Copy the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
-		<passkey
-			tooltiptext="The passkey in your PreToMe rss feed"
-			pasteRegex="[\?&amp;]key=([\da-fA-F]{32})"
-		/>
-	</settings>
+                <description text="Copy the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+                <authkey />
+ 	</settings>
 
 	<servers>
 		<server
@@ -49,8 +46,17 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
+				<!--tehFIRE: [TV|x264] Newsreaders.S01E05.HDTV.x264-2HD https://pretome.info/details.php?id=333951-->
+				<regex value="tehFIRE(?:\|REQ)?: \[([^\]]*)\] ([^:]*) https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+			<extract>
 				<!--tehFIRE: [TV|XviD] Royal.Institution.Christmas.Lectures.2009.Part2.WS.PDTV.XviD-WATERS :: preGAP: 1m and 9s :: https://pretome.info/details.php?id=127107-->
-				<!--tehFIRE|REQ: [Movies|XviD] Casanova.2005.DvDrip.AC3.XviD-PTM :: preGAP: P2P source :: https://pretome.info/details.php?id=127124-->
 				<regex value="tehFIRE(?:\|REQ)?: \[([^\]]*)\] ([^:]*) :: preGAP: ([^:]*) :: https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="category"/>
@@ -68,8 +74,8 @@
 				<string value="/download.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
-				<var name="passkey"/>
-				<string value="/"/>
+                                <var name="authkey"/>
+                                <string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
