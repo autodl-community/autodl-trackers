@@ -38,7 +38,7 @@
 		<server
 			network="Darknet-IRC.net"
 			serverNames="irc.darknet-irc.net"
-			channelNames="#feedthe.net"
+			channelNames="#feedthe.net.announce"
 			announcerNames="FTN-BOT"
 			/>
 	</servers>
