@@ -49,8 +49,17 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
+				<!--tehFIRE: [TV|x264] Newsreaders.S01E05.HDTV.x264-2HD https://pretome.info/details.php?id=333951-->
+				<regex value="tehFIRE(?:\|REQ)?: \[([^\]]*)\] ([^:]*) https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+			<extract>
 				<!--tehFIRE: [TV|XviD] Royal.Institution.Christmas.Lectures.2009.Part2.WS.PDTV.XviD-WATERS :: preGAP: 1m and 9s :: https://pretome.info/details.php?id=127107-->
-				<!--tehFIRE|REQ: [Movies|XviD] Casanova.2005.DvDrip.AC3.XviD-PTM :: preGAP: P2P source :: https://pretome.info/details.php?id=127124-->
 				<regex value="tehFIRE(?:\|REQ)?: \[([^\]]*)\] ([^:]*) :: preGAP: ([^:]*) :: https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="category"/>
