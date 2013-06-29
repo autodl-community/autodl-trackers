@@ -71,6 +71,16 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="scene">
+				<string value="false"/>
+			</var>
+
+			<if srcvar="preTime" regex="^\d+\s*\w+">
+				<var name="scene">
+					<string value="true"/>
+				</var>
+			</if>
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
