@@ -70,8 +70,7 @@
 				<regex value="^\[ Title:([^\]]*)\]\s*\[ Series:([^\]]*)\]\s*$"/>
 				<vars>
 					<var name="$title"/>
-					<!-- Their series name field is buggy so don't use it anymore -->
-					<var name="$name1"/>
+					<var name="name1"/>
 				</vars>
 			</extract>
 			<extract>
@@ -97,13 +96,8 @@
 				<string value="false"/>
 			</var>
 
-			<if srcvar="$title" regex="^AutoFillFail$">
-				<var name="$title">
-					<string value=""/>
-				</var>
-			</if>
-			<if srcvar="$name1" regex="^AutoFillFail$">
-				<var name="$name1">
+			<if srcvar="name1" regex="^AutoFill">
+				<var name="name1">
 					<string value=""/>
 				</var>
 			</if>
