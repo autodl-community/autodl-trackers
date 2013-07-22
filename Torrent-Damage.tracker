@@ -30,59 +30,72 @@
 	siteName="www.torrent-damage.net">
 
 	<settings>
-		<cookie_description/>
-		<cookie/>
-		<delta
-			tooltiptext="Don't change unless you know what you're doing. torrent download link ID - torrent page ID."
-			defaultValue="-28"
-			name="delta3"
-			/>
+		<gazelle_description/>
+		<gazelle_authkey/>
+		<gazelle_torrent_pass/>
 	</settings>
 
 	<servers>
 		<server
 			network="torrent-damage"
 			serverNames="irc.torrent-damage.net"
-			channelNames="#releases-auto"
-			announcerNames="AnnounceBot"
-			/>
+			channelNames="#releases"
+			announcerNames="TD-Bot"
+		/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New Torrent: EPL.2011.10.02.Bolton.Wanderers.vs.Chelsea.720p.HDTV.x264-FAIRPLAY 114324 TV/HD-->
-				<regex value="^New Torrent:(.*)\s(\d+)\s(\S+(?:/\S+ \S+)?)$"/>
+				<!-- New Torrent: Movies - September.Runs.Red.2012.1080p.BluRay.x264-iFPD - http://www.torrent-damage.net/torrents.php?id=49922 / http://www.torrent-damage.net/torrents.php?action=download&id=49922 - 1080p, BluRay, x264-->
+				<!-- New Torrent: TV - Eastenders.2013.07.19.WEBRip.x264-FaiLED  - http://www.torrent-damage.net/torrents.php?id=54816 / http://www.torrent-damage.net/torrents.php?action=download&id=54816 - SD, Webrip, x264-->
+				<regex value="^New Torrent: (.*) - (.*) - https?:.*[&amp;\?]id=.*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\s*-\s*(.*)"/>
 				<vars>
-					<var name="torrentName"/>
-					<var name="$torrentId"/>
 					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+					<var name="$releaseTags"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
-			<var name="$baseUrl">
-				<string value="http://www.torrent-damage.net/"/>
+			<var name="scene">
+				<string value="false"/>
 			</var>
-			<var name="$torrentId">
-				<delta idName="$torrentId" deltaName="delta3"/>
-			</var>
+
+			<varreplace name="tags" srcvar="$releaseTags" regex="[\._]" replace=" "/>
+
+			<extracttags srcvar="$releaseTags" split="/">
+				<setvarif varName="format" regex="^(?:MP3|FLAC|Ogg Vorbis|AAC|AC3|DTS)$"/>
+
+				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i)$"/>
+				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|TVRip|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEB\-DL|WEB|Webrip|HDDVD|HD\-DVD)$"/>
+				<setvarif varName="encoder" regex="^(?:XviD|DivX|x264|mpeg2|h\.264 Remux|h264 Remux|VC-1 Remux|VC1 Remux|h\.264|h264|mpeg2|VC\-1|VC1)$"/>
+
+				<setvarif varName="scene" value="Scene" newValue="true"/>
+			</extracttags>
+
 			<var name="torrentUrl">
-				<var name="$baseUrl"/>
-				<string value="download.php/"/>
-				<var name="$torrentId"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
-			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
-			<http name="Referer">
+				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
-			</http>
+				<string value="&amp;authkey="/>
+				<var name="authkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
+			</var>
+			<var name="torrentSslUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="torrents.php?action=download&amp;id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;authkey="/>
+				<var name="authkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
+			</var>
 		</linematched>
 		<ignore>
 		</ignore>
