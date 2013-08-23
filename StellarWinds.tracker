@@ -38,21 +38,24 @@
 		<server
 			network="StellarWinds"
 			serverNames="irc.stellarwinds.me"
-			channelNames="#SW"
-			announcerNames="JarlAxle"
+			channelNames="#sw-auto"
+			announcerNames="Jarlaxle"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New Torrent: Perception S01 Complete - 720p - WEB DL - DD5.1 - H.264 - KiNGS (TV|HD Packs) 13 GB - http://stellarwinds.me/details.php?id=707250-->
-				<!--New Torrent: VA-Kitsune_Soleil_Vol.2-(CDA051)-CD-2013-BF (Electronic) 120 MB - http://stellarwinds.me/details.php?id=707235-->
-				<regex value="^New Torrent:\s*(.*?)\s+\((.*)\)\s+([\d,.]*\s*\S*)\s*-\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!--Synthax-Directions_054_(Pure_FM)-SBD-08-21-2013-B2RLiVE_INT|Electronic|86738273|Anonymous#2fdd66|Yes|22|http://stellarwinds.me/details.php?id=719338|-->
+				<!--Catfish.The.TV.Show.S02E09.Jesse.and.Brian.720p.HDTV.x264-2HD|TV-HD-x264|1304202763|Anonymous#2fdd66|Yes|53|http://stellarwinds.me/details.php?id=719342|-->
+				<regex value="(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
 					<var name="torrentSize"/>
+					<var name="uploader"/>
+					<var name="scene"/>
+					<var name="preTime"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
