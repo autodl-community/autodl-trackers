@@ -31,7 +31,9 @@
 
 	<settings>
 		<gazelle_description/>
-		<gazelle_authkey/>
+		<gazelle_authkey
+			pasteGroup="authkey,torrent_pass"
+			pasteRegex="id=\d+&amp;([\da-zA-Z]{32})"/>
 		<gazelle_torrent_pass/>
 	</settings>
 
