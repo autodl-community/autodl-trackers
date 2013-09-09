@@ -22,19 +22,19 @@
    - Contributor(s):
    -
    - ***** END LICENSE BLOCK ***** -->
-   
+
 <trackerinfo
 	type="ab"
 	shortName="AB"
 	longName="AnimeBytes"
 	siteName="animebytes.tv">
-	
+
 	<settings>
 		<gazelle_description/>
 		<gazelle_authkey/>
 		<gazelle_torrent_pass/>
 	</settings>
-	
+
 	<servers>
 		<server
 			network="AnimeBytes"
@@ -43,7 +43,7 @@
 			announcerNames="Satsuki"
 		/>
 	</servers>
-	
+
 	<parseinfo>
 		<linepatterns>
 			<extract>
@@ -74,12 +74,12 @@
 		</linepatterns>
 		<linematched>
 			<varreplace name="tags" srcvar="tags" regex="[\.]" replace=" "/>
-			
+
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="$container" regex="^(?:AVI|MKV|VOB|MPEG|MP4|ISO|WMV|TS|M4V)$"/>
 				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
 				<setvarif varName="encoder" regex="^(?:XviD|DivX|x264|h\.264|h264|mpeg2|VC\-1|VC1|WMV)$"/>
-				
+
 				<setvarif varName="format" regex="^(?:MP3|FLAC|Ogg|AAC|AC3|DTS)$"/>
 				<setvarif varName="bitrate" regex="Lossless$"/>
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,4}|\d+\.\d+|q\d+\.[\dx]+|Other)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
@@ -88,14 +88,14 @@
 				<!--Ignored-->
 				<regex value=""/>
 			</extracttags>
-			
+
 			<extract srcvar="torrentName">
 				<regex value=".*\[(.*)\]"/>
 				<vars>
 					<var name="year"/>
 				</vars>
 			</extract>
-			
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
