@@ -78,7 +78,7 @@
 				<!--Ignored-->
 				<regex value=""/>
 			</extracttags>
-			
+
 			<extract srcvar="torrentName">
 				<regex value="^(.*)\s\[(.*)\]"/>
 				<vars>

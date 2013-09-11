@@ -71,7 +71,7 @@
 			</var>
 
 			<setregex srcvar="$scene" regex="Scene" varName="scene" newValue="true"/>
-			
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>

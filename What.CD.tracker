@@ -68,7 +68,7 @@
 			<var name="cue">
 				<string value="false"/>
 			</var>
-            <var name="freeleech">
+			<var name="freeleech">
 				<string value="false"/>
 			</var>
 
@@ -89,7 +89,7 @@
 				<!--Roy Buchanan - Loading Zone [1977] - FLAC / Lossless / Log / 100% / Cue / CD - http://what.cd/torrents.php?id=97614 / http://what.cd/torrents.php?action=download&id=1382972 - blues, rock, classic.rock,jazz,blues.rock,electric.blues-->
 				<!--Heirloom - Road to the Isles [1998] [Album] - FLAC / Lossless / Log / 100% / Cue / CD - http://what.cd/torrents.php?id=72158898 / http://what.cd/torrents.php?action=download&id=29910415 - 1990s, folk, world_music, celtic-->
 				<!--Rascal Flatts - Changed [2012] [Album] - MP3 / 320 / CD - http://what.cd/torrents.php?id=72176696 /
-                http://what.cd/torrents.php?action=download&id=29983793 - country, pop-->
+				http://what.cd/torrents.php?action=download&id=29983793 - country, pop-->
 					<!--<regex value="^(.+?) - ([^\[]+).*\[(\d{4})\].*-([^\-\[\]]+)"/>-->
 					<regex value="^(.+?) - ([^\[]+).*\[(\d{4})\] \[([^\[]+)\] - ([^\-\[\]]+)"/>
 					<vars>

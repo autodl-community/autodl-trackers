@@ -22,19 +22,19 @@
    - Contributor(s):
    -
    - ***** END LICENSE BLOCK ***** -->
-   
+
 <trackerinfo
 	type="emp"
 	shortName="Emp"
 	longName="Empornium"
 	siteName="empornium.me">
-	
+
 	<settings>
 		<gazelle_description/>
 		<gazelle_authkey/>
 		<gazelle_torrent_pass/>
 	</settings>
-	
+
 	<servers>
 		<server
 			network="DigitalIRC"
@@ -43,7 +43,7 @@
 			announcerNames="^Wizard^"
 			/>
 	</servers>
-	
+
 	<parseinfo>
 		<linepatterns>
 			<extract>
