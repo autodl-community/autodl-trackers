@@ -69,7 +69,7 @@
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^\[ Title:([^\]]*)\]\s*\[ Series:([^\]]*)\]\s*$"/>
+				<regex value="^\[ Title:(.*)\]\s*\[ Series:(.*)\]\s*$"/>
 				<vars>
 					<var name="$title"/>
 					<var name="name1"/>
