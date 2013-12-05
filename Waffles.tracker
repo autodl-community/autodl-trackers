@@ -151,6 +151,7 @@
 				<var name="passkey"/>
 				<string value="&amp;uid="/>
 				<var name="uid"/>
+				<string value="&amp;rss=1"/>
 			</var>
 		</linematched>
 		<ignore>
