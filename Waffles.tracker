@@ -27,7 +27,8 @@
 	type="waffles"
 	shortName="Waffles"
 	longName="Waffles"
-	siteName="waffles.fm">
+	siteName="waffles.fm"
+	follow302links="true">
 
 	<settings>
 		<description text="Paste (Ctrl+V) any Waffles torrent download link into any one of the two text boxes below to automatically extract passkey and uid."/>
