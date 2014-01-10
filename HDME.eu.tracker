@@ -98,11 +98,11 @@
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="rssdown.php/"/>
+				<string value="rssdown.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="&amp;passkey="/>
 				<var name="passkey"/>
-				<string value="/"/>
+				<string value="&amp;name="/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
