@@ -30,8 +30,19 @@
 	siteName="goem.org">
 
 	<settings>
-		<cookie_description/>
-		<cookie/>
+		<description text="Paste (Ctrl+V) any goem torrent download link into any one of the two text boxes below to automatically extract passkey and uid."/>
+		<passkey
+			pasteGroup="passkey,uid"
+			pasteRegex="/[\d]+/[\d]+/([\da-fA-F]+)"
+			/>
+		<textbox
+			name="uid"
+			text="uid"
+			accesskey="i"
+			tooltiptext="The uid in any goem torrent download link."
+			pasteGroup="passkey,uid"
+			pasteRegex="/[\d]+/([\d]+)/[\da-fA-F]+"
+			/>
 	</settings>
 
 	<servers>
@@ -57,18 +68,21 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<varreplace name="torrentName" srcvar="torrentName" regex='["]' replace=""/>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="download.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
+				<var name="uid"/>
+				<string value="/"/>
+				<var name="passkey"/>
+				<string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
 		</linematched>
 		<ignore>
 			<regex value="^\[New Torrent\]" expected="false"/>
