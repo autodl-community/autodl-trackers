@@ -40,7 +40,7 @@
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net"
 			channelNames="#tstn"
-			announcerNames="Abigaile"
+			announcerNames="announce-bot"
 		/>
 	</servers>
 
