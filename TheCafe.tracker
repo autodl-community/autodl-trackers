@@ -1,0 +1,57 @@
+<trackerinfo
+	type="tc"
+	shortName="TC"
+	longName="TheCafe"
+	siteName="thecafe.me">
+
+	<settings>
+		<description text="Head over to https://thecafe.me/getrss.php ; generate a link and copy down the secret_key= part"/>
+		<textbox
+			name="rsskey"
+			text="rsskey"
+			accesskey="r"
+			tooltiptext="The secret key in your TC RSS feed link."
+			emptytext="TC key"
+			pasteGroup="rsskey"
+			pasteRegex="/([\da-fA-F]{32})"
+			/>
+	</settings>
+
+	<servers>
+		<server
+			network="TCaf"
+			serverNames="irc.thecafe.me"
+			channelNames="#Announce"
+			announcerNames="TC-Announce"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+			<!--TheCafe - T.I.And.Tiny.The.Family.Hustle.S03E14.HDTV.X264-CRiMSON Size: 163.95 MB Category: -Unedited Link: https://thecafe.me/details.php?id=110099-->
+				<regex value="^TheCafe\s-\s(.*)Size:\s(.*)\sCategory:\s(.*)\sLink:\shttps?:\/\/thecafe\.me\/details.php\?id=([0-9]+).*"/>
+				<vars>
+					<var name="torrentName"/>
+                    <var name="torrentSize"/>
+                    <var name="category"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="scene">
+				<string value="false"/>
+			</var>
+			<var name="torrentUrl">
+				<string value="https://thecafe.me/"/>
+				<string value="download.php?type=rss&amp;secret_key="/>
+                <var name="rsskey"/>
+                <string value="&amp;id="/>
+				<var name="$torrentId"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
