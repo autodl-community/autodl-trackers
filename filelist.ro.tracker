@@ -38,24 +38,40 @@
 		<server
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
-			channelNames="#filelist.ro"
-			announcerNames="Anna^"
+			channelNames="#filelist"
+			announcerNames="System"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New! Toy Story 3 USA PSP-BAHAMUT - http://filelist.ro/details.php?id=114326-->
-				<regex value="^New!\s*(.*)- https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="^New torrent:\s*(.*)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
+					<var name="$releaseTags"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="uploader"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="$releaseTags" regex="[FreeLeech!]" varName="freeleech" newValue="true"/>
+			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[FreeLeech!]\s*" replace=""/>
+
+			<extract srcvar="$releaseTags">
+				<regex value="\[(.*?)\]\s*\[(.*)\]"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentSize"/>
+				</vars>
+			</extract>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
