@@ -24,68 +24,66 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="goem"
-	shortName="goem"
-	longName="goem"
-	siteName="goem.org">
+	type="hb"
+	shortName="HB"
+	longName="Hebits"
+	siteName="">
 
 	<settings>
-		<description text="Paste (Ctrl+V) any goem torrent download link into any one of the two text boxes below to automatically extract passkey and uid."/>
-		<passkey
-			pasteGroup="passkey,uid"
-			pasteRegex="/[\d]+/[\d]+/([\da-fA-F]+)"
-			/>
-		<textbox
-			name="uid"
-			text="uid"
-			accesskey="i"
-			tooltiptext="The uid in any goem torrent download link."
-			pasteGroup="passkey,uid"
-			pasteRegex="/[\d]+/([\d]+)/[\da-fA-F]+"
-			/>
+		<description text="Go to Hebits site and enter Edit Profile to find your passkey."/>
+		<passkey tooltiptext="Copy the passkey from your Edit Profile page"/>
 	</settings>
 
 	<servers>
 		<server
-			network="P2P-NET"
-			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
-			channelNames="#goem,#goem.announce"
-			announcerNames="Besch"
+			network="Hebits"
+			serverNames="irc.hebits.net"
+			channelNames="#Announce"
+			announcerNames="HeBoT"
 			/>
 	</servers>
 
 	<parseinfo>
-		<linepatterns>
+		<multilinepatterns>
 			<extract>
-				<!--[New Torrent]  Cirque du Freak: The Vampire's Assistant [720P] - http://goem.org/details.php?id=23028-->
-				<!--[New Torrent]  "Leverage" The Morning After Job [S03] [E13] [720P] - BD/x264/AC3 - http://goem.org/details.php?torrent=26175-->
-				<regex value="^\[New Torrent\](.*)- https?\:\/\/([^\/]+\/).*[&amp;\?](?:id|torrent)=(\d+)"/>
+				<regex value="^New: \((.*)\)  Category: (.*) Size: ([\d\.,]+ \w+) Seeders: .+ Leechers: .+"/>
 				<vars>
-					<var name="torrentName"/>
+					<var name="name1"/>
+					<var name="category"/>
+					<var name="torrentSize"/>
+				</vars>
+			</extract>
+			<extract>
+				<regex value="^Link: https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<vars>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
 			</extract>
-		</linepatterns>
+			<extract>
+				<regex value="^Release: (.*)"/>
+				<vars>
+					<var name="torrentName"/>
+				</vars>
+			</extract>
+		</multilinepatterns>
+		
 		<linematched>
-			<varreplace name="torrentName" srcvar="torrentName" regex='["]' replace=""/>
-
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="/"/>
+				<string value="downloadRss.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
-				<var name="uid"/>
+				<varenc name="passkey"/>
 				<string value="/"/>
-				<var name="passkey"/>
-				<string value="/"/>
+				<string value="%5BHebits.net%5D"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
-		</linematched>
+		</linematched>	
 		<ignore>
-			<regex value="^\[New Torrent\]" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>

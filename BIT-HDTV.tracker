@@ -16,7 +16,7 @@
    -
    - The Initial Developer of the Original Code is
    - David Nilsson.
-   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - Portions created by the Initial Developer are Copyright (C) 2010
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
@@ -24,68 +24,67 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="goem"
-	shortName="goem"
-	longName="goem"
-	siteName="goem.org">
+	type="bithdtv"
+	shortName="bithdtv"
+	longName="BIT-HDTV"
+	siteName="www.bit-hdtv.com">
 
 	<settings>
-		<description text="Paste (Ctrl+V) any goem torrent download link into any one of the two text boxes below to automatically extract passkey and uid."/>
-		<passkey
-			pasteGroup="passkey,uid"
-			pasteRegex="/[\d]+/[\d]+/([\da-fA-F]+)"
-			/>
-		<textbox
-			name="uid"
-			text="uid"
-			accesskey="i"
-			tooltiptext="The uid in any goem torrent download link."
-			pasteGroup="passkey,uid"
-			pasteRegex="/[\d]+/([\d]+)/[\da-fA-F]+"
-			/>
+		<cookie_description/>
+		<cookie/>
 	</settings>
 
 	<servers>
 		<server
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
-			channelNames="#goem,#goem.announce"
-			announcerNames="Besch"
+			channelNames="#bit-hdtv"
+			announcerNames="BHD-bot"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[New Torrent]  Cirque du Freak: The Vampire's Assistant [720P] - http://goem.org/details.php?id=23028-->
-				<!--[New Torrent]  "Leverage" The Morning After Job [S03] [E13] [720P] - BD/x264/AC3 - http://goem.org/details.php?torrent=26175-->
-				<regex value="^\[New Torrent\](.*)- https?\:\/\/([^\/]+\/).*[&amp;\?](?:id|torrent)=(\d+)"/>
+				<!-- New torrent: Heat.1995.810p.BluRay.x264.DTS-PRoDJi | Cat.: Movies | x264 | | 720p | Uploader: wunschan | http://www.bit-hdtv.com/details.php?id=32224-->
+				<regex value="^\s*New torrent:(.*)\|\s*Cat.:([^\|]*)(.*)Uploader:([^\|]*)\|\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
+					<var name="category"/>
+					<var name="tags"/>
+					<var name="uploader"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
-			<varreplace name="torrentName" srcvar="torrentName" regex='["]' replace=""/>
+			<varreplace name="tags" srcvar="tags" regex="[\|]" replace=", "/>
+
+			<extracttags srcvar="tags" split=",">
+				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i)$"/>
+				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
+				<setvarif varName="encoder" regex="^(?:XviD|DivX|x264|h\.264|h264|mpeg2|VC\-1|VC1|WMV)$"/>
+
+				<!--Ignored-->
+				<regex value=""/>
+			</extracttags>
 
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="download.php?/"/>
 				<var name="$torrentId"/>
-				<string value="/"/>
-				<var name="uid"/>
-				<string value="/"/>
-				<var name="passkey"/>
 				<string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
+			<http name="Cookie">
+				<var name="cookie"/>
+			</http>
 		</linematched>
 		<ignore>
-			<regex value="^\[New Torrent\]" expected="false"/>
+			<regex value="^\s*New torrent:" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>

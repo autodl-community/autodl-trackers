@@ -20,57 +20,56 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -   thebigmunch
    -
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="tstn"
-	shortName="TSTN"
-	longName="The Sports Torrent Network"
-	siteName="www.thesportstorrentnetwork.co.uk">
+	type="xs"
+	shortName="XS"
+	longName="XSpeeds"
+	siteName="xspeeds.eu">
 
 	<settings>
-		<cookie_description text="FireFox -> Preferences -> Privacy -> Show Cookies and find the uid and pass cookies. Example: uid=1234; pass=asdf12347asdf13"/>
-		<cookie/>
+		<description text="Go to http://xspeeds.eu/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+		<passkey
+			tooltiptext="The passkey in your xspeeds RSS feed link."
+			pasteRegex="[\?&amp;]secret_key=([\da-fA-F]{32})"
+			/>
 	</settings>
 
 	<servers>
 		<server
-			network="P2P-NET"
-			serverNames="irc.p2p-network.net"
-			channelNames="#tstn"
-			announcerNames="announce-bot"
-		/>
+			network="xspeeds.eu"
+			serverNames="irc.xspeeds.eu"
+			channelNames="#xspeeds,#announce"
+			announcerNames="Announce"
+			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[MLS] MLS Cup FINAL - Los Angeles Galaxy vs Houston Dynamo - 2012.12.01. - 720p Stream http://www.thesportstorrentnetwork.co.uk/details.php?id=4ed3423d0bcaf15b689c251c48b0f129cb15b452-->
-				<!--[MLB] MLB - World Series - Game 2 - Houston Astros @ Chicago White Sox - 2005/10/22 - English - 720p HD http://www.thesportstorrentnetwork.co.uk/details.php?id=90c27ba19c13ff13c74270c6de13d22ab8bc0017-->
-			<regex value="^\[(.*)\] (.*) https?\:\/\/([^\/]+\/).*[&amp;\?]id=([a-f0-9]+)"/>
-			<vars>
-				<var name="category"/>
-				<var name="torrentName"/>
-				<var name="$baseUrl"/>
-				<var name="$torrentId"/>
-			</vars>
+				<!-- xspeeds.eu - New Torrent: xspeeds.eu - New Torrent: ( Splash.S01E03.720p.HDTV.x264-2HD ) Size: ( 1.41 GB ) Category: ( TV-HD ) Uploader: ( XSbot ) Link: ( http://xspeeds.eu/details.php?id=293605 )-->
+				<regex value="^\s*xspeeds.eu\s*-\s*New Torrent:\s*\((.*)\) Size: \(([^)]*)\)\s*Category:\s*\(([^)]*)\)\s*Uploader:\s*\(([^)]*)\)\s*Link:\s*\(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="torrentSize"/>
+					<var name="category"/>
+					<var name="uploader"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="/download.php?id="/>
+				<string value="download.php?type=rss&amp;secret_key="/>
+				<var name="passkey"/>
+				<string value="&amp;id="/>
 				<var name="$torrentId"/>
-				<string value="&amp;f="/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
 			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
 		</linematched>
 		<ignore>
 		</ignore>
