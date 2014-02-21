@@ -84,6 +84,8 @@
 				<setvarif varName="bitrate" regex="Lossless$"/>
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,4}|\d+\.\d+|q\d+\.[\dx]+|Other)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
 				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB)$"/>
+				
+				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
 
 				<!--Ignored-->
 				<regex value=""/>
