@@ -74,6 +74,10 @@
 		</linepatterns>
 		<linematched>
 			<varreplace name="tags" srcvar="tags" regex="[\.]" replace=" "/>
+			
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
 
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="$container" regex="^(?:AVI|MKV|VOB|MPEG|MP4|ISO|WMV|TS|M4V)$"/>
