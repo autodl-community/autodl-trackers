@@ -75,6 +75,10 @@
 		<linematched>
 			<varreplace name="tags" srcvar="tags" regex="[\.]" replace=" "/>
 
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="$container" regex="^(?:AVI|MKV|VOB|MPEG|MP4|ISO|WMV|TS|M4V)$"/>
 				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEBRip|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
@@ -85,6 +89,7 @@
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,4}|\d+\.\d+|q\d+\.[\dx]+|Other)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
 				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB)$"/>
 				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i)$"/>
+				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
 
 				<!--Ignored-->
 				<regex value=""/>
