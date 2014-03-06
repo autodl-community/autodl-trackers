@@ -31,7 +31,7 @@
 	ignore404="true">
 
 	<settings>
-		<description text="Go to https://danishbits.org/links.php and copy the RSS feed (direct download) link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+		<description text="Go to https://danishbits.org/rss.php and copy the RSS feed (direct download) link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
 		<passkey/>
 	</settings>
 
