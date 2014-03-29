@@ -99,7 +99,7 @@
 			</extracttags>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="?p=rss&amp;action=download&amp;tid="/>
 				<var name="$torrentId"/>
