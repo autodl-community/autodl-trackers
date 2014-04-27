@@ -8,7 +8,7 @@ They are licensed under the [Mozilla Public License 1.1](https://www.mozilla.org
 
 ### Code
 
-See [CONTRIBUTING.MD](CONTRIBUTING.MD) for more information on submitting bugs, requests, and code.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on submitting bugs, requests, and code.
 
 ### Donate
 
