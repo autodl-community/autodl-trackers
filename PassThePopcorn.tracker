@@ -50,7 +50,7 @@
 			<extract>
 				<!--Irene Huss - Nattrond AKA The Night Round [2008] by Anders Engström - XviD / DVD / AVI / 640x352 - http://passthepopcorn.me/torrents.php?id=51627 / http://passthepopcorn.me/torrents.php?action=download&id=97333 - crime, drama, mystery-->
 				<!--Dirty Rotten Scoundrels [1988] by Frank Oz - x264 / Blu-ray / MKV / 720p - http://passthepopcorn.me/torrents.php?id=10735 / http://passthepopcorn.me/torrents.php?action=download&id=97367 - comedy, crime-->
-				<regex value="^(.*)-\s+(https?\:\/\/[^\/]+\/).*action=download&amp;id=(\d+)\s+-\s+(.*)"/>
+				<regex value="^(.*)-\s*https?:.*[&amp;\?]id=.*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\s*-\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
@@ -72,10 +72,12 @@
 				</vars>
 			</extract>
 
-			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[/]" replace=","/>
-
-			<!--Some use dots some use underscores, but replace all with spaces-->
-			<varreplace name="tags" srcvar="tags" regex="[._]" replace=" "/>
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(\S+ /.*)"/>
+				<vars>
+					<var name="$releaseTags"/>
+				</vars>
+			</extract>
 
 			<extract srcvar="torrentName" optional="true">
 				<regex value="(?:^|[^\d])((?:19|20)\d\d)(?:$|[^\d])"/>
@@ -91,6 +93,11 @@
 				</vars>
 			</extract>
 
+			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[/]" replace=","/>
+
+			<!--Some use dots some use underscores, but replace all with spaces-->
+			<varreplace name="tags" srcvar="tags" regex="[._]" replace=" "/>
+
 			<extracttags srcvar="$releaseTags" split=",">
 				<setvarif varName="scene" value="Scene" newValue="true"/>
 				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
@@ -103,6 +110,7 @@
 			</extracttags>
 
 			<var name="torrentUrl">
+				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
