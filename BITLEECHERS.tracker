@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="bl"
+	shortName="BL"
+	longName="BITLEECHERS"
+	siteName="http://bitleechers.me/">
+
+	<settings>
+		<description text="Go to https://bitleechers.me/rss.php?custom=1. Select Alternative under Log-in Type and hit the Get Link button. Paste the resulting URL."/>
+		<passkey pasteRegex="(?:passkey=)([\da-zA-Z]{32})" tooltiptext="The passkey in your Alternative BITLEECHERS RSS feed link."/>
+	</settings>
+
+	<servers>
+		<server
+			network="BITLEECHERS"
+			serverNames="irc.bitleechers.me"
+			channelNames="#announce"
+			announcerNames="BITLEECHERS"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!--Torrent Uploaded -> Name: Duck.Dynasty.S02E16.Auf.zur.Jagd.Schaetzchen.GERMAN.DUBBED.DOKU.WS.HDTVRip.x264-TVP  Size:  317.57 MB Category: Foreign  URL: https://www.bitleechers.me/torrents-details.php?id=214710&hit=1-->
+				<!--Torrent Uploaded -> Name: VA-Fetenhits The Real Classics 5-2CD-FLAC-2004-CUSTODES  Size:  1,004.46 MB Category: FLAC  URL: https://www.bitleechers.me/torrents-details.php?id=214711&hit=1-->
+				<regex value="Torrent Uploaded.*Name: (.*?) Size: (.*) Category: (.*) URL: https?\:\/\/([^\/]+\/).*id=(\d+)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="torrentSize"/>
+					<var name="category"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="torrentUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="download.php?id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;passkey="/>
+				<var name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
