@@ -47,7 +47,7 @@
 		<linepatterns>
 			<extract>
 				<!--New Torrent : Alex Kava's Epub Collection Category: ( Ebooks - General Fiction ) Size: ( 2.37 MB ) Link: ( http://www.myanonamouse.net/details.php?id=85661 )-->
-				<regex value="^New Torrent :(.*) Category:\s*\((.*)\) Size: \((.*)\) Link: \(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="New Torrent :(.*) Category:\s*\((.*)\) Size: \((.*)\) Link: \(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
