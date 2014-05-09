@@ -30,7 +30,7 @@
 	siteName="x264.me">
 
 	<settings>
-		<description text="Go to http://sportscene.net and extract passkey."/>
+		<description text="Go to RSS and extract passkey."/>
 		<passkey tooltiptext="The passkey in your sportscene RSS feed link."/>
 	</settings>
 
