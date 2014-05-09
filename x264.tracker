@@ -30,8 +30,8 @@
 	siteName="x264.me">
 
 	<settings>
-		<cookie_description/>
-		<cookie/>
+		<description text="Go to RSS and extract passkey."/>
+		<passkey tooltiptext="The passkey in your sportscene RSS feed link."/>
 	</settings>
 
 	<servers>
@@ -68,17 +68,16 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="https://"/>
+				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="download.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
+				<varenc name="passkey"/>
+				<string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
 		</linematched>
 		<ignore>
 			<regex value="/details\.php" expected="false"/>
