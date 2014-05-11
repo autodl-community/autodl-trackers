@@ -30,8 +30,8 @@
 	siteName="www.sport-scene.net">
 
 	<settings>
-		<cookie_description/>
-		<cookie/>
+		<description text="Go to http://sport-scene.net/getrss.php and extract passkey."/>
+		<passkey tooltiptext="The passkey in your sportscene RSS feed link."/>
 	</settings>
 
 	<servers>
@@ -63,12 +63,11 @@
 				<string value="download.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
+				<var name="passkey"/>
+				<string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
 		</linematched>
 		<ignore>
 			<regex value="^Sport-Scene.net.*Torrents:" expected="false"/>
