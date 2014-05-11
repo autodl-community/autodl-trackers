@@ -66,7 +66,7 @@
 				<string value="download.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
-				<var name="torrentName"/>
+				<varenc name="torrentName"/>
 				<string value=".torrent?passkey="/>
 				<var name="passkey"/>
 			</var>

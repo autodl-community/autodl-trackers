@@ -73,7 +73,7 @@
 				<string value="/"/>
 				<var name="rsskey"/>
 				<string value="/"/>
-				<var name="torrentName"/>
+				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
 
