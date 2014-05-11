@@ -66,9 +66,8 @@
 				<string value="/"/>
 				<var name="passkey"/>
 				<string value="/0/"/>
-				<var name="torrentName"/>
-				<string value=".torrent"/>
-				
+				<varenc name="torrentName"/>
+				<string value=".torrent"/>			
 			</var>
 		</linematched>
 		<ignore>
