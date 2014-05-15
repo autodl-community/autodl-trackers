@@ -47,7 +47,7 @@
 			network="TCaf"
 			serverNames="irc.thecafe.me"
 			channelNames="#Announce"
-			announcerNames="TC-Announce"
+			announcerNames="Announce"
 		/>
 	</servers>
 
