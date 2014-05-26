@@ -64,7 +64,7 @@
 			</var>
 			<setregex srcvar="torrentName" regex="Scene\)" varName="scene" newValue="true"/>
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
