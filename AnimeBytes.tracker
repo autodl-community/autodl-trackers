@@ -95,7 +95,7 @@
 				<regex value=""/>
 			</extracttags>
 
-			<extract srcvar="torrentName">
+			<extract srcvar="torrentName" optional="true">
 				<regex value=".*\[(.*)\]"/>
 				<vars>
 					<var name="year"/>
