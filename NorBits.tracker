@@ -28,10 +28,10 @@
 	shortName="NorBits"
 	longName="NorBits"
 	siteName="norbits.net">
-	
+
 	<settings>
-		<description text="Paste the 32 character long passkey here. Can be found at the end of any Norbits download links."/>
-		<authkey/>
+		<description text="Paste the 32 character long passkey here. Can be found at the end of any NorBits download links."/>
+		<passkey tooltiptext="The passkey from your NorBits download link."/>
 	</settings>
 
 	<servers>
@@ -68,7 +68,7 @@
 				<string value="download.php?id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;passkey="/>
-				<var name="authkey"/>
+				<var name="passkey"/>
 			</var>
 			<var name="torrentSslUrl">
 				<string value="https://"/>
@@ -76,7 +76,7 @@
 				<string value="download.php?id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;passkey="/>
-				<var name="authkey"/>
+				<var name="passkey"/>
 			</var>
 		</linematched>
 		<ignore>
