@@ -72,7 +72,7 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?type=rss&amp;secret_key="/>
+				<string value="download.php?type=rss&amp;autodl=true&amp;secret_key="/>
 				<var name="rsskey"/>
 				<string value="&amp;id="/>
 				<var name="$torrentId"/>
