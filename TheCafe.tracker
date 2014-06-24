@@ -30,15 +30,15 @@
 	siteName="thecafe.me">
 
 	<settings>
-		<description text="Head over to https://thecafe.me/getrss.php ; generate a link and copy down the secret_key= part"/>
+		<description text="Head over to https://thecafe.me/getrss.php and click generate.  Paste the entire link"/>
 		<textbox
 			name="rsskey"
 			text="rsskey"
 			accesskey="r"
-			tooltiptext="The secret key in your TC RSS feed link."
+			tooltiptext="Paste any rss feed link"
 			emptytext="TC key"
 			pasteGroup="rsskey"
-			pasteRegex="/([\da-fA-F]{32})"
+			pasteRegex="[\?&amp;]secret_key=([\da-fA-F]{32})"
 		/>
 	</settings>
 
@@ -72,7 +72,7 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?type=rss&amp;secret_key="/>
+				<string value="download.php?type=rss&amp;autodl=true&amp;secret_key="/>
 				<var name="rsskey"/>
 				<string value="&amp;id="/>
 				<var name="$torrentId"/>
