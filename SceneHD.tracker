@@ -61,7 +61,6 @@
 			<var name="freeleech">
 				<string value="false"/>
 			</var>
-
 			<setregex srcvar="torrentName" regex="S01E01|SceneHD$" varName="freeleech" newValue="true"/>
 			<setregex srcvar="category" regex="Bluray\/Complete" varName="freeleech" newValue="true"/>
 			<var name="torrentUrl">
