@@ -73,6 +73,14 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+			<setregex srcvar="category" regex="Packs|Foreign|FLAC|MP3|MVID|^0DAY$" varName="freeleech" newValue="true"/>
+			<var name="scene">
+				<string value="true"/>
+			</var>
+			<setregex srcvar="category" regex="Non-Scene" varName="scene" newValue="false"/>
 			<var name="torrentUrl">
 				<string value="https://sceneaccess.eu/"/>
 				<string value="download/"/>
