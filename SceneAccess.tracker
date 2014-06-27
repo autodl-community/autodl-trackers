@@ -76,7 +76,7 @@
 			<var name="freeleech">
 				<string value="false"/>
 			</var>
-			<setregex srcvar="category" regex="Packs|Foreign" varName="freeleech" newValue="true"/>
+			<setregex srcvar="category" regex="Packs|Foreign|FLAC|MP3|MVID|^0DAY$" varName="freeleech" newValue="true"/>
 			<var name="scene">
 				<string value="true"/>
 			</var>
