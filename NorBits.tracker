@@ -16,7 +16,7 @@
    -
    - The Initial Developer of the Original Code is
    - David Nilsson.
-   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - Portions created by the Initial Developer are Copyright (C) 2010
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
@@ -24,42 +24,34 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="tc"
-	shortName="TC"
-	longName="TheCafe"
-	siteName="thecafe.me">
+	type="norbits"
+	shortName="NorBits"
+	longName="NorBits"
+	siteName="norbits.net">
 
 	<settings>
-		<description text="Head over to https://thecafe.me/getrss.php and click generate.  Paste the entire link"/>
-		<textbox
-			name="rsskey"
-			text="rsskey"
-			accesskey="r"
-			tooltiptext="Paste any rss feed link"
-			emptytext="TC key"
-			pasteGroup="rsskey"
-			pasteRegex="[\?&amp;]secret_key=([\da-fA-F]{32})"
-		/>
+		<description text="Paste any NorBits torrent download link."/>
+		<passkey tooltiptext="The passkey from your NorBits download link."/>
 	</settings>
 
 	<servers>
 		<server
-			network="TCaf"
-			serverNames="irc.thecafe.me"
-			channelNames="#Announce"
-			announcerNames="Announce"
-		/>
+			network="NB-IRC"
+			serverNames="irc.norbits.net"
+			channelNames="#Norbits"
+			announcerNames="NB"
+			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--TheCafe - T.I.And.Tiny.The.Family.Hustle.S03E14.HDTV.X264-CRiMSON Size: 163.95 MB Category: -Unedited Link: https://thecafe.me/details.php?id=110099-->
-				<regex value="^TheCafe\s-\s(.*)Size:\s(.*)\sCategory:\s(.*)\sLink:\shttps?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="Ny torrent: (.*) :: Kategori: (.*) :: Scene: (.*) :: St[&#248;]rrelse: (.*) :: http?\:\/\/([^\/]+\/).*[\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
 					<var name="category"/>
+					<var name="$scene"/>
+					<var name="torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
@@ -69,16 +61,28 @@
 			<var name="scene">
 				<string value="false"/>
 			</var>
+
+			<setregex srcvar="$scene" regex="Ja" varName="scene" newValue="true"/>
+
 			<var name="torrentUrl">
+				<string value="http://"/>
+				<var name="$baseUrl"/>
+				<string value="download.php?id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;passkey="/>
+				<var name="passkey"/>
+			</var>
+			<var name="torrentSslUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?type=rss&amp;autodl=true&amp;secret_key="/>
-				<var name="rsskey"/>
-				<string value="&amp;id="/>
+				<string value="download.php?id="/>
 				<var name="$torrentId"/>
+				<string value="&amp;passkey="/>
+				<var name="passkey"/>
 			</var>
 		</linematched>
 		<ignore>
+			<regex value="^Ny torrent:" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
