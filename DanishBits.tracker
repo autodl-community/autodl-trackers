@@ -31,8 +31,9 @@
 	ignore404="true">
 
 	<settings>
-		<description text="Go to https://danishbits.org/links.php and copy the RSS feed (direct download) link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
-		<passkey/>
+		<gazelle_description/>
+		<gazelle_authkey/>
+		<gazelle_torrent_pass/>
 	</settings>
 
 	<servers>
@@ -47,11 +48,13 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--Nyt Upload ~ Danske Film ~ Hunters.Video.74.Jagt.paa.Berleburg.Nordic.PAL-DVDR ~ 4.25GB ~ https://danishbits.org/details.php?id=94606-->
-				<!--Nyt Upload ~ HD-X264 ~ The.Thin.Red.Line.1998.DKsubs.720p.BluRay.x264-DNG ~ 8.00GB ~ https://danishbits.org/details.php?id=94607-->
-				<!--POWERLEECH ~ HD-X264 ~ The.Thin.Red.Line.1998.DKsubs.720p.BluRay.x264-DNG ~ 8.00GB ~ https://danishbits.org/details.php?id=94607-->
-				<regex value="^(?:Nyt Upload|POWERLEECH|POWERLEEH|FREELEECH) ~([^~]*)~([^~]*)~([^~]*)~\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!--GLOBAL FREELEECH ~ Superleech ~ Occupant.2011.Custom.DKsubs.NTSC.DVDR-SUBLiME ~ 3.90GB ~ https://danishbits.org/torrents.php?torrentid=16550-->
+				<!--POWERLEECH ~ Bluray ~ The.Railway.Man.2013.NOR.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi ~ 31.33GB ~ https://danishbits.org/torrents.php?torrentid=331724-->
+				<!--FREELEECH ~ Danske Film ~ Marie.Kroeyer.2012.DANiSH.PAL.DVDR-FARGIRENIS ~ 4.39GB ~ https://danishbits.org/torrents.php?torrentid=332259-->
+				<!--NYT UPLOAD ~ HDx264 ~ Men.In.Black.3.2012.3D.HSBS.1080p.BluRay.x264.HQ-TUSAHD ~ 9.27GB ~ https://danishbits.org/torrents.php?torrentid=331725-->
+				<regex value="(NYT UPLOAD|FREELEECH|POWERLEECH|GLOBAL FREELEECH)\s~\s([^~]+?)\s~\s([^~]+?)\s~\s([^~]+?)\s~\s(https?\:\/\/[^\/]+\/)torrents.php\?torrentid=(\d+)"/>
 				<vars>
+					<var name="$freeleech"/>
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="torrentSize"/>
@@ -61,19 +64,23 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="$freeleech" regex="FREELEECH" varName="freeleech" newValue="true"/>
+
 			<var name="torrentUrl">
-				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="torrents.php?action=download&amp;authkey="/>
+				<var name="authkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
+				<string value="&amp;id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent?passkey="/>
-				<var name="passkey"/>
 			</var>
 		</linematched>
 		<ignore>
-			<regex value="^(?:Nyt Upload|POWERLEECH|POWERLEEH|FREELEECH) " expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
