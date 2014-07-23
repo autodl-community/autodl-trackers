@@ -104,6 +104,21 @@
 				</var>
 			</if>
 
+			<extract srcvar="$title" optional="true">
+				<regex value="Season 0?(\d+)"/>
+				<vars>
+					<var name="season"/>
+				</vars>
+			</extract>
+
+			<extract srcvar="$title" optional="true">
+				<regex value="S0?(\d+)E0?(\d+)"/>
+				<vars>
+					<var name="season"/>
+					<var name="episode"/>
+				</vars>
+			</extract>
+
 			<varreplace name="tags" srcvar="tags" regex="[\|]" replace=", "/>
 
 			<extracttags srcvar="tags" split=",">
