@@ -28,7 +28,7 @@
 	shortName="KG"
 	longName="Karagarga"
 	siteName="">
-	
+
 	<settings>
 		<cookie_description/>
 		<cookie/>
@@ -45,19 +45,18 @@
 
 	<parseinfo>
 		<multilinepatterns>
-			<!--Traugott Müller & Gustaf Gründgens - Friedemann Bach (1941) [Drama] [DVD-R]-->
-			<!-- https://karagarga.net/details.php?id=169055 -->		
+			<!--Alessandro Blasetti, Carlo Campogalliani - Petrolineide (1949) [Movie] [Classics] [DVD-R]-->
+			<!-- https://karagarga.net/details.php?id=170393 -->
 			<extract>
-				<regex value="(.*)\s\((.*)\)\s\[([^\]]+)\]\s?\[?([^\]]+)?\]?"/>
+				<regex value="(.*)\s\((.*)\)\s(.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="year"/>
-					<var name="category"/>
 					<var name="tags"/>
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^.*https?\:\/\/([^\/]+\/)\S*[&amp;\?]id=(\d+)"/>
+				<regex value="https?\:\/\/([^\/]+\/)\S*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
@@ -65,6 +64,15 @@
 			</extract>
 		</multilinepatterns>
 		<linematched>
+			<varreplace name="tags" srcvar="tags" regex="\]\s" replace=", "/>
+			<varreplace name="tags" srcvar="tags" regex="[\[\]]" replace=""/>
+
+			<extracttags srcvar="tags" split=",">
+				<setvarif varName="category" regex="^(?:Movie|Music|Literature)$"/>
+				<setvarif varName="resolution" regex="^(?:720p|1080p)$"/>
+				<setvarif varName="source" regex="^(?:DVD\-R|BD)$"/>
+			</extracttags>
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
