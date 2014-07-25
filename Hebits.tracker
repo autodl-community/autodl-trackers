@@ -73,14 +73,10 @@
 				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="/"/>
-				<string value="downloadRss.php/"/>
+				<string value="downloadRss.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="&passkey="/>
 				<varenc name="passkey"/>
-				<string value="/"/>
-				<string value="%5BHebits.net%5D"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
 			</var>
 		</linematched>	
 		<ignore>
