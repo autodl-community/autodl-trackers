@@ -54,7 +54,7 @@
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^Link: https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<regex value="^Link: https?\:\/\/?[w{3}.]*([^\/]+).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
@@ -67,22 +67,18 @@
 				</vars>
 			</extract>
 		</multilinepatterns>
-		
+
 		<linematched>
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="/"/>
-				<string value="downloadRss.php/"/>
+				<string value="downloadRss.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="&amp;passkey="/>
 				<varenc name="passkey"/>
-				<string value="/"/>
-				<string value="%5BHebits.net%5D"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
 			</var>
-		</linematched>	
+		</linematched>
 		<ignore>
 		</ignore>
 	</parseinfo>
