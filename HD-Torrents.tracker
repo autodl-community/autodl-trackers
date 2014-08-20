@@ -47,10 +47,9 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New Torrent by Ms89 [Remux] Barry Munday 2010 BluRay Remux 1080p AVC DTS-HD MA 5 1 (16.28 GB) uploaded! Download: http://hdts.ru/download.php?id=fa193a789afbcdba6d76186766a262d8a79f5d3b-->
-				<regex value="^New Torrent by (.*) \[([^\]]*)\] (.*) \(([^\)]*)\) uploaded! Download\: https?\:\/\/([^\/]+\/).*[&amp;\?]id=([a-f0-9]+)"/>
+				<!--New Torrent in category [XXX/Blu-ray] Erotische Fantasien 3D (2008) Blu-ray 1080p AVC DTS-HD MA 7 1 (14.60 GB) uploaded! Download: https://hd-torrents.org/download.php?id=806bc36530d146969d300c5352483a5e6e0639e9-->
+				<regex value="New Torrent in category \[([^\]]*)\] (.*) \(([^\)]*)\) uploaded! Download\: https?\:\/\/([^\/]+\/).*[&amp;\?]id=([a-f0-9]+)"/>
 				<vars>
-					<var name="uploader"/>
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="torrentSize"/>
