@@ -72,6 +72,7 @@
 			</var>
 		</linematched>
 		<ignore>
+			<regex value=".*torrentshack.eu\/requests.php.*"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
