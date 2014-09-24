@@ -40,7 +40,7 @@
 			network="SceneHD"
 			serverNames="irc.scenehd.eu"
 			channelNames="#scenehd,#announce"
-			announcerNames="ratatat"
+			announcerNames="SceneHD"
 			/>
 	</servers>
 
