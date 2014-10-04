@@ -70,6 +70,17 @@
 				<string value="&amp;torrent_pass="/>
 				<var name="torrent_pass"/>
 			</var>
+			<var name="torrentSslUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="torrents.php?action=download&amp;id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;authkey="/>
+				<var name="authkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
+				<string value="&amp;ssl=1"/>
+			</var>
 		</linematched>
 		<ignore>
 			<regex value=".*torrentshack.eu\/requests.php.*"/>
