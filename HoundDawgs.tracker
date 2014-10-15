@@ -37,7 +37,7 @@
 	<servers>
 		<server
 			network="HoundDawgs IRC"
-			serverNames="hounddawgs.org"
+			serverNames="irc.hounddawgs.org"
 			channelNames="#announce"
 			announcerNames="Fido"
 			/>
