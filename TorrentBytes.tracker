@@ -36,9 +36,9 @@
 
 	<servers>
 		<server
-			network="P2P-NET"
-			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
-			channelNames="#torrentbytes-spam"
+			network="torrentbytes"
+			serverNames="irc.torrentbytes.ninja"
+			channelNames="#torrentbytes-announce"
 			announcerNames="ByteMe"
 			/>
 	</servers>
