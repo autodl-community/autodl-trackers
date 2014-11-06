@@ -62,6 +62,12 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<if srcvar="category" regex="TV-SD">
+				<var name="resolution">
+					<string value="SD"/>
+				</var>
+			</if>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
