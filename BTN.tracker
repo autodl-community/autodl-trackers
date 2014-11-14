@@ -63,20 +63,20 @@
 			<!--[ 2010 ] [ Episode ] [ AVI | XViD | HDTV | Scene | FastTorrent ] [ Uploader: Satan ] [ Pretime: 1 minute and 30 seconds ]-->
 			<!--[ https://XXXXXXXXX/torrents.php?id=7366 / https://XXXXXXXXX/torrents.php?action=download&id=9088 ]-->
 			<extract>
-				<regex value="^NOW BROADCASTING!\s*(?:\[(.*)\])?\s*$"/>
+				<regex value="^NOW BROADCASTING! \[(.*)\]"/>
 				<vars>
 					<var name="torrentName"/>
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^\[ Title:(.*)\]\s*\[ Series:(.*)\]\s*$"/>
+				<regex value="^\[ Title: (.*) \] \[ Series: (.*) \]"/>
 				<vars>
 					<var name="$title"/>
 					<var name="name1"/>
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^(?:\[\s*(?:(\d+)[^\]]*)?\s*\]\s*)?\[ ([^\]]*)\] \[([^\]]*)\]\s*\[ Uploader: ([^\]]*)\]\s*(?:\[\s*Pretime:([^\]]*)\])?\s*$"/>
+				<regex value="^\[ (\d+) \] \[ (.*) \] \[ (.*) \] \[ Uploader: (.*?) \](?: \[ Pretime: (.*) \])?"/>
 				<vars>
 					<var name="year"/>
 					<var name="category"/>
@@ -86,10 +86,9 @@
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^\[.* / .*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\s*\]\s*$"/>
+				<regex value="^\[ .* / (https?://.*id=\d+) \]"/>
 				<vars>
 					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</multilinepatterns>
@@ -157,10 +156,7 @@
 			</if>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="torrents.php?action=download&amp;id="/>
-				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
 				<string value="&amp;torrent_pass="/>
