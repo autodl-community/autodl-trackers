@@ -74,6 +74,12 @@
 				</vars>
 			</extract>
 
+			<if srcvar="category" regex="(Movies|TV).SD">
+				<var name="resolution">
+					<string value="SD"/>
+				</var>
+			</if>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
