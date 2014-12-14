@@ -49,17 +49,31 @@
 			<extract>
 				<!--New Torrent Uploaded :: Movies/x264 :: Maniac.Cop.1988.720p.BluRay.x264-PSYCHD :: http://www.torrentshack.eu/torrents.php?id=47636&torrentid=47636#torrent47636 :: PreTime: 10m 26s-->
 				<!--New Torrent Uploaded :: TV/x264 :: Wizards.Of.Waverly.Place.S04E19.Alex.The.Puppetmaster.720p.HDTV.x264-PREMiER :: http://www.torrentshack.eu/torrents.php?id=48372&torrentid=48372#torrent48372-->
-				<regex value="^New Torrent Uploaded ::(.*)::(.*):: https?\:\/\/([^\/]+\/).*[&amp;\?]torrentid=(\d+)\S*\s*(?::: PreTime:(.*))?"/>
+				<!--New Torrent Uploaded :: Anime :: [Hatsuyuki]_Akame_ga_Kill!_-_11_[848x480][3AA8B62F] :: http://www.torrentshack.eu/torrents.php?id=47636&torrentid=47636 :: P2P-->
+				<regex value="^New Torrent Uploaded ::(.*)::(.*):: https?\:\/\/([^\/]+\/).*[&amp;\?]torrentid=(\d+)\S*\s*(?::: (.*))?"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
-					<var name="preTime"/>
+					<var name="$preTime"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="scene">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="$preTime" regex="PreTime" varName="scene" newValue="true"/>
+
+			<extract srcvar="$preTime" optional="true">
+				<regex value="PreTime: (.*)"/>
+				<vars>
+					<var name="preTime"/>
+				</vars>
+			</extract>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
