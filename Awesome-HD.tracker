@@ -78,11 +78,12 @@
 				<regex value=""/>
 			</extracttags>
 
-			<extract srcvar="torrentName">
-				<regex value="^(.*)\s\[(.*)\]"/>
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(.*) \[(\d+)\] -(.*)"/>
 				<vars>
 					<var name="name1"/>
 					<var name="year"/>
+					<var name="releaseGroup"/>
 				</vars>
 			</extract>
 
