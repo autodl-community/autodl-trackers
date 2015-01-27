@@ -129,7 +129,7 @@
 
 			<if srcvar="torrentName" regex="^(?!\[.*]).*">
 				<extract srcvar="torrentName" optional="true">
-					<regex value="(?:.*?[\._\s])+.*?-(.*)"/>
+					<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
 					<vars>
 						<var name="releaseGroup"/>
 					</vars>
