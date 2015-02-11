@@ -36,7 +36,7 @@
 		<server
 			network="torrentech"
 			serverNames="irc.torrentech.org"
-			channelNames="#torrentech"
+			channelNames="#announce"
 			announcerNames="ttbot"
 			/>
 	</servers>
