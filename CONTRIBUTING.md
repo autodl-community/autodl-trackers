@@ -1,3 +1,16 @@
+## Requesting a new tracker
+
+[Submit an issue](#submitting-an-issue) to the [Issue Tracker](https://github.com/autodl-community/autodl-trackers/issues) or come to the IRC channel below with the following information:
+
+* Tracker name
+* Tracker abbreviation (if applicable)
+* Tracker IRC server address
+* Tracker IRC announce channel
+* Tracker IRC announcer name
+* A decent size sampling of announces from the announce channel (at least 5-10)
+
+Preferably, this information should be provided using a pastebin site. More information may be requested if necessary.
+
 ## Submitting an issue
 
 Bug reports and feature requests can be submitted to our [Issue Tracker](https://github.com/autodl-community/autodl-trackers/issues).
