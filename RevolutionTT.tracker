@@ -36,9 +36,9 @@
 
 	<servers>
 		<server
-			network="revolutiontt"
+			network="thehorde"
 			serverNames="irc.revolutiontt.me"
-			channelNames="#RevolutionTT,#vip"
+			channelNames="#vip"
 			announcerNames="RevoTT"
 			/>
 	</servers>
