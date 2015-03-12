@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="dks"
+	shortName="dks"
+	longName="DK-Scene"
+	siteName="dk-scene.org">
+
+	<settings>
+		<description text="Paste (Ctrl+V) any DK-Scene RSS link into the box below to automatically extrart the passkey"/>
+		<passkey tooltiptext="The passkey in any RSS link."/>
+	</settings>
+
+	<servers>
+		<server
+			network="DK-Scene.org"
+			serverNames="DK-Scene.org"
+			channelNames="#announce"
+			announcerNames="DK-Scene"
+		/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!-- NYT UPLOAD ~ Kato - Show You Love 2015 Single 320Kbps - Sound4You (Music) ~ https://www.dk-scene.org/details.php?id=1400&hit=1 -->
+				<regex value="NYT UPLOAD ~ (.*) \((.*)\) ~ (https:\/\/.*\/).*id=(\d+)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="category"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
+				<vars>
+					<var name="releaseGroup"/>
+				</vars>
+			</extract>
+
+			<!-- https://www.dk-scene.org/download.php?torrent=1398&passkey= -->
+			<var name="torrentUrl">
+				<var name="$baseUrl"/>
+				<string value="download.php?torrent="/>
+				<var name="$torrentId"/>
+				<string value="&amp;passkey="/>
+				<var name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
