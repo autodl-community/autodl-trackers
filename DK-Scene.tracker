@@ -37,7 +37,7 @@
 	<servers>
 		<server
 			network="DK-Scene.org"
-			serverNames="DK-Scene.org"
+			serverNames="irc.DK-Scene.org"
 			channelNames="#announce"
 			announcerNames="DK-Scene"
 		/>
