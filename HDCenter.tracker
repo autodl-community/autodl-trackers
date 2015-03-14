@@ -38,7 +38,7 @@
 	<servers>
 		<server
 			network="FashShit.Net"
-			serverNames="irc.hdcenter.cc"
+			serverNames="irc.fastshit.net"
 			channelNames="#hdcenter"
 			announcerNames="HDC"
 			/>
