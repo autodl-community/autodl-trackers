@@ -38,8 +38,8 @@
 		<server
 			network="IPTorrents"
 			serverNames="irc.iptorrents.com"
-			channelNames="#ipt.announce2"
-			announcerNames="FunTimes"
+			channelNames="#ipt.announce,#ipt.announce2"
+			announcerNames="IPT,FunTimes"
 			/>
 	</servers>
 
