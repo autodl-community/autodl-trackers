@@ -46,7 +46,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[NEWmTORRENT]jinfTV/XViDY->HBones.S05E12.The.Proof.in.the.Pudding.HDTV.XviD-FQMA| https://www.revolutiontt.net/details.php?id=131411&hit=1-->
+				<!--[NEWmTORRENT]jinfTV/XViDY->HBones.S05E12.The.Proof.in.the.Pudding.HDTV.XviD-FQMA| https://www.revolutiontt.net/details.php?id=pyK9laiE&hit=1-->
 				<regex value="^\[NEW.TORRENT\].in.(.*).->.(.*).\| https?\:\/\/([^\/]+\/).*[&amp;\?]id=([0-9a-zA-Z]+)"/>
 				<vars>
 					<var name="category"/>
@@ -56,7 +56,7 @@
 				</vars>
 			</extract>
 			<extract>
-				<!--[NEWyREQUESTEDOTORRENT]CindTV/PacksY->v[REQ]BOneTTreeaHillHSeasonJ6z| https://www.revolutiontt.net/details.php?id=131418&hit=1-->
+				<!--[NEWyREQUESTEDOTORRENT]CindTV/PacksY->v[REQ]BOneTTreeaHillHSeasonJ6z| https://www.revolutiontt.net/details.php?id=pAKvOOfg&hit=1-->
 				<regex value="^\[NEW.REQUESTED.TORRENT\].in.(.*).->.(.*).\| https?\:\/\/([^\/]+\/).*[&amp;\?]id=([0-9a-zA-Z]+)"/>
 				<vars>
 					<var name="category"/>
