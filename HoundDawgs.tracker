@@ -30,8 +30,9 @@
 	siteName="www.hounddawgs.org">
 
 	<settings>
-		<description text="Get the link from a random torrent download. Right click the torrent's download link and choose Copy link (may vary from browser to browser), and copy your authkey and passkey from the link like this: authkey=asdy78dasd21ed&amp;torrent_pass=23efdsffwe32. Paste here."/>
-        <passkey tooltiptext="The authkey and passkey from your HoundDawgs download link."/>
+		<!-- https://hounddawgs.org/torrents.php?action=download&id=24281&authkey=ctji6sXXXXXXXXXXXXXXXXXXXXXXXXXX&torrent_pass=vqxb1gbXXXXXXXXXXXXXXXXXXXXXXXXX -->
+		<description text="Paste (Ctrl+V) any HoundDawgs RSS link into the box below to automatically extract the information needed"/>
+        	<passkey pasteRegex="(authkey=[0-9a-zA-Z]{32}&torrent_pass=[0-9a-zA-Z]{32})" />
 	</settings>
 
 	<servers>
