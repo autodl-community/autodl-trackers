@@ -4,6 +4,8 @@
 These files are not guaranteed to be compatible with the original [autodl-irssi](http://sourceforge.net/projects/autodl-irssi/).  
 They are licensed under the [Mozilla Public License 1.1](https://www.mozilla.org/MPL/1.1/)
 
+See [CHANGELOG.md](https://github.com/autodl-community/autodl-trackers/blob/master/CHANGELOG.md) for a history of the project.
+
 ## Getting Started
 
 * Current and previous releases can be downloaded from our [release archives](http:/releases.autodl-community.com).
@@ -13,7 +15,7 @@ They are licensed under the [Mozilla Public License 1.1](https://www.mozilla.org
 
 ### Code
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on submitting bugs, requests, and code.
+See [CONTRIBUTING.md](https://github.com/autodl-community/autodl-trackers/blob/master/CONTRIBUTING.md) for more information on submitting bugs, requests, and code.
 
 ### Donate
 
