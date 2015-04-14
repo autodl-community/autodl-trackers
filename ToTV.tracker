@@ -40,8 +40,8 @@
 
 	<servers>
 		<server
-			network="ToT"
-			serverNames="irc.titansof.tv"
+			network="TimberWolves"
+			serverNames="irc.timberwolves.in"
 			channelNames="#tot-announce"
 			announcerNames="Titan"
 			/>
