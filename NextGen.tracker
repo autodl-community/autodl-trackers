@@ -58,6 +58,14 @@
 				</extract>
 			</linepatterns>
 			<linematched>
+				<!-- Extract releaseGroup from torrent name -->
+				<extract srcvar="torrentName" optional="true">
+					<regex value="(?:.*?[\._\s\-])+.*?-(.*?)(?:\..*)?$"/>
+					<vars>
+						<var name="releaseGroup"/>
+					</vars>
+				</extract>
+
 				<var name="torrentUrl">
 					<string value="http://"/>
 					<var name="$baseUrl"/>
