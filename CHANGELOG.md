@@ -3,16 +3,33 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v246](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v246) (2015-04-16)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v245...community-v246)
+
+### Added
+
+* Add TuneTraxx.
+* Add match/except-release-groups filter options to NextGen.
+* Add Mac-Torrents.
+* Add HD4Free.
+
+### Changed
+
+* Update IRC info for ToTV.
+* Add server name for AnimeBytes.
+
+
 ## [community-v245](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v245) (2015-03-20)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v244...community-v245)
 
 ### Added
 
-* Add PsyTorrents
-* Add CloneBits
-* Add Takeabyte-Nordic
-* Add ToTV
+* Add PsyTorrents.
+* Add CloneBits.
+* Add Takeabyte-Nordic.
+* Add ToTV.
 
 
 ## [community-v244](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v244) (2015-03-20)
