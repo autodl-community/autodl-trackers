@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -30,14 +30,14 @@
 	siteName="dk-scene.org">
 
 	<settings>
-		<description text="Paste (Ctrl+V) any DK-Scene RSS link into the box below to automatically extrart the passkey"/>
-		<passkey tooltiptext="The passkey in any RSS link."/>
+		<description text="Paste (Ctrl+V) any DK-Scene RSS link into the box below to automatically extrart the torrent_pass. You will need to download a .torrent before hand to generate the torrent_pass in the RSS link"/>
+		<gazelle_torrent_pass/>
 	</settings>
 
 	<servers>
 		<server
 			network="DK-Scene.org"
-			serverNames="irc.DK-Scene.org"
+			serverNames="irc.dk-Scene.org"
 			channelNames="#announce"
 			announcerNames="DK-Scene"
 		/>
@@ -47,7 +47,7 @@
 		<linepatterns>
 			<extract>
 				<!-- NYT UPLOAD ~ Kato - Show You Love 2015 Single 320Kbps - Sound4You (Music) ~ https://www.dk-scene.org/details.php?id=1400&hit=1 -->
-				<regex value="NYT UPLOAD ~ (.*) \((.*)\) ~ (https:\/\/.*\/).*id=(\d+)"/>
+				<regex value="NYT UPLOAD ~ (.*) \((.*)\) ~ (https?:\/\/.*\/).*id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
@@ -64,13 +64,13 @@
 				</vars>
 			</extract>
 
-			<!-- https://www.dk-scene.org/download.php?torrent=1398&passkey= -->
+			<!-- https://www.dk-scene.org/download.php?torrent=34&torrent_pass= -->
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
 				<string value="download.php?torrent="/>
 				<var name="$torrentId"/>
-				<string value="&amp;passkey="/>
-				<var name="passkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
 			</var>
 		</linematched>
 		<ignore>
