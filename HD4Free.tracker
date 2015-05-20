@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -30,10 +30,8 @@
 	siteName="hd4free.xyz">
 
 	<settings>
-		<description text="Paste (Ctrl+V) any hd4free.xyz torrent direct download (RSS) link into the text box below to automatically extract passkey."/>
-		<passkey
-			tooltiptext="The passkey in your hd4free RSS feed."
-			pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32})"/>
+		<description text="Paste (Ctrl+V) any HD4Free download link into the box below to automatically extract the torrent_pass."/>
+		<gazelle_torrent_pass/>
 	</settings>
 
 	<servers>
@@ -60,13 +58,14 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<!-- http://hd4free.xyz/download.php?torrent=7978&torrent_pass= -->
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="download.php?torrent="/>
 				<var name="$torrentId"/>
 				<string value="&amp;torrent_pass="/>
-				<var name="passkey"/>
+				<var name="torrent_pass"/>
 			</var>
 		</linematched>
 		<ignore>
