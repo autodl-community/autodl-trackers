@@ -25,7 +25,7 @@
 
 <trackerinfo
 	type="mactorrents"
-	shortName="mactorrents"
+	shortName="MacTorrents"
 	longName="Mac-Torrents"
 	siteName="www.mac-torrents.me">
 
@@ -37,10 +37,10 @@
 
 	<servers>
 		<server
-			network="mactorrents"
-			serverNames="irc.mac-torrents.me"
-			channelNames="#announce"
-			announcerNames="ZooKeeper"
+			network="p2p-net"
+			serverNames="irc.p2p-network.net"
+			channelNames="#mac-torrents.announce"
+			announcerNames="MTBot"
 			/>
 	</servers>
 
