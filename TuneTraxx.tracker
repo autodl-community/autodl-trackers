@@ -22,7 +22,7 @@
    - Contributor(s):
    - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
-   
+
 <trackerinfo
 	type="ttx"
 	shortName="TT"
@@ -44,7 +44,7 @@
 	</servers>
 
 	<parseinfo>
-	
+
 		<linepatterns>
 			<extract>
 				<!--NY TORRENT: Dance Single Croatia_Squad_-_Touch_Me-(ETR236)-WEB-2014-XDS 41.62MB (http://tunetraxx.org/?p=torrents&pid=10&action=details&tid=1972)-->
@@ -63,7 +63,7 @@
 				</vars>
 			</extract>
 		</linepatterns>
-		
+
 		<linematched>
 			<var name="scene">
 				<string value="false"/>
@@ -83,7 +83,7 @@
 			<var name="media">
 				<string value="false"/>
 			</var>
-			
+
 			<!-- Extract releasegroup from torrent name -->
 			<extract srcvar="torrentName" optional="true">
 				<regex value="(?:.*?[\._\s\-])+.*?-(.*?)(?:\..*)?$"/>
@@ -91,7 +91,7 @@
 					<var name="releaseGroup"/>
 				</vars>
 			</extract>
-			
+
 			<!-- Extract Artists from torrent name -->
 			<varreplace name="simpleName" srcvar="torrentName" regex="[_]" replace=" "/>
 			<extract srcvar="simpleName" optional="true">
@@ -108,7 +108,7 @@
 					<var name="name2"/>
 				</vars>
 			</extract>
-			
+
 			<!-- Extract releaseType from category -->
 			<extract srcvar="category" optional="true">
 				<regex value="(\w+)$"/>
@@ -116,7 +116,7 @@
 					<var name="releaseType"/>
 				</vars>
 			</extract>
-		
+
 			<!-- http://tunetraxx.org/?p=rss&action=download&tid=1736&pk= -->
 			<var name="torrentUrl">
 			    <var name="$baseUrl"/>
@@ -126,9 +126,9 @@
 				    <var name="passkey"/>
 			</var>
 		</linematched>
-		
+
 		<ignore>
 		</ignore>
-		
+
 	</parseinfo>
 </trackerinfo>

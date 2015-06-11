@@ -47,25 +47,25 @@
 		<multilinepatterns>
 			<!-- New Torrent Uploaded: Daencker Sommer Mix 2012 .:. Category: Audio -->
 			<!-- Size: 270.22 MB .:. URL: https://takeabyte-nordic.org/details.php?id=5061 -->
-			
+
 			<!-- New Torrent Uploaded: Arne Dahl Dodsmassa 2015 SWEDISH CUSTOM PAL DVDR-LaLLa .:. Category: DVD-R -->
 			<!-- Size: 2.71 GB .:. URL: https://takeabyte-nordic.org/details.php?id=5062 -->
-			
+
 			<!-- New Torrent Uploaded: Arne Dahl En Midsommarnattsdrom 2015 SWEDISH CUSTOM PAL DVDR-LaLLa .:. Category: DVD-R -->
 			<!-- Size: 2.49 GB .:. URL: https://takeabyte-nordic.org/details.php?id=5063 -->
-			
+
 			<!-- New Torrent Uploaded: Arne Dahl Morkertal 2015 SWEDISH CUSTOM PAL DVDR-LaLLa .:. Category: DVD-R -->
 			<!-- Size: 2.16 GB .:. URL: https://takeabyte-nordic.org/details.php?id=5064 -->
-			
+
 			<!-- New Torrent Uploaded: Beck Invasionen 2015 SWEDISH RETAiL SWESUB PAL DVDR-CDS .:. Category: Swedish -->
 			<!-- Size: 4.40 GB .:. URL: https://takeabyte-nordic.org/details.php?id=5065 -->
-			
+
 			<!-- New Torrent Uploaded: Powers S01E01-E04 720p WEB-DL AAC 2 0-H.264-GREYHOUNDS .:. Category: TV-Series -->
 			<!-- Size: 3.46 GB .:. URL: https://takeabyte-nordic.org/details.php?id=5066 -->
-			
+
 			<!-- New Torrent Uploaded: Powers S01E05 Retail DKsubs 720p WEB-DL H.264-RAPiDCOWS .:. Category: TV-Series -->
 			<!-- Size: 973.43 MB .:. URL: https://takeabyte-nordic.org/details.php?id=5067 -->
-			
+
 			<extract>
 				<regex value="^.*: (.*) \.:\. Category: (.*)$"/>
 				<vars>

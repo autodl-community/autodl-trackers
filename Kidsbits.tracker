@@ -47,19 +47,19 @@
 		<multilinepatterns>
 			<!-- New Torrent Uploaded: Grand Theft Auto V FULL UNLOCKED-SG .:. Category: PC -->
 			<!-- Size: 60.06 GB .:. URL: https://kidsbits.org/details.php?id=3531 -->
-			
+
 			<!-- New Torrent Uploaded: Grand Theft Auto V UPDATE v1-SG .:. Category: PC -->
 			<!-- Size: 352.75 MB .:. URL: https://kidsbits.org/details.php?id=3532 -->
-			
+
 			<!-- New Torrent Uploaded: Grand Theft Auto V CRACK ONLY-SG .:. Category: PC -->
 			<!-- Size: 723.84 kB .:. URL: https://kidsbits.org/details.php?id=3533 -->
-			
+
 			<!-- New Torrent Uploaded: Star Wars Rebels Spark Of Rebellion 2014 NORDiC PAL DVDR-4MYKIDS .:. Category: DVD-R -->
 			<!-- Size: 4.09 GB .:. URL: https://kidsbits.org/details.php?id=3537 -->
-			
+
 			<!-- New Torrent Uploaded: Grand Theft Auto V Update 1 and Crack v2-3DM .:. Category: PC -->
 			<!-- Size: 860.70 MB .:. URL: https://kidsbits.org/details.php?id=3538 -->
-			
+
 			<extract>
 				<regex value="New Torrent Uploaded: (.*) \.:\. Category: (.*)"/>
 				<vars>
