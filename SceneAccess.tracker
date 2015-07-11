@@ -92,7 +92,7 @@
 			</if>
 
 			<var name="torrentUrl">
-				<string value="https://sceneaccess.eu/"/>
+				<string value="http://sceneaccess.eu/"/>
 				<string value="download/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
