@@ -3,6 +3,21 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v247](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v247) (2015-07-14)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v246...community-v247)
+
+### Added
+
+* Add KidsBits
+* Add Sparvar
+* Add containers filter option to AnimeBytes
+
+### Changed
+
+* Update IRC info for Mac-Torrents
+
+
 ## [community-v246](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v246) (2015-04-16)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v245...community-v246)
