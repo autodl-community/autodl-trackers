@@ -39,14 +39,14 @@
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
 			channelNames="#filelist"
-			announcerNames="System"
+			announcerNames="Announce"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="^New torrent:\s*(.*)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
+				<regex value="^New Torrent:\s*(.*)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
@@ -75,11 +75,11 @@
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="download.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="&amp;file="/>
 				<varenc name="torrentName"/>
-				<string value=".torrent?passkey="/>
+				<string value=".torrent&amp;passkey="/>
 				<var name="passkey"/>
 			</var>
 		</linematched>
