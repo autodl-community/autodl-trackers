@@ -39,14 +39,14 @@
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
 			channelNames="#filelist"
-			announcerNames="System"
+			announcerNames="Announce"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="^New torrent:\s*(.*)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
+				<regex value="^New Torrent:\s*(.*?)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
@@ -62,7 +62,9 @@
 			</var>
 
 			<setregex srcvar="$releaseTags" regex="[FreeLeech!]" varName="freeleech" newValue="true"/>
-			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[FreeLeech!]\s*" replace=""/>
+			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="\[FreeLeech!\]\s*" replace=""/>
+			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="\[Internal!\]\s*" replace=""/>
+
 
 			<extract srcvar="$releaseTags">
 				<regex value="\[(.*?)\]\s*\[(.*)\]"/>
@@ -73,15 +75,16 @@
 			</extract>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
-				<var name="$baseUrl"/>
-				<string value="download.php/"/>
-				<var name="$torrentId"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent?passkey="/>
-				<var name="passkey"/>
-			</var>
+                                <string value="http://"/>
+                                <var name="$baseUrl"/>
+                                <string value="download.php?id="/>
+                                <var name="$torrentId"/>
+                                <string value="&amp;file="/>
+                                <varenc name="torrentName"/>
+                                <string value=".torrent&amp;passkey="/>
+                                <var name="passkey"/>
+                        </var>
+                        
 		</linematched>
 		<ignore>
 			<regex value="^New!\s*(.*)-" expected="false"/>
