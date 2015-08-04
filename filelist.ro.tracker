@@ -46,10 +46,12 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="^New torrent:\s*(.*)\s*--\s*(.*)\s*--\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).*by\s*(.*)"/>
+				<regex value="New Torrent: (.*?) (?:-- (.*) )?-- \[(.*)] \[(.*)] -- (https?://filelist.ro/).*id=(.*) -- by (.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
+					<var name="category"/>
+					<var name="torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 					<var name="uploader"/>
@@ -61,19 +63,14 @@
 				<string value="false"/>
 			</var>
 
-			<setregex srcvar="$releaseTags" regex="[FreeLeech!]" varName="freeleech" newValue="true"/>
-			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[FreeLeech!]\s*" replace=""/>
+			<varreplace name="tags" srcvar="$releaseTags" regex="[\[\]]" replace=""/>
 
-			<extract srcvar="$releaseTags">
-				<regex value="\[(.*?)\]\s*\[(.*)\]"/>
-				<vars>
-					<var name="category"/>
-					<var name="torrentSize"/>
-				</vars>
-			</extract>
+			<extracttags srcvar="tags" split="--">
+				<setvarif varName="origin" regex="^(?:Internal!)$"/>
+				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
+			</extracttags>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
 				<var name="$baseUrl"/>
 				<string value="download.php?id="/>
 				<var name="$torrentId"/>
