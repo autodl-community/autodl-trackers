@@ -48,7 +48,7 @@
 		<linepatterns>
 			<extract>
 				<!--NCEXAMPLE [NEW TORRENT in xvidser_hun] Veep.S04.WEB-DL.x264-DDDD > 1.99 GB in 11F > https://ncore.cc/torrents.php?action=details&id=1112-->
-                                <regex value="^\[NEW TORRENT in (.*?)\] (.*?) > (.*?B) in (.*?) > https:\/\/([^/]+)\/torrents\.php\?action=details&amp;id=(\d+)"/>
+                                <regex value="^\[NEW TORRENT in (.*?)\] (.*?) > (.*?B) in (.*?) > https:\/\/([^/]+\/)torrents\.php\?action=details&amp;id=(\d+)"/>
 				<vars>
                                         <var name="category"/>
                                         <var name="torrentName"/>
