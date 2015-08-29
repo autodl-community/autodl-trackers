@@ -3,6 +3,23 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v248](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v248) (2015-08-29)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v247...community-v248)
+
+### Added
+
+* Add deli.sh
+* Add nCore
+* Add StarBits
+
+### Changed
+
+* Update announcer name for filelist.ro
+* Update download url for filelist.ro
+* Improve regex for filelist.ro
+
+
 ## [community-v247](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v247) (2015-07-14)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v246...community-v247)
