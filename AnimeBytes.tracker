@@ -79,6 +79,8 @@
 				<string value="false"/>
 			</var>
 
+			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[\|]" replace="/"/>
+
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="container" regex="^(?:AVI|MKV|VOB|MPEG|MP4|ISO|WMV|TS|M4V)$"/>
 				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEBRip|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
