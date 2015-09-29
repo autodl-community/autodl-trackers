@@ -3,21 +3,34 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v249](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v249) (2015-09-29)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v248...community-v249)
+
+### Added
+
+* Add release-groups filter option to Tv TORRENTs ro.
+
+### Changed
+
+* Also split releaseTags in AnimeBytes by the pipe character.
+
+
 ## [community-v248](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v248) (2015-08-29)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v247...community-v248)
 
 ### Added
 
-* Add deli.sh
-* Add nCore
-* Add StarBits
+* Add deli.sh.
+* Add nCore.
+* Add StarBits.
 
 ### Changed
 
-* Update announcer name for filelist.ro
-* Update download url for filelist.ro
-* Improve regex for filelist.ro
+* Update announcer name for filelist.ro.
+* Update download url for filelist.ro.
+* Improve regex for filelist.ro.
 
 
 ## [community-v247](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v247) (2015-07-14)
@@ -26,13 +39,13 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Added
 
-* Add KidsBits
-* Add Sparvar
-* Add containers filter option to AnimeBytes
+* Add KidsBits.
+* Add Sparvar.
+* Add containers filter option to AnimeBytes.
 
 ### Changed
 
-* Update IRC info for Mac-Torrents
+* Update IRC info for Mac-Torrents.
 
 
 ## [community-v246](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v246) (2015-04-16)
