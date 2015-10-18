@@ -20,24 +20,24 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
 	type="ng"
 	shortName="NG"
 	longName="NextGen"
-	siteName="nxtgn.org">
+	siteName="nxtgn.info">
 
 	<settings>
-		<description text="Go to http://nxtgn.org/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+		<description text="Go to http://nxtgn.info/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
 		<passkey tooltiptext="The passkey in your NextGen RSS feed link."/>
 	</settings>
 
 	<servers>
 		<server
 			network="NExTGen"
-			serverNames="irc.nxtgn.org"
+			serverNames="irc.nxtgn.info"
 			channelNames="#Announce"
 			announcerNames="James"
 			/>
@@ -46,7 +46,7 @@
 	<parseinfo>
 			<linepatterns>
 				<extract>
-					<!--~ [ DSB ] ~ [ Game.of.Thrones.S03D01.Retail.DKSubs.NTSC.DVDR-DSB ] ~ [ 4.414 GB ] ~ [ http://nxtgn.org/details.php?id=309699 ] ~-->
+					<!--~ [ DSB ] ~ [ Game.of.Thrones.S03D01.Retail.DKSubs.NTSC.DVDR-DSB ] ~ [ 4.414 GB ] ~ [ http://nxtgn.info/details.php?id=309699 ] ~-->
 					<regex value="^~\s*\[\s([^\]]*)\]\s~\s\[\s([^\]]*)\]\s~\s\[\s([^\]]*)\]\s~\s\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\ ]"/>
 					<vars>
 						<var name="category"/>
