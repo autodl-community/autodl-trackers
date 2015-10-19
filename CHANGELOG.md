@@ -3,6 +3,20 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v250](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v250) (2015-10-19)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v249...community-v250)
+
+### Removed
+
+* Remove hey.fux0r.eu
+
+### Fixed
+
+* Make year capture optional in BTN
+* Update siteName for NextGen
+
+
 ## [community-v249](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v249) (2015-09-29)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v248...community-v249)
