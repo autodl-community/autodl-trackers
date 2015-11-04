@@ -27,7 +27,7 @@
 	type="tsh"
 	shortName="TSH"
 	longName="Torrent Shack"
-	siteName="www.torrentshack.eu">
+	siteName="www.torrentshack.me">
 
 	<settings>
 		<gazelle_description/>
@@ -103,7 +103,7 @@
 			</var>
 		</linematched>
 		<ignore>
-			<regex value=".*torrentshack.eu\/requests.php.*"/>
+			<regex value=".*torrentshack.me\/requests.php.*"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
