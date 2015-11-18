@@ -40,7 +40,7 @@
 		<server
 			network="TvT"
 			serverNames="irc.freshon.tv"
-			channelNames="#tvt"
+			channelNames="#tvt.announce"
 			announcerNames="T"
 			/>
 	</servers>
