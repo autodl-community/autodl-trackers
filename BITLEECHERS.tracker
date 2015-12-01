@@ -20,39 +20,39 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - black@justla.me
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
 	type="bl"
 	shortName="BL"
 	longName="BITLEECHERS"
-	siteName="http://bitleechers.me/">
+	siteName="http://bitleechers.net">
 
 	<settings>
-		<description text="Go to https://bitleechers.me/rss.php?custom=1. Select Alternative under Log-in Type and hit the Get Link button. Paste the resulting URL."/>
+		<description text="Go to https://bitleechers.net/rss.php?custom=1. Select Alternative under Log-in Type and hit the Get Link button. Paste the resulting URL."/>
 		<passkey pasteRegex="(?:passkey=)([\da-zA-Z]{32})" tooltiptext="The passkey in your Alternative BITLEECHERS RSS feed link."/>
 	</settings>
 
 	<servers>
 		<server
 			network="BITLEECHERS"
-			serverNames="irc.bitleechers.me"
+			serverNames="irc.bitleechers.net"
 			channelNames="#announce"
-			announcerNames="BITLEECHERS"
+			announcerNames="BL"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--Torrent Uploaded -> Name: Duck.Dynasty.S02E16.Auf.zur.Jagd.Schaetzchen.GERMAN.DUBBED.DOKU.WS.HDTVRip.x264-TVP  Size:  317.57 MB Category: Foreign  URL: https://www.bitleechers.me/torrents-details.php?id=214710&hit=1-->
-				<!--Torrent Uploaded -> Name: VA-Fetenhits The Real Classics 5-2CD-FLAC-2004-CUSTODES  Size:  1,004.46 MB Category: FLAC  URL: https://www.bitleechers.me/torrents-details.php?id=214711&hit=1-->
-				<regex value="Torrent Uploaded.*Name: (.*?) Size: (.*) Category: (.*) URL: https?\:\/\/([^\/]+\/).*id=(\d+)"/>
+				<!--New Torrent: [Minority.Report.S01E10.480p.x264-mSD] [Uploaded By: Anonymous] [Category: TV/X264] [Size: 236.57 MB] [URL: https://bitleechers.net/details.php?id=1321]-->
+				<regex value="New Torrent: \[(.*)\] \[Uploaded By: (.*)\] \[Category: (.*)\] \[Size: (.*)\] \[URL: (https?://.*/).*id=(\d+)\]"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="uploader"/>
 					<var name="category"/>
+					<var name="torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
@@ -60,9 +60,8 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?id="/>
+				<string value="download.php?torrent="/>
 				<var name="$torrentId"/>
 				<string value="&amp;passkey="/>
 				<var name="passkey"/>
