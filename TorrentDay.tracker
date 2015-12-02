@@ -48,7 +48,7 @@
 			<extract>
 				<!--[TV/x264] LBX Little Battlers Experience S01E06 720p HDTV x264-W4F - https://www.torrentday.com/details.php?id=1340045 - 461.734 MB-->
 				<!--[Movie/Bluray] Bad.Boys.II.2003.1080p.BluRay.DTS-HD.MA.5.1.x264-SiMPLE FREELEECH - https://www.torrentday.com/details.php?id=1335201 - 22.772 GB-->
-				<regex value="\[(.*)\] (.*?) - (https?://.*/).*id=(\d+) - (.*)"/>
+				<regex value="\[(.*?)\] (.*?) - (https?://.*/).*id=(\d+) - (.*)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
