@@ -28,7 +28,7 @@
 	shortName="scihd"
 	longName="ScienceHD"
 	siteName="">
-	
+
 	<settings>
 		<gazelle_description/>
 		<gazelle_authkey/>
@@ -40,7 +40,7 @@
 			network="ScienceHD"
 			serverNames="irc.sciencehd.me"
 			channelNames="#SciHD-Announce"
-			announcerNames="SciBorg"
+			announcerNames="Xen"
 			/>
 	</servers>
 
