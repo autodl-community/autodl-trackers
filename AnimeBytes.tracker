@@ -91,6 +91,7 @@
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,4}|\d+\.\d+|q\d+\.[\dx]+|Other)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
 				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB)$"/>
 				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i)$"/>
+				<setvarif varName="$episodeString" regex="^Episode \d+$"/>
 				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
 
 				<!--Ignored-->
@@ -114,6 +115,13 @@
 				<string value="&amp;torrent_pass="/>
 				<var name="torrent_pass"/>
 			</var>
+
+			<extract srcvar="$episodeString" optional="true">
+				<regex value="Episode (\d+)"/>
+				<vars>
+					<var name="episode"/>
+				</vars>
+			</extract>
 		</linematched>
 		<ignore>
 		</ignore>
