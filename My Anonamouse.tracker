@@ -68,11 +68,8 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="tor/download.php?tid="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
 			</var>
 			<http name="cookie">
 				<var name="cookie"/>
