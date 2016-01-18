@@ -3,6 +3,21 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v252](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v251) (2016-01-18)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v251...community-v252)
+
+### Added
+
+* Add 32PAGES
+* Add episode filter option to AnimeBytes
+
+### Fixed
+
+* Update announcer name for ScienceHD
+* Update torrent download URL for My Anonamouse
+
+
 ## [community-v251](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v251) (2015-12-02)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v250...community-v251)
