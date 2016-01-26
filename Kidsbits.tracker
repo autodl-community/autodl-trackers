@@ -77,14 +77,6 @@
 			</extract>
 		</multilinepatterns>
 		<linematched>
-			<!-- Capture releaseGroup -->
-			<!-- torrentName Example: Star Wars Rebels Spark Of Rebellion 2014 NORDiC PAL DVDR-4MYKIDS -->
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
 			<!-- http://kidsbits.org/download.php?torrent=<ID>&passkey=<PASSKEY> -->
 			<var name="torrentUrl">
 				<string value="http://"/>

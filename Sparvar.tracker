@@ -64,13 +64,6 @@
 			</extract>
 		</linepatterns>
 		<linematched>
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
 			<!-- https://www.sparvar.org/download.php?id=93564&authkey= -->
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>

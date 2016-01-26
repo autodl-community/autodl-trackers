@@ -70,24 +70,6 @@
 			</extract>
 		</linepatterns>
 		<linematched>
-			<if srcvar="torrentName" regex="^\[(.*)]">
-				<extract srcvar="torrentName" optional="true">
-					<regex value="^\[(.*?)]"/>
-					<vars>
-						<var name="releaseGroup"/>
-					</vars>
-				</extract>
-			</if>
-
-			<if srcvar="torrentName" regex="^(?!\[.*]).*">
-				<extract srcvar="torrentName" optional="true">
-					<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-					<vars>
-						<var name="releaseGroup"/>
-					</vars>
-				</extract>
-			</if>
-
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>

@@ -70,13 +70,6 @@
 
 			<setregex srcvar="$freeleech" regex="FREELEECH" varName="freeleech" newValue="true"/>
 
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
 				<string value="torrents.php?action=download&amp;authkey="/>

@@ -62,14 +62,6 @@
 			</extract>
 		</linepatterns>
 		<linematched>
-			<!-- Stille.Hjerte.2014.DANISH.PAL.DVDR-WILDER -->
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
 			<!-- http://clonebits.org/download.php?torrent=<ID>&passkey=<PASSKEY> -->
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>

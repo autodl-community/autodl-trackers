@@ -57,13 +57,6 @@
 			</extract>
 		</linepatterns>
 		<linematched>
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
 			<!-- https://www.dk-scene.org/download.php?torrent=1398&passkey= -->
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>

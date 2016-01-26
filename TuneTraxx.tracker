@@ -84,14 +84,6 @@
 				<string value="false"/>
 			</var>
 
-			<!-- Extract releasegroup from torrent name -->
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s\-])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
 			<!-- Extract Artists from torrent name -->
 			<varreplace name="simpleName" srcvar="torrentName" regex="[_]" replace=" "/>
 			<extract srcvar="simpleName" optional="true">

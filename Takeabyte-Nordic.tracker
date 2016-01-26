@@ -83,13 +83,6 @@
 			</extract>
 		</multilinepatterns>
 		<linematched>
-			<!-- Arne Dahl Dodsmassa 2015 SWEDISH CUSTOM PAL DVDR-LaLLa -->
-			<extract srcvar="torrentName" optional="true">
-				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
 			<!-- http://takeabyte-nordic.org/download.php?torrent=<ID>&passkey=<PASSKEY> -->
 			<var name="torrentUrl">
 				<string value="http://"/>
