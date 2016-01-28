@@ -27,7 +27,7 @@
 	type="ahd"
 	shortName="AHD"
 	longName="Awesome-HD"
-	siteName="awesome-hd.net">
+	siteName="awesome-hd.me">
 
 	<settings>
 		<gazelle_description/>
@@ -38,7 +38,7 @@
 	<servers>
 		<server
 			network="AHDIRCNet"
-			serverNames="irc.awesome-hd.net"
+			serverNames="irc.awesome-hd.me"
 			channelNames="#ahd-announce"
 			announcerNames="AHDBot"
 			/>
@@ -47,9 +47,9 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--MOVIE: The Hobbit: An Unexpected Journey [2012] - HiFi / Blu-Ray / 1080p / mkv / h.264 Remux / DTSHD-MA / AHD Gold / DXVA / 75% Freeleech - https://awesome-hd.net/torrents.php?id=7892 / https://awesome-hd.net/torrents.php?action=download&id=13462 -->
-				<!--TV-SHOW: Homeland [2011] - WiKi / Blu-Ray / 720p / mkv / x264 / DTS / AHD Gold / 0% Freeleech - https://awesome-hd.net/torrents.php?id=7905 / https://awesome-hd.net/torrents.php?action=download&id=13459-->
-				<!--AUDIO-TRACK: Indiana Jones and the Last Crusade [1989] - D-Z0N3 /  / DTS / DTS / DTS / 75% Freeleech - https://awesome-hd.net/torrents.php?id=6978 / https://awesome-hd.net/torrents.php?action=download&id=11479-->
+				<!--MOVIE: The Hobbit: An Unexpected Journey [2012] - HiFi / Blu-Ray / 1080p / mkv / h.264 Remux / DTSHD-MA / AHD Gold / DXVA / 75% Freeleech - https://awesome-hd.me/torrents.php?id=7892 / https://awesome-hd.me/torrents.php?action=download&id=13462 -->
+				<!--TV-SHOW: Homeland [2011] - WiKi / Blu-Ray / 720p / mkv / x264 / DTS / AHD Gold / 0% Freeleech - https://awesome-hd.me/torrents.php?id=7905 / https://awesome-hd.me/torrents.php?action=download&id=13459-->
+				<!--AUDIO-TRACK: Indiana Jones and the Last Crusade [1989] - D-Z0N3 /  / DTS / DTS / DTS / 75% Freeleech - https://awesome-hd.me/torrents.php?id=6978 / https://awesome-hd.me/torrents.php?action=download&id=11479-->
 				<regex value="(.*?): (.*?) / (.*) - https?://.* / (https?://.*id=\d+)"/>
 				<vars>
 					<var name="category"/>
