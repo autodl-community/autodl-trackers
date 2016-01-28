@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -31,14 +31,14 @@
 
 	<settings>
 		<description text="Paste (Ctrl+V) any DK-Scene RSS link into the box below to automatically extrart the passkey"/>
-		<passkey tooltiptext="The passkey in any RSS link."/>
+		<passkey pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32})" tooltiptext="Paste your DK-Scene RSS link here."/>
 	</settings>
 
 	<servers>
 		<server
 			network="DK-Scene.org"
 			serverNames="irc.DK-Scene.org"
-			channelNames="#announce"
+			channelNames="#Announce"
 			announcerNames="DK-Scene"
 		/>
 	</servers>
@@ -46,8 +46,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- NYT UPLOAD ~ Kato - Show You Love 2015 Single 320Kbps - Sound4You (Music) ~ https://www.dk-scene.org/details.php?id=1400&hit=1 -->
-				<regex value="NYT UPLOAD ~ (.*) \((.*)\) ~ (https:\/\/.*\/).*id=(\d+)"/>
+				<!-- NYT UPLOAD ~ Krigen 2015 DANiSH BDRip x264-x264ERFREMTiDEN (Danish-HD) ~ https://dk-scene.org/details.php?id=1872&hit=1 -->
+				<regex value="NYT UPLOAD ~ ([^\(]+) \(([^\)]+)\) ~ (https?:\/\/[^\/]+\/)[^=]+=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
@@ -63,13 +63,13 @@
 					<var name="releaseGroup"/>
 				</vars>
 			</extract>
-
-			<!-- https://www.dk-scene.org/download.php?torrent=1398&passkey= -->
+			
+			<!-- https://dk-scene.org/download.php?torrent=1435&torrent_pass= -->
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
 				<string value="download.php?torrent="/>
 				<var name="$torrentId"/>
-				<string value="&amp;passkey="/>
+				<string value="&amp;torrent_pass="/>
 				<var name="passkey"/>
 			</var>
 		</linematched>
