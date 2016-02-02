@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -47,12 +47,15 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
+					<!--[Musik] Riverside-Love_Fear_And_The_Time_Machine-(Limited_Edition)-2CD-2015-gnvr - https://hounddawgs.org/torrents.php?id=35442 - 152.52 MiB-->
+					<!--[Musik] [FreeLeech] Riverside-Love_Fear_And_The_Time_Machine-(Limited_Edition)-2CD-2015-gnvr - https://hounddawgs.org/torrents.php?id=35442 - 152.52 MiB-->
 					<!--[Film HD] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
-					<regex value="^\[([^\]]*)](.*)-(.*)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
+					<!--[Film HD] [FreeLeech] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
+					<regex value="\[([^\]]+)\] (?:\[(FreeLeech)\] |)(.*?) - https?\:\/\/(?:www\.|)([^\/]+)[^=]+=(\d+) - (.*)"/>
 				<vars>
 					<var name="category"/>
+					<var name="$freeleech"/>
 					<var name="torrentName"/>
-					<var name="uploader"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 					<var name="torrentSize"/>
@@ -60,6 +63,23 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			
+			<setregex srcvar="$freeleech" regex="FreeLeech" varName="freeleech" newValue="true"/>
+		
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
+				<vars>
+					<var name="releaseGroup"/>
+				</vars>
+			</extract>
+			
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(?:.*?[\._\s])+.*?-(.*?)(?:\..*)?$"/>
+				<vars>
+					<var name="uploader"/>
+				</vars>
+			</extract>
+			
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
@@ -72,7 +92,6 @@
 			</var>
 		</linematched>
 		<ignore>
-			<regex value="torrents\.php\?id=\d+" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
