@@ -51,7 +51,7 @@
 					<!--[Musik] [FreeLeech] Riverside-Love_Fear_And_The_Time_Machine-(Limited_Edition)-2CD-2015-gnvr - https://hounddawgs.org/torrents.php?id=35442 - 152.52 MiB-->
 					<!--[Film HD] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
 					<!--[Film HD] [FreeLeech] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
-					<regex value="\[([^\]]+)\](?:\[(FreeLeech)\])? (.*?)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
+					<regex value="\[([^\]]+)\](?:\s\[(FreeLeech)\])? (.*?) - (https?\:\/\/.*)id=(\d+) - (.*)"/>
 				<vars>
 					<var name="category"/>
 					<var name="$freeleech"/>
@@ -66,9 +66,8 @@
 			<setregex srcvar="$freeleech" regex="FreeLeech" varName="freeleech" newValue="true"/>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="/torrents.php?action=download&amp;id="/>
+				<string value="action=download&amp;id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
@@ -77,7 +76,6 @@
 			</var>
 		</linematched>
 		<ignore>
-			<regex value="torrents\.php\?id=\d+" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
