@@ -47,10 +47,14 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
+					<!--[Musik] Riverside-Love_Fear_And_The_Time_Machine-(Limited_Edition)-2CD-2015-gnvr - https://hounddawgs.org/torrents.php?id=35442 - 152.52 MiB-->
+					<!--[Musik] [FreeLeech] Riverside-Love_Fear_And_The_Time_Machine-(Limited_Edition)-2CD-2015-gnvr - https://hounddawgs.org/torrents.php?id=35442 - 152.52 MiB-->
 					<!--[Film HD] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
-					<regex value="\[([^\]]+)\] (.*?)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
+					<!--[Film HD] [FreeLeech] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
+					<regex value="\[([^\]]+)\](?:\[(FreeLeech)\])? (.*?)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
 				<vars>
 					<var name="category"/>
+					<var name="$freeleech"/>
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
@@ -59,6 +63,8 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<setregex srcvar="$freeleech" regex="FreeLeech" varName="freeleech" newValue="true"/>
+
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
