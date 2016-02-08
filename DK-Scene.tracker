@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -38,7 +38,7 @@
 		<server
 			network="DK-Scene.org"
 			serverNames="irc.DK-Scene.org"
-			channelNames="#announce"
+			channelNames="#Announce"
 			announcerNames="DK-Scene"
 		/>
 	</servers>
