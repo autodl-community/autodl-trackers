@@ -20,7 +20,7 @@
    - the Initial Developer. All Rights Reserved.
    -
    - Contributor(s):
-   -
+   - THEGURUDK
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
@@ -48,11 +48,10 @@
 		<linepatterns>
 			<extract>
 					<!--[Film HD] To The Wonder 2012 Retail DKSubs 720p BluRay x264-TREATS - http://www.hounddawgs.org/torrents.php?id=1465 - 4.37 GB-->
-					<regex value="^\[([^\]]*)](.*)-(.*)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
+					<regex value="\[([^\]]+)\] (.*?)\s-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
-					<var name="uploader"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 					<var name="torrentSize"/>
