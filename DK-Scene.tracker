@@ -46,8 +46,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- NYT UPLOAD ~ Kato - Show You Love 2015 Single 320Kbps - Sound4You (Music) ~ https://www.dk-scene.org/details.php?id=1400&hit=1 -->
-				<regex value="NYT UPLOAD ~ (.*) \((.*)\) ~ (https:\/\/.*\/).*id=(\d+)"/>
+				<!-- NYT UPLOAD ~ Krigen 2015 DANiSH BDRip x264-x264ERFREMTiDEN (Danish-HD) ~ https://dk-scene.org/details.php?id=1872&hit=1 -->
+				<regex value="NYT UPLOAD ~ ([^\(]+) \(([^\)]+)\) ~ (https?:\/\/[^\/]+\/)[^=]+=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
