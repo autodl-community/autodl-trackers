@@ -63,11 +63,11 @@
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php/"/>
+				<string value="download.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="&amp;torr="/>
 				<varenc name="torrentName"/>
-				<string value=".torrent?passkey="/>
+				<string value=".torrent&amp;passkey="/>
 				<var name="passkey"/>
 			</var>
 		</linematched>
