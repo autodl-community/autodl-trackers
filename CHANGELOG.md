@@ -3,6 +3,20 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v254](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v254) (2016-03-13)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v253...community-v254)
+
+### Added
+
+* Add TtN
+
+### Changed
+
+* Force SSL for TorrentLeech
+* Update torrentUrl for PolishSource
+
+
 ## [community-v253](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v253) (2016-02-10)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v252...community-v253)
@@ -20,7 +34,6 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Remove release group captures from most trackers. autodl-irssi now captures re them from standard form release names. 
 * Update domain name for Awesome-HD.
 * Update announce channel, download URL, and regex for DK-Scene.
-
 
 
 ## [community-v252](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v251) (2016-01-18)
