@@ -27,7 +27,8 @@
 	type="ipt"
 	shortName="IPT"
 	longName="IPTorrents"
-	siteName="www.iptorrents.com">
+	siteName="www.iptorrents.com"
+	follow302links="true">
 
 	<settings>
 		<description text="Go to IPTorrents site and click on your username under the logo to find your passkey."/>
