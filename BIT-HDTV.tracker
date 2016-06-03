@@ -72,13 +72,10 @@
 			</extracttags>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?/"/>
+				<string value="download.php?id="/>
 				<var name="$torrentId"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
 			</var>
 			<http name="Cookie">
 				<var name="cookie"/>
