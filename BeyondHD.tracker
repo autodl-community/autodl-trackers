@@ -27,7 +27,7 @@
 	type="bhd"
 	shortName="BHD"
 	longName="BeyondHD"
-	siteName="beyondhd.me">
+	siteName="beyond-hd.me">
 
 	<settings>
 		<description text="Paste (Ctrl+V) any BeyondHD torrent direct download (RSS) link into the text box below to automatically extract passkey."/>
@@ -39,7 +39,7 @@
 	<servers>
 		<server
 			network="BeyondHD-IRC"
-			serverNames="irc.beyondhd.me"
+			serverNames="irc.beyond-hd.me"
 			channelNames="#bhd_announce"
 			announcerNames="Willie"
 			/>
@@ -48,7 +48,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New Torrent: Orange.Is.the.New.Black.S01.1080p.Blu-ray.AVC.DTS-HD.MA.5.1-Test Category: Blu-ray Encodes By: KC Size: 137.73 GB Link: https://www.beyondhd.me/details.php?id=25918-->
+				<!--New Torrent: Orange.Is.the.New.Black.S01.1080p.Blu-ray.AVC.DTS-HD.MA.5.1-Test Category: Blu-ray Encodes By: KC Size: 137.73 GB Link: https://beyond-hd.me/details.php?id=25918-->
 				<regex value="New Torrent:(.*)Category:(.*)By:(.*)Size:(.*)Link: https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
