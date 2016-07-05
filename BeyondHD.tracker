@@ -48,7 +48,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--New Torrent: Orange.Is.the.New.Black.S01.1080p.Blu-ray.AVC.DTS-HD.MA.5.1-Test Category: Blu-ray Encodes By: KC Size: 137.73 GB Link: https://www.beyond-hd.me/details.php?id=25918-->
+				<!--New Torrent: Orange.Is.the.New.Black.S01.1080p.Blu-ray.AVC.DTS-HD.MA.5.1-Test Category: Blu-ray Encodes By: KC Size: 137.73 GB Link: https://beyond-hd.me/details.php?id=25918-->
 				<regex value="New Torrent:(.*)Category:(.*)By:(.*)Size:(.*)Link: https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
