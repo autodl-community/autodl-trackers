@@ -3,18 +3,34 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v255](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v255) (2016-07-09)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v254...community-v255)
+
+### Removed
+
+* Remove StopThePresses.
+* Remove ToTV.
+
+### Changed
+
+* Update torrentUrl for BIT-HDTV.
+* Follow 302 links for IPTorrents.
+* Update domain for BeyondHD.
+
+
 ## [community-v254](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v254) (2016-03-13)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v253...community-v254)
 
 ### Added
 
-* Add TtN
+* Add TtN.
 
 ### Changed
 
-* Force SSL for TorrentLeech
-* Update torrentUrl for PolishSource
+* Force SSL for TorrentLeech.
+* Update torrentUrl for PolishSource.
 
 
 ## [community-v253](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v253) (2016-02-10)
@@ -42,13 +58,13 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Added
 
-* Add 32PAGES
-* Add episode filter option to AnimeBytes
+* Add 32PAGES.
+* Add episode filter option to AnimeBytes.
 
 ### Fixed
 
-* Update announcer name for ScienceHD
-* Update torrent download URL for My Anonamouse
+* Update announcer name for ScienceHD.
+* Update torrent download URL for My Anonamouse.
 
 
 ## [community-v251](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v251) (2015-12-02)
@@ -57,15 +73,15 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Added
 
-* Add freeleech filter option to My Anonamouse
-* Add TorrentDay
+* Add freeleech filter option to My Anonamouse.
+* Add TorrentDay.
 
 ### Fixed
 
-* Update announce channel for Tv TORRENTs ro
-* Update siteName for NextGen
-* Update siteName for Torrent Shack
-* Update BITLEECHERS
+* Update announce channel for Tv TORRENTs ro.
+* Update siteName for NextGen.
+* Update siteName for Torrent Shack.
+* Update BITLEECHERS.
 
 
 ## [community-v250](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v250) (2015-10-19)
@@ -74,12 +90,12 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Removed
 
-* Remove hey.fux0r.eu
+* Remove hey.fux0r.eu.
 
 ### Fixed
 
-* Make year capture optional in BTN
-* Update siteName for NextGen
+* Make year capture optional in BTN.
+* Update siteName for NextGen.
 
 
 ## [community-v249](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v249) (2015-09-29)
