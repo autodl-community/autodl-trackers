@@ -52,11 +52,12 @@
 				<!--POWERLEECH ~ Bluray ~ The.Railway.Man.2013.NOR.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi ~ 31.33GB ~ https://danishbits.org/torrents.php?torrentid=331724-->
 				<!--FREELEECH ~ Danske Film ~ Marie.Kroeyer.2012.DANiSH.PAL.DVDR-FARGIRENIS ~ 4.39GB ~ https://danishbits.org/torrents.php?torrentid=332259-->
 				<!--NYT UPLOAD ~ HDx264 ~ Men.In.Black.3.2012.3D.HSBS.1080p.BluRay.x264.HQ-TUSAHD ~ 9.27GB ~ https://danishbits.org/torrents.php?torrentid=331725-->
-				<regex value="(NYT UPLOAD|FREELEECH|POWERLEECH|GLOBAL FREELEECH)\s~\s([^~]+?)\s~\s([^~]+?)\s~\s([^~]+?)\s~\s(https?\:\/\/[^\/]+\/)torrents.php\?torrentid=(\d+)"/>
+				<regex value="(NYT UPLOAD|FREELEECH|POWERLEECH|GLOBAL FREELEECH)\s~\s([^~]+?)\s~\s([^~]+?([^-]*))\s~\s([^~]+?)\s~\s(https?\:\/\/[^\/]+\/)torrents.php\?torrentid=(\d+)"/>
 				<vars>
 					<var name="$freeleech"/>
 					<var name="category"/>
 					<var name="torrentName"/>
+					<var name="uploader"/>
 					<var name="torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
