@@ -74,12 +74,13 @@
 				<!--http://www.acid-lounge.org.uk/rssdownload.php?passkey=XXXXXXXXXX&uid=XXXXX&tid=XXXX-->
 				<string value="http://"/>
 				<var name="$baseUrl"/>
-				<string value="rssdownload.php?tid="/>
-				<var name="$torrentId"/>
+				<string value="rssdownload.php?"/>
 				<string value="&amp;passkey="/>
 				<var name="passkey"/>
 				<string value="&amp;uid="/>
 				<var name="uid"/>
+				<string value="&amp;tid="/>
+				<var name="$torrentId"/>
 			</var>
 		</linematched>
 		<ignore>
