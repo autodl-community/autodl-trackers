@@ -3,6 +3,19 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v257](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v257) (2016-09-07)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v256...community-v257)
+
+### Added
+
+* Add TTsWeb.
+
+### Fixed
+
+* Update torrentUrl for Infinity-T.
+
+
 ## [community-v256](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v256) (2016-09-02)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v255...community-v256)
