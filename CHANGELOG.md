@@ -3,6 +3,21 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v258](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v258) (2016-10-10)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v257...community-v258)
+
+### Added
+
+* Add HardBay.
+
+### Updated
+
+* Update regex  for TehConnection.
+* Update announcerNames for HD-Torrent.
+* Update network for ScienceHD.
+
+
 ## [community-v257](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v257) (2016-09-07)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v256...community-v257)
@@ -11,7 +26,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Add TTsWeb.
 
-### Fixed
+### Updated
 
 * Update torrentUrl for Infinity-T.
 
@@ -25,7 +40,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add Ininify-T
 * Add WoP
 
-### Fixed
+### Updated
 
 * Update regex for My Anonamouse
 * Update regex for DanishBits
@@ -41,7 +56,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Remove StopThePresses.
 * Remove ToTV.
 
-### Fixed
+### Updated
 
 * Update torrentUrl for BIT-HDTV.
 * Follow 302 links for IPTorrents.
@@ -60,7 +75,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Force SSL for TorrentLeech.
 
-### Fixed
+### Updated
 
 * Update torrentUrl for PolishSource.
 
@@ -80,6 +95,8 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 ### Changed
 
 * Remove release group captures from most trackers. autodl-irssi now captures re them from standard form release names. 
+
+### Updated
 * Update domain name for Awesome-HD.
 * Update announce channel, download URL, and regex for DK-Scene.
 
@@ -93,7 +110,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add 32PAGES.
 * Add episode filter option to AnimeBytes.
 
-### Fixed
+### Updated
 
 * Update announcer name for ScienceHD.
 * Update torrent download URL for My Anonamouse.
@@ -108,7 +125,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add freeleech filter option to My Anonamouse.
 * Add TorrentDay.
 
-### Fixed
+### Updated
 
 * Update announce channel for Tv TORRENTs ro.
 * Update siteName for NextGen.
@@ -127,6 +144,9 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 ### Fixed
 
 * Make year capture optional in BTN.
+
+### Updated
+
 * Update siteName for NextGen.
 
 
@@ -155,9 +175,12 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Changed
 
+* Improve regex for filelist.ro.
+
+### Updated
+
 * Update announcer name for filelist.ro.
 * Update download url for filelist.ro.
-* Improve regex for filelist.ro.
 
 
 ## [community-v247](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v247) (2015-07-14)
@@ -170,7 +193,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add Sparvar.
 * Add containers filter option to AnimeBytes.
 
-### Changed
+### Updated
 
 * Update IRC info for Mac-Torrents.
 
@@ -186,7 +209,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add Mac-Torrents.
 * Add HD4Free.
 
-### Changed
+### Updated
 
 * Update IRC info for ToTV.
 * Add server name for AnimeBytes.
@@ -212,7 +235,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Change HoundDawgs to use Gazelle auth.
 
-### Fixed
+### Updated
 
 * Update server name for DK-Scene.
 * Update IRC info for IPTorrents.
@@ -229,7 +252,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add DK-Scene.
 * Add match/except-release-groups filter options to DanishBits.
 
-### Fixed
+### Updated
 
 * Update IRC info for RevolutionTT.
 
@@ -242,7 +265,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Set SD resolution based on category for SceneAccess.
 
-### Fixed
+### Updated
 
 * Update announce channel for Torrentech.
 
@@ -258,10 +281,16 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add containers filter option to BTN.
 * Add Morethan.tv.
 
+### Changed
+
+* Force SSL for Tv Torrents ro.
+
 ### Fixed
 
 * Fix regex for release names containing colons for Awesome-HD.
-* Force SSL for Tv Torrents ro.
+
+### Updated
+
 * Update announcer name for HD-Torrents.
 
 
@@ -278,7 +307,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Set SD resolution based on category for Torrent Shack.
 
-### Fixed
+### Updated
 
 * Update announcer name for AceHD.
 
@@ -298,7 +327,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Set SD resolution based on category for XSpeeds.
 
-### Fixed
+### Updated
 
 * Update server name for HoundDawgs.
 * Update IRC info for TorrentBytes.
@@ -308,7 +337,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v237...community-v238)
 
-### Fixed
+### Updated
 
 * Add requests ignore for Torrent Shack.
 * Update announcer name for SceneHD.
@@ -322,7 +351,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Add origin filter option to BTN.
 
-### Fixed
+### Updated
 
 * Update Torrent Shack for move.
 * Update regex for HD-Torrents.
@@ -346,7 +375,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add explicit capture of season and episode to BTN. Fixes issues mostly occuring with anime release names.
 * Change regex for Karagarga.
 
-### Fixed
+### Updated
 
 * Update DanishBits to use Gazelle.
 * Update download URL for Hebits.
@@ -363,7 +392,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add freeleech filter option to SceneHD.
 * Add NorBits.
 
-### Fixed
+### Updated
 
 * Update auth method for TheCafe.
 * Update download URL for TheCafe.
@@ -380,23 +409,29 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add required keys message to BIT-HDTV.
 * Add required keys message to BrokenStones.
 
-### Fixed
+### Changed
 
+* Force SSL for My Anonamouse.
 * Make year extraction in AnimeBytes optional.
+
+### Updated
+
 * Update download URL for Sport-Scene.
 * Update regex for My Anonamouse.
-* Force SSL for My Anonamouse.
 
 
 ## [community-v233](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v233) (2014-05-26)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v232...community-v233)
 
-### Fixed
+### Changed
 
-* Update announcer name for TheCafe.
 * Force SSL for GazelleGames.
 * Force SSL for GFTracker.
+
+### Updated
+
+* Update announcer name for TheCafe.
 
 
 ## [community-v232](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v232) (2014-05-14)
@@ -430,7 +465,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Remove TSTN.
 
-### Fixed
+### Updated
 
 * Update regex for PassThePopcorn. Fixes problems with announces containing directors.
 
@@ -449,9 +484,12 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Remove Torrent-Damage.
 
-### Fixed
+### Changed
 
 * Force SSL for BeyondHD.
+
+### Updated
+
 * Update announcer name for TSTN.
 * Update regex for AwesomeHD.
 
@@ -484,7 +522,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Remove StellarWinds.
 
-### Fixed
+### Updated
 
 * Update goem.
 * Update announcer name for TSTN.
@@ -500,7 +538,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add WEBRip capture to AnimeBytes, BTN, PassThePopcorn, SWARM, and TehConnection.eu.
 * Add SnatchThat.
 
-### Fixed
+### Updated
 
 * Update download URL for HDME.
 * Add redirect handling for HDME.
@@ -510,9 +548,12 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v225...community-v226)
 
-### Fixed
+### Changed
 
 * Force SSL for HD-Torrents.
+
+### Updated
+
 * Add redirect handling to Waffles.
 
 
@@ -524,7 +565,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Add SceneFZ.
 
-### Fixed
+### Updated
 
 * Update Waffles download URL.
 * Update BTN series regex to fix edge cases.
@@ -548,7 +589,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Remove TheBox.
 
-### Fixed
+### Updated
 
 * Update IRC info and regex for SceneHD.
 * Update IRC info for AnimeBytes.
@@ -558,7 +599,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v221...community-v222)
 
-### Fixed
+### Update
 
 * Update StellarWinds regex and announce channel.
 
@@ -585,7 +626,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Change name1 for BTN to capture the series name as given on the site.
 
-### Fixed
+### Updated
 
 * Update SuperTorrent for new name and announce format.
 * Update Torrent-Damage.
@@ -599,10 +640,13 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Remove Underground Gamer.
 
-## Fixed
+### Changed
+
+* Add regex to PreToMe to handle announces with preGap.
+
+### Updated
 
 * Update announce channel for FTN.
-* Add regex to PreToMe to handle announces with preGap.
 
 
 ## [community-v218](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v218) (2013-06-07)
@@ -622,12 +666,15 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Fixed
 
+* Fix incorrect variable in NextGen.
+
+### Updated
+
 * Remove FTN deobfuscation.
 * Update IRC info for SceneHD.
 * Update IRC info for TorrentVault.
 * Update NextGen.
 * Update IRC info for SceneBits.
-* Fix incorrect variable in NextGen.
 
 
 ## [community-v217](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v217) (2013-05-07)
@@ -639,7 +686,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Change PreToMe to use passkey.
 * Change Acid-Lounge to use RSS download link.
 
-### Fixed
+### Updated
 
 * Update IRC info for My Anonamouse.
 
@@ -655,9 +702,6 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 ### Changed
 
 * Change authkey to passkey in FunFile.
-
-### Fixed
-
 * Force SSL for Waffles.
 
 
@@ -665,13 +709,13 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v214...community-v215)
 
-### Fixed
-
-* Update server name for AnimeBytes.
-
 ### Removed
 
 * Remove HDBits tracker
+
+### Updated
+
+* Update server name for AnimeBytes.
 
 
 ## [community-v214](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v214) (2013-04-01)
@@ -684,7 +728,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 * Add ignores to PTN.
 * Add ignore to Empornium.
 
-### Fixed
+### Changed
 
 * Force SSL for IPtorrents.
 
@@ -696,9 +740,6 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 # Changed
 
 * Change Blackcats to use passkey.
-
-# Fixed
-
 * Force SSL for Blackcats.
 
 
@@ -730,18 +771,18 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 * Change IPTorrents to use passkey.
 * Modify Awesome-HD.
+* Force SSL for Awesome-HD.
+* Force SSL for RevolutionTT.
 
 ### Removed
 
 * Remove bitGAMER.
 * Remove dead trackers.
 
-### Fixed
+### Updated
 
-* Force SSL for Awesome-HD.
 * Update regex and download URL for AnimeBytes.
 * Update PTN.
-* Force SSL for RevolutionTT.
 * Update channel name for GazelleGames.
 * Update download URL for Animebytes.
 * Update PussyTorrents.
