@@ -47,8 +47,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--NEW TORRENT ADDED: Pro Pinball Pack GoG Classic 4000th RELEASE-I KnoW <https://ultimategamer.club/torrents-details.php?id=3132&hit=1> at 2016-04-25T11:18:30+0000-->
-				<regex value="^NEW TORRENT ADDED:\\s(.*)\\s+\\&lt;https?\\:\\/\\/([^\\/]+).*[&amp;\\?]id=(\\d+)"/>
+				<!--//NEW TORRENT// Half-Life.3-RAZOR1911 at https://ultimategamer.club/torrents-details.php?id=1911&hit=1 on 2016-05-18T11:35:08+0000-->
+				<regex value="^\/\/NEW TORRENT\/\/\s+(.*)\s+at\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
