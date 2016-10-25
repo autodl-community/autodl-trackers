@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<!-- ***** BEGIN LICENSE BLOCK *****
+- Version: MPL 1.1
+-
+- The contents of this file are subject to the Mozilla Public License Version
+- 1.1 (the "License":wink:; you may not use this file except in compliance with
+- the License. You may obtain a copy of the License at
+- http://www.mozilla.org/MPL/
+-
+- Software distributed under the License is distributed on an "AS IS" basis,
+- WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+- for the specific language governing rights and limitations under the
+- License.
+-
+- The Original Code is IRC Auto Downloader.
+-
+- The Initial Developer of the Original Code is
+- David Nilsson.
+- Portions created by the Initial Developer are Copyright (C) 2010, 2011
+- the Initial Developer. All Rights Reserved.
+-
+- Contributor(s):
+-
+- ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="ugc"
+	shortName="UGC"
+	longName="Ultimate Gamer Club"
+	siteName="ultimategamer.club">
+
+	<settings>
+		<description text="Go to your profile page (https://ultimategamer.club/account.php) to lookup your passkey"/>
+		<passkey tooltiptext="The passkey from your profile page."/>
+	</settings>
+
+	<servers>
+		<server
+			network="UGC"
+			serverNames="irc.ultimategamer.club"
+			channelNames="#UGC.Announce"
+			announcerNames="Gnarl"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!--//NEW TORRENT// Half-Life.3-RAZOR1911 at https://ultimategamer.club/torrents-details.php?id=1911&hit=1 on 2016-05-18T11:35:08+0000-->
+				<regex value="^\/\/NEW TORRENT\/\/\s+(.*)\s+at\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="torrentUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="/download.php?id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;passkey="/>
+				<varenc name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
