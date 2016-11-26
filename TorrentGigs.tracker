@@ -30,8 +30,17 @@
 	siteName="">
 
 	<settings>
-		<description text="Paste the RSS feed for your passkey."/>
-		<passkey/>
+		<description text="Paste your passkey. In ssl field put 0 for non ssl tracker or 1 for ssl tracker."/>
+	                <passkey
+                        pasteGroup="passkey,ssl"
+                        />
+                <textbox
+                        name="ssl"
+                        text="ssl"
+                        accesskey="i"
+			tooltiptext="0 for non ssl tracker, 1 for ssl tracker"
+                        />
+
 	</settings>
 
 	<servers>
@@ -69,7 +78,7 @@
 				<var name="$torrentId"/>
 				<string value="/"/>
 				<var name="passkey"/>
-				<string value="/0/"/>
+				<string value="/ssl/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>			
 			</var>
