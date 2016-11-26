@@ -30,8 +30,17 @@
 	siteName="">
 
 	<settings>
-		<description text="Paste the RSS feed for your passkey."/>
-		<passkey/>
+		<description text="Paste your passkey. In ssl field put 0 for non ssl tracker or 1 for ssl tracker."/>
+	                <passkey
+                        pasteGroup="passkey,ssl"
+                        />
+                <textbox
+                        name="ssl"
+                        text="ssl"
+                        accesskey="i"
+			tooltiptext="0 for non ssl tracker, 1 for ssl tracker"
+                        />
+
 	</settings>
 
 	<servers>
@@ -46,26 +55,30 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- [REQ]  Twin Peaks: Ogniu Krocz Ze Mn± / Twin Peaks Fire Walk With Me 1992 PL 720p BRRip XviD AC3-inTGrity - http://btgigs.info/details.php?id=356855-->
+				<!--[REQ]  TV/Seriale || Westworld S01E08 1080p HDTV X264-BATV || Rozmiar: 5.71 GB || 0 || - https://btgigs.info/details.php?id=449457-->
 				<!---->
-				<!--Nagi Instynkt Przetrwania / Naked And Afraid S02E06 Meltdown In Bolivia PL 720p HDTV X264 AC3-TVM4iN - http://btgigs.info/details.php?id=356858-->
-				<regex value="^(.*)\s\-\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!--TV/Seriale || Westworld S01E08 1080p HDTV X264-BATV || Rozmiar: 5.71 GB || 0 || - https://btgigs.info/details.php?id=449457-->
+				<regex value="^(.*) \|\| (.*) \|\| Rozmiar: (.*) \|\| (\d) \|\| \- https\:\/\/([^\/]+\/).*id=(\d+)"/>
 				<vars>
+					<var name="category"/>
 					<var name="torrentName"/>
+					<var name="torrentSize"/>
+					<var name="freeleech"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<setregex srcvar="$freeleech" regex="1" varName="freeleech" newValue="true"/>
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="download_rss.php/"/>
 				<var name="$torrentId"/>
 				<string value="/"/>
 				<var name="passkey"/>
-				<string value="/0/"/>
+				<string value="/ssl/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>			
 			</var>
