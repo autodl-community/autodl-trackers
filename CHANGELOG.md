@@ -3,6 +3,25 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v259](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v259) (2016-10-10)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v258...community-v259)
+
+### Added
+
+* Add UltimateGamerClub.
+* Add PassTheHeadphones.
+
+### Removed
+
+* Remove What.CD.
+* Remove ScienceHD.
+
+### Updated
+
+* Update TorrentGigs.
+
+
 ## [community-v258](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v258) (2016-10-10)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v257...community-v258)
