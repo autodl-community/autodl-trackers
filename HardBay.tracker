@@ -42,7 +42,7 @@
 			network="Hardbay IRC Network"
 			serverNames="irc.hardbay.club"
 			channelNames="#hardbay.announce"
-			announcerNames="HardBay-Announce"
+			announcerNames="Announce"
 			/>
 	</servers>
 
