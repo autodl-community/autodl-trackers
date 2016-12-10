@@ -52,7 +52,7 @@
 				<regex value="^TORRENT: (.*)-(.*).*\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
-                       	<var name="nukkij"/>
+                    <var name="nukkij"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
@@ -76,13 +76,14 @@
 
 			<!--Get year-->
 			<extract srcvar="$releaseTags" optional="true">
-				<regex value="(?:^|[\[\/])\s*((?:18|19|20)\d\d)\s*(?:$|[\]\/])"/>
+				<regex value="^\[(\d{4})\].*\[(.+)\].-([^\-\[\]]+)-(.+)"/>
 				<vars>
 					<var name="year"/>
+					<var name="releaseType"/>
+					<var name="releaseTags"/>
+					<var name="tags"/>
 				</vars>
 			</extract>
-
-			<varreplace name="tags" srcvar="$releaseTags" regex="[\/]" replace=", "/>
 
 			<extractone>
 				<extract srcvar="torrentName">
@@ -107,22 +108,15 @@
 				</extract>
 			</extractone>
 
-			<setregex srcvar="torrentName" regex="\(web\)" varName="media" newValue="WEB"/>
-
 			<setregex srcvar="torrentName" regex="\(scene\)" varName="scene" newValue="true"/>
-
-				<extract srcvar="torrentName" optional="true">
-				<regex value="(MP3|FLAC|Ogg|AAC|AC3|DTS)"/>
-				<vars>
-					<var name="format"/>
-				</vars>
-			</extract>
-			<extracttags srcvar="$releaseTags" split="/">
+			
+			<extracttags srcvar="releaseTags" split="/">
+				<setvarif varName="format" regex="(MP3|FLAC|Ogg|AAC|AC3|DTS)"/>
 				<setvarif varName="bitrate" regex="Lossless$"/>
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,3}|\d+\.\d+|q\d+\.[\dx]+)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
 
-			<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB|Blu-ray|Other)$"/>
-			<setvarif varName="scene" value="Scene" newValue="true"/>
+				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB|Blu-ray|Other)$"/>
+				<setvarif varName="scene" value="Scene" newValue="true"/>
 				<setvarif varName="log" value="Log" newValue="true"/>
 				<setvarif varName="cue" value="Cue" newValue="true"/>
 				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
