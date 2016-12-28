@@ -47,9 +47,13 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--user - Uploaded: || PC - Big_Rigs_Over_the_Road_Racing_NFO_FIX-Razor1911 in Big Rigs: Over the Road Racing [-2003-] - (English, Scene) - http://gazellegames.net/torrents.php?id=4684 -OR- http://gazellegames.net/torrents.php?action=download&id=7018 - racing -->
-				<!--user - Uploaded: || Hatoful Boyfriend Holiday Star in Hatoful Boyfriend Holiday Star [-2012-] - (English, Home Rip) - http://gazellegames.net/torrents.php?id=4687 -OR- http://gazellegames.net/torrents.php?action=download&id=7019 - visual.novel,indie, adventure -->
-				<regex value="^\s*(\S+) - Uploaded: \|\|(.*) - https?\:\/\/.*\s+https?\:\/\/([^\/]+\/)torrents.php\?action=download[&amp;\?]id=(\d+)\S*\s*.*"/>
+				<!-- user - Uploaded: || Windows - A Golden Wake (2.0.0.4) in A Golden Wake [-2014-] - (English, DRM Free) - https://gazellegames.net/torrents.php?id=20382 -OR- https://gazellegames.net/torrents.php?action=download&id=71527 - adventure, puzzle, fantasy, |, native_controller_support, controller_support, unreal_engine -->
+				<!-- user - Uploaded: || Xbox 360 - Bully: Scholarship Edition - IGN Insider Strategy Guide in Bully: Scholarship Edition [-2008-] - (English, Region-Free, GameDOX) - https://gazellegames.net/torrents.php?id=6761 -OR- https://gazellegames.net/torrents.php?action=download&id=71508 - adventure, action, fighting, |, rockstar_games -->
+				<!-- user - Uploaded: || Windows - Anachronox.v1.02.46-GGn in Anachronox [-2001-] - (English, Scene) Freeleech! - https://gazellegames.net/torrents.php?id=2670 -OR- https://gazellegames.net/torrents.php?action=download&id=71473 - action, role_playing_game, |, ion_storm, gog -->
+				<!-- user - Uploaded: || Retro - Other - MAME Collections [-1997-] - (Multi-Language, Multi-Region, Other) - https://gazellegames.net/torrents.php?id=22537 -OR- https://gazellegames.net/torrents.php?action=download&id=71937 - pack, arcade, collection, emulation, |, pack, collection -->
+				<!-- user - Uploaded: || E-Books - Final Fantasy XV The Complete Official Guide  - https://gazellegames.net/torrents.php?id=28701 -OR- https://gazellegames.net/torrents.php?action=download&id=72127 - fantasy, official.guide, strategy.guide, pdf -->
+				<!-- user - Uploaded: ||  - Medieval.Engineers.Deluxe.Edtion.v0.4.4.92227.Cracked-3DM in [] - (English, P2P) - https://gazellegames.net/torrents.php?id=28905 -OR- https://gazellegames.net/torrents.php?action=download&id=72892 -->
+				<regex value="^\s*(\S+) - Uploaded: \|\| (.*) - https?\:\/\/.*\s+https?\:\/\/([^\/]+\/)torrents.php\?action=download[&amp;\?]id=(\d+)\S*\s*.*"/>
 				<vars>
 					<var name="uploader"/>
 					<var name="torrentName"/>
@@ -62,7 +66,33 @@
 			<var name="scene">
 				<string value="false"/>
 			</var>
-			<setregex srcvar="torrentName" regex="Scene\)" varName="scene" newValue="true"/>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+			
+			<setregex srcvar="torrentName" regex="Freeleech!$" varName="freeleech" newValue="true"/>
+			
+			<extract srcvar="torrentName" optional="true">
+				<regex value="^(?!\s|-)(Retro - Other|.*?) - (.*)"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+				</vars>
+			</extract>
+			
+			<extract srcvar="torrentName" optional="true">
+				<regex value="(.*) - \((.*)\)(?: Freeleech!$|$)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="tags"/>
+				</vars>
+			</extract>
+			
+			<extracttags srcvar="tags" split=",">
+				<setvarif varName="scene" value="Scene" newValue="true"/>
+				<setvarif varName="origin" regex="^(?:DRM Free|P2P|Home Rip|Rip)$"/>
+			</extracttags>
+			
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
