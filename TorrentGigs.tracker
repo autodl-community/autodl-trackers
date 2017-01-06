@@ -76,7 +76,9 @@
 				<var name="$torrentId"/>
 				<string value="/"/>
 				<var name="passkey"/>
-				<string value="/ssl/"/>
+				<string value="/"/>
+				<var name="ssl"/>
+				<string value="/"/>
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
