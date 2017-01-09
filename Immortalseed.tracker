@@ -27,10 +27,10 @@
 	type="is"
 	shortName="IS"
 	longName="Immortalseed"
-	siteName="immortalseed.tv">
+	siteName="immortalseed.me">
 
 	<settings>
-		<description text="Go to https://immortalseed.tv/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+		<description text="Go to https://immortalseed.me/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
 		<passkey
 			tooltiptext="The passkey in your ImmortalSeed RSS feed link."
 			pasteRegex="[\?&amp;]secret_key=([\da-fA-F]{32})"
@@ -40,7 +40,7 @@
 	<servers>
 		<server
 			network="Immortalseed"
-			serverNames="irc.immortalseed.tv"
+			serverNames="irc.immortalseed.me"
 			channelNames="#immortal"
 			announcerNames="thoth"
 			/>
@@ -49,7 +49,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--ImmortalSeed - Category: ( TV - High Definition ) Torrent: ( The.Mindy.Project.S02E10.720p.HDTV.X264-DIMENSION ) Size: ( 760.00 MB ) Link: ( https://immortalseed.tv/details.php?id=275757 ) -->
+				<!--ImmortalSeed - Category: ( TV - High Definition ) Torrent: ( The.Mindy.Project.S02E10.720p.HDTV.X264-DIMENSION ) Size: ( 760.00 MB ) Link: ( https://immortalseed.me/details.php?id=275757 ) -->
 				<regex value="^\s*ImmortalSeed\s*-\s*Category:\s*\(([^)]*)\)\s*Torrent:\s*\(([^)]*)\)\s*Size:\s*\(([^)]*)\)\s*Link:\s*\(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="category"/>
@@ -60,7 +60,7 @@
 				</vars>
 			</extract>
 			<extract>
-				<!--ImmortalSeed - Category: ( Movies-HD ) Torrent: ( Family Guy Blue Harvest 2007 1080p BluRay x264-TRiS ) Size: ( 4.38 GB ) Link: ( https://immortalseed.tv/details.php?id=274877 ) -->
+				<!--ImmortalSeed - Category: ( Movies-HD ) Torrent: ( Family Guy Blue Harvest 2007 1080p BluRay x264-TRiS ) Size: ( 4.38 GB ) Link: ( https://immortalseed.me/details.php?id=274877 ) -->
 				<regex value="^\s*ImmortalSeed\s*-\s*Category:\s*\(([^)]*)\)\s*Torrent:\s*\(([^)]*)\)\s*Size:\s*\(([^)]*)\)\s*Link:\s*\(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="category"/>
