@@ -31,9 +31,10 @@
 	follow302links="true">
 
 	<settings>
-		<gazelle_description/>
-		<gazelle_authkey/>
-		<gazelle_torrent_pass/>
+		<description text="Go to https://animebytes.tv and open your profile. Find 'Personal' section and move cursor over black part under 'Passkey' and copy its value."/>
+		<passkey
+			tooltiptext="AnimeBytes passkey"
+			pasteRegex="([\\da-zA-Z]{32})"/>
 	</settings>
 
 	<servers>
@@ -50,7 +51,7 @@
 			<extract>
 				<!--Various Artists - Samurai Girl Real Bout High School Official Soundtrack [2003] :: MP3 / 320 / CD || https://tracker.url/torrents2.php?id=14923&torrentid=50957 || soundtrack || Uploaded by: Username-->
 				<!--Yume Kui: Tsurumiku Shiki Game Seisaku - OVA [2011] :: DVD / MKV / h264 / 704x396 / AAC / Softsubs (SubDESU-H) / Hentai (Censored) || https://tracker.url/torrents.php?id=8370&torrentid=50958 || nudity, sex, rape, virgins, erotic.game || Uploaded by: Username-->
-				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\?.*[&amp;\?]torrentid=(\d+) \|\| (.*) \|\|\s+Uploaded by: (.*)"/>
+				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\/torrents2?\.php\?.*[&amp;\?]torrentid=(\d+) \|\| (.*) \|\|\s+Uploaded by: (.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
@@ -63,7 +64,7 @@
 			<extract>
 				<!--Juubee Ninpuuchou - Movie [1993] :: Bluray / MKV / h264 / 960x720 / AC3 / Dual Audio / Softsubs (BluDragon) || https://tracker.url/torrents.php?id=788&torrentid=48514 || drama, ecchi, fantasy, historical, horror, martial.arts, seinen, supernatural, violence, nudity, ninjas, samurai, gore, action-->
 				<!--Stereopony - More! More!! More!!! [2011] :: FLAC / Lossless / CD || https://tracker.url/torrents2.php?id=13120&torrentid=48574 || pop, vocal-->
-				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\?.*[&amp;\?]torrentid=(\d+) \|\| (.*)"/>
+				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\/torrents2?\.php\?.*[&amp;\?]torrentid=(\d+) \|\| (.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
@@ -109,12 +110,10 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="?action=download&amp;id="/>
+				<string value="/torrent/"/>
 				<var name="$torrentId"/>
-				<string value="&amp;authkey="/>
-				<var name="authkey"/>
-				<string value="&amp;torrent_pass="/>
-				<var name="torrent_pass"/>
+				<string value="/download/"/>
+				<var name="passkey"/>
 			</var>
 
 			<extract srcvar="$episodeString" optional="true">
