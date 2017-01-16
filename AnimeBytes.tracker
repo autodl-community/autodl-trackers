@@ -27,7 +27,8 @@
 	type="ab"
 	shortName="AB"
 	longName="AnimeBytes"
-	siteName="animebytes.tv">
+	siteName="animebytes.tv"
+	follow302links="true">
 
 	<settings>
 		<gazelle_description/>
