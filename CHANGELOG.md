@@ -3,6 +3,31 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v260](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v260) (2017-01-19)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v259...community-v260)
+
+### Added
+
+* Add UHDBits.
+* Add container filter option to PassThePopcorn.
+
+### Changed
+
+* Follow redirect links for AnimeBytes.
+
+### Fixed
+
+* Fix SSL option for TorrentGigs.
+
+### Updated
+
+* Update announcer name for HardBay.
+* Update IRC server names for AnimeBytes.
+* Update download link for AnimeBytes.
+* Update TLD for ImmortalSeed.
+
+
 ## [community-v259](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v259) (2016-10-10)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v258...community-v259)
