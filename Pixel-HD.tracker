@@ -63,7 +63,7 @@
 				<regex value="^Uploader:(.*)\| Release Group:(.*)\| Format:(.*)$"/>
 				<vars>
 					<var name="uploader"/>
-					<var name="$releaseGroup"/>
+					<var name="releaseGroup"/>
 					<var name="category"/>
 				</vars>
 			</extract>
