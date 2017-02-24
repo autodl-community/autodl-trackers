@@ -24,10 +24,10 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="pth"
-	shortName="PTH"
-	longName="PassTheHeadphones"
-	siteName="passtheheadphones.me">
+	type="red"
+	shortName="RED"
+	longName="Redacted"
+	siteName="redacted.ch">
 
 	<settings>
 		<gazelle_description/>
@@ -37,9 +37,9 @@
 
 	<servers>
 		<server
-			network="PassTheHeadphones"
-			serverNames="irc.passtheheadphones.me"
-			channelNames="#pth-announce"
+			network="Scratch Network"
+			serverNames="irc.scratch-network.net"
+			channelNames="#red-announce"
 			announcerNames="Drone"
 			/>
 	</servers>
