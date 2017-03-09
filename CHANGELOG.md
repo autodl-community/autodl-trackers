@@ -3,6 +3,32 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v261](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v261) (2017-03-09)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v260...community-v261)
+
+### Added
+
+* Add SceneAxx.
+* Add TorrentCrate.
+* Add Apollo.
+
+### Removed
+
+* Remove Beathau5.
+* Remove Blackcats.
+* Remove deli.sh.
+
+### Changed
+
+* Force SSL for Empornium.
+* PTH rebranded as RED.
+
+### Fixed
+
+* Fix release-group filter option for Pixel-HD.
+
+
 ## [community-v260](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v260) (2017-01-19)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v259...community-v260)
