@@ -33,7 +33,7 @@
 		<description text="Paste (Ctrl+V) any TorrentCrate torrent direct download (RSS) link into the text box to automatically extract passkey."/>
 		<passkey
 			tooltiptext="The passkey in your TorrentCrate RSS feed."
-			pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32}"/>
+			pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32})"/>
 	</settings>
 
 	<servers>
