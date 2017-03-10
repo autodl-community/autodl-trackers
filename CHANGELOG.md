@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v262](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v262) (2017-03-09)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v261...community-v262)
+
+### Fixed
+
+* Fix torrent_pass regex for TorrentCrate.
+
+
 ## [community-v261](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v261) (2017-03-09)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v260...community-v261)
