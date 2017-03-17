@@ -49,7 +49,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="TORRENT: (.*)-(.*).*\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="TORRENT: (.*)-.*.*\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
