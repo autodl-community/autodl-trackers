@@ -3,7 +3,7 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
-## [community-v263](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v262) (2017-03-18)
+## [community-v263](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v263) (2017-03-18)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v262...community-v263)
 
