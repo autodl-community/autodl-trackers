@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v263](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v262) (2017-03-18)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v262...community-v263)
+
+### Fixed
+
+* Fix Apollo.
+
+
 ## [community-v262](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v262) (2017-03-09)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v261...community-v262)
@@ -173,7 +182,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Changed
 
-* Remove release group captures from most trackers. autodl-irssi now captures re them from standard form release names. 
+* Remove release group captures from most trackers. autodl-irssi now captures re them from standard form release names.
 
 ### Updated
 * Update domain name for Awesome-HD.
