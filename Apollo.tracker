@@ -49,11 +49,11 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="TORRENT: (.*)-(.*).*\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="TORRENT: (.*) - (.*) - https?://.* / (https?://.*id=\d+)"/>
 				<vars>
 					<var name="torrentName"/>
+					<var name="tags"/>
 					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
@@ -76,12 +76,11 @@
 
 			<!--Get year-->
 			<extract srcvar="$releaseTags" optional="true">
-				<regex value="^\[(\d{4})\].*\[(.+)\].-([^\-\[\]]+)-(.+)"/>
+				<regex value="\[(\d{4})\].*\[(.+)\].-([^\-\[\]]+)"/>
 				<vars>
 					<var name="year"/>
 					<var name="releaseType"/>
-					<var name="releaseTags"/>
-					<var name="tags"/>
+					<var name="$releaseTags"/>
 				</vars>
 			</extract>
 
@@ -108,7 +107,7 @@
 				</extract>
 			</extractone>
 
-			<extracttags srcvar="releaseTags" split="/">
+			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="format" regex="(MP3|FLAC|Ogg|AAC|AC3|DTS)"/>
 				<setvarif varName="bitrate" regex="Lossless$"/>
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,3}|\d+\.\d+|q\d+\.[\dx]+)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
@@ -127,10 +126,7 @@
 			</extracttags>
 
 			<var name="torrentUrl">
-				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="torrents.php?action=download&amp;id="/>
-				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
 				<string value="&amp;torrent_pass="/>
