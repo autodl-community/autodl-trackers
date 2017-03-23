@@ -47,7 +47,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="^\[(.*?)\] (.*?) -- Uploader: (.*?) -- https\:\/\/([^\/]+\/).*[&amp;\?]id=(.*)$"/>
+				<regex value="^\[(.*?)\] (.*?) -- Uploader: (.*?) -- https\:\/\/([^\/]+\/).*id=(.*)$"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
