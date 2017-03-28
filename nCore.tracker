@@ -30,9 +30,8 @@
 	siteName="ncore.cc">
 
 	<settings>
-		<cookie_description/>
-		<description text="&lt;br&gt;&lt;strong&gt;Required Keys:&lt;/strong&gt; nick, pass."/>
-		<cookie/>
+		<description text="Check a torrent download link. key='value' is your passkey."/>
+		<passkey/>
 	</settings>
 
 	<servers>
@@ -63,10 +62,9 @@
 				<var name="$baseUrl"/>
 				<string value="download&amp;id="/>
 				<var name="$torrentId"/>
+				<string value="&amp;key="/>
+				<var name="passkey"/>
 			</var>
-			<http name="cookie">
-				<var name="cookie"/>
-			</http>
 		</linematched>
 		<ignore>
 		</ignore>
