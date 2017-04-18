@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+        type="RW"
+        shortName="RW"
+        longName="RetroWithin"
+        siteName="retrowith.in">
+
+        <settings>
+                <description text="Check the profile page for your passkey."/>
+		            <passkey/>
+        </settings>
+
+        <servers>
+                <server
+                        network="RWirc"
+                        serverNames="irc.retrowith.in"
+                        channelNames="#torrents"
+                        announcerNames="Colin"
+                        />
+        </servers>
+
+        <parseinfo>
+                <linepatterns>
+                        <extract>
+                                <!--New torrent: (Dreamcast) Cool Boarders Burrrn Beta v0.901 19990622 JAP DC-MOONLiGHT [NTSC-J/Snowboarding/1999] 473.99 MB https://retrowith.in/details.php?id=70771-->
+                                <regex value="^New torrent: \(([^\)]*)\)(.*?)([\d\.,]+\s*[a-zA-Z]+)\s*https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)"/>
+                                <vars>
+                                        <var name="category"/>
+                                        <var name="torrentName"/>
+                                        <var name="torrentSize"/>
+                                        <var name="$baseUrl"/>
+                                        <var name="$torrentId"/>
+                                </vars>
+                        </extract>
+                </linepatterns>
+                <linematched>
+                        <extract srcvar="torrentName" optional="true">
+                                <regex value="\[([^\]]*(?:19|20)\d\d[^\]]*)\]"/>
+                                <vars>
+                                        <var name="$releaseTags"/>
+                                </vars>
+                        </extract>
+
+                        <varreplace name="tags" srcvar="$releaseTags" regex="[\/]" replace=", "/>
+
+                        <extracttags srcvar="$releaseTags" split="/">
+                                <setvarif varName="year" regex="^(?:19|20)\d\d$"/>
+
+                                <setvarif varName="format" regex="^(?:MP3|FLAC|Ogg|AAC|AC3|DTS)$"/>
+
+                                <setvarif varName="bitrate" regex="Lossless$"/>
+                                <setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,3}|\d+\.\d+|q\d+\.[\dx]+)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
+
+                                <!--Ignored-->
+                                <regex value=""/>
+                        </extracttags>
+
+                        <var name="torrentUrl">
+                                <string value="https://"/>
+                                <var name="$baseUrl"/>
+                                <string value="/download.php?id="/>
+                                <var name="$torrentId"/>
+                                <string value="&amp;passkey="/>
+                                <var name="passkey"/>
+                        </var>
+                </linematched>
+                <ignore>
+                        <regex value="^New torrent:" expected="false"/>
+                </ignore>
+        </parseinfo>
+</trackerinfo>
