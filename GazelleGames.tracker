@@ -39,7 +39,7 @@
 		<server
 			network="GGn"
 			serverNames="irc.gazellegames.net"
-			channelNames="#Announce"
+			channelNames="#GGn-Announce"
 			announcerNames="Vertigo"
 			/>
 	</servers>
@@ -47,22 +47,44 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--user - Uploaded: || PC - Big_Rigs_Over_the_Road_Racing_NFO_FIX-Razor1911 in Big Rigs: Over the Road Racing [-2003-] - (English, Scene) - http://gazellegames.net/torrents.php?id=4684 -OR- http://gazellegames.net/torrents.php?action=download&id=7018 - racing -->
-				<!--user - Uploaded: || Hatoful Boyfriend Holiday Star in Hatoful Boyfriend Holiday Star [-2012-] - (English, Home Rip) - http://gazellegames.net/torrents.php?id=4687 -OR- http://gazellegames.net/torrents.php?action=download&id=7019 - visual.novel,indie, adventure -->
-				<regex value="^\s*(\S+) - Uploaded: \|\|(.*) - https?\:\/\/.*\s+https?\:\/\/([^\/]+\/)torrents.php\?action=download[&amp;\?]id=(\d+)\S*\s*.*"/>
+				<!-- Uploader :-: Nintendo 3DS :-: Yo-Kai.Watch.KOR.3DS-BigBlueBox in Yo-kai Watch [2013] ::Korean, Multi-Region, Scene:: https://gazellegames.net/torrents.php?torrentid=78851 - adventure, role_playing_game, nintendo; -->
+				<!-- Uploader :-: Windows :-: Warriors.Wrath.Evil.Challenge-HI2U in Warriors' Wrath [2016] ::English, Scene:: FREELEECH! :: https://gazellegames.net/torrents.php?torrentid=78902 - action, adventure, casual, indie, role.playing.game; -->
+
+				<regex value="^(.+) :-: (.+) :-: (.+) \[(\d+)\] ::(.+?):: ?(.+? ::)? https?:\/\/([^\/]+\/)torrents.php\?torrentid=(\d+) ?-? ?(.*?)?;?$"/>
+
 				<vars>
 					<var name="uploader"/>
+					<var name="category"/>
 					<var name="torrentName"/>
+					<var name="year"/>
+					<var name="$flags"/>
+					<var name="$bonus"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="tags"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<!-- create values -->
 			<var name="scene">
 				<string value="false"/>
 			</var>
-			<setregex srcvar="torrentName" regex="Scene\)" varName="scene" newValue="true"/>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<varreplace name="tags" srcvar="tags" regex="[\.]" replace=" "/> <!-- Change period tags to spaces [optional?]-->
+
+			<setregex srcvar="$bonus" regex="FREELEECH!" varName="freeleech" newValue="true"/> <!-- If bonus has Freeleech, make it so!-->
+			<setregex srcvar="$flags" regex="Scene" varName="scene" newValue="true"/>
+			
+			<extracttags srcvar="$flags" split=",">
+				<setvarif varName="scene" value="Scene" newValue="true"/>
+				<setvarif varName="origin" regex="^(?:DRM Free|P2P|Home Rip|Rip)$"/>
+			</extracttags>
+
+
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
