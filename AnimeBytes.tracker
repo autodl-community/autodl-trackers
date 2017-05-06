@@ -31,7 +31,7 @@
 	follow302links="true">
 
 	<settings>
-		<description text="Go to https://animebytes.tv and open your profile. Find 'Personal' section and move cursor over black part under 'Passkey' and copy its value."/>
+		<description text="Go to https://animebytes.tv and open your account settings. Go to 'Account' tab and move cursor over black part near 'Passkey' and copy its value."/>
 		<passkey
 			tooltiptext="AnimeBytes passkey"
 			pasteRegex="([\\da-zA-Z]{32})"/>
