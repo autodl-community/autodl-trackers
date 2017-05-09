@@ -3,6 +3,26 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v264](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v264) (2017-05-09)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v263...community-v264)
+
+### Added
+
+* Add RetroWithin.
+* Add MyXZ.
+
+### Fixed
+
+* Remove ampersand/question mark from regex for Empornium.
+
+### Updated
+
+* Update nCore to use passkey authentication.
+* Update announce format and channel for GazelleGames.
+* Update passkey description for AnimeBytes.
+
+
 ## [community-v263](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v263) (2017-03-18)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v262...community-v263)
