@@ -36,9 +36,9 @@
 
 	<servers>
 		<server
-			network="P2P-NET"
-			serverNames="irc.p2p-network.net,irc.p2p-irc.net"
-			channelNames="#filelist"
+			network="FileList"
+			serverNames="irc.filelist.ro"
+			channelNames="#announce"
 			announcerNames="Announce"
 			/>
 	</servers>
