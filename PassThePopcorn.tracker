@@ -48,8 +48,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--Irene Huss - Nattrond AKA The Night Round [2008] by Anders Engström - XviD / DVD / AVI / 640x352 - http://passthepopcorn.me/torrents.php?id=51627 / http://passthepopcorn.me/torrents.php?action=download&id=97333 - crime, drama, mystery-->
-				<!--Dirty Rotten Scoundrels [1988] by Frank Oz - x264 / Blu-ray / MKV / 720p - http://passthepopcorn.me/torrents.php?id=10735 / http://passthepopcorn.me/torrents.php?action=download&id=97367 - comedy, crime-->
+				<!--Irene Huss - Nattrond AKA The Night Round [2008] by Anders Engström - XviD / DVD / AVI / 640x352 - https://passthepopcorn.me/torrents.php?id=51627 / https://passthepopcorn.me/torrents.php?action=download&id=97333 - crime, drama, mystery-->
+				<!--Dirty Rotten Scoundrels [1988] by Frank Oz - x264 / Blu-ray / MKV / 720p - https://passthepopcorn.me/torrents.php?id=10735 / https://passthepopcorn.me/torrents.php?action=download&id=97367 - comedy, crime-->
 				<regex value="^(.*)-\s*https?:.*[&amp;\?]id=.*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\s*-\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
@@ -111,7 +111,7 @@
 			</extracttags>
 
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
