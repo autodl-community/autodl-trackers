@@ -25,10 +25,10 @@
    ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-  type="ttn"
-	shortName="TtN"
-	longName="TransmiThe.net"
-	siteName="transmithe.net">
+  type="nbl"
+	shortName="nbl"
+	longName="Nebulance"
+	siteName="Nebulance.io">
 
 	<settings>
 		<gazelle_description/>
@@ -39,8 +39,8 @@
 	<servers>
 		<server
 			network="DigitalIRC"
-			serverNames="irc.transmithe.net"
-			channelNames="#ttn-announce"
+			serverNames="irc.nebulance.io"
+			channelNames="#nbl-announce"
 			announcerNames="DRADIS"
 			/>
 	</servers>
@@ -48,8 +48,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[Episodes] Expedition Unknown - S02E15 [HDTV / x264 / MKV / 720p / HD] [1.12 GB - Uploader: Caprica] - http://transmithe.net/torrents.php?id=71799-->
-				<!--[Seasons] Marvels Agent Carter - Season 2 [ [WebDL / h264 / MKV / 1080p / HD] [16.31 GB - Uploader: Zoe] - http://transmithe.net/torrents.php?id=71800-->
+				<!--[Episodes] The Vet Life - S02E08 [WebRip / x264 / MKV / 720p / HD / VLAD / The.Vet.Life.S02E08.Tuskegee.Reunion.720p.ANPL.WEBRip.AAC2.0.x264-VLAD.mkv] [702.00 MB - Uploader: Zoe] - http://nebulance.io/torrents.php?id=147-->
+				<!--[Seasons] Police Interceptors - S10 [HDTV / x264 / MKV / MP4 / 480p / SD / BTN / Police.Interceptors.S10.HDTV.x264-BTN] [5.27 GB - Uploader: partwish031] - http://nebulance.io/torrents.php?id=1472-->
 				<regex value="\[(.*?)\] (.*?) \[(.*?)\] \[(.*?) - Uploader: (.*?)\] - (https?://.*)id=(\d+)"/>
 				<vars>
 					<var name="category"/>
