@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   - slackSource
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="hdspace"
+	shortName="HDSpace"
+	longName="HD-Space"
+	siteName="hd-space"
+	follow302links="true">
+
+	<settings>
+		<description text="Go to main page https://hd-space.org/index.php and get passkey from 'My Panel'. Paste it (Ctrl+V) into the text box below."/>
+		<passkey tooltiptext="The passkey from your profile page"/>
+	</settings>
+
+	<servers>
+		<server
+			network="P2P-NET"
+			serverNames="irc.p2p-network.net"
+			channelNames="#HD-Space"
+			announcerNames="hdspace"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!-- New Torrent in category [HDTV 720p] The Originals S04E12 720p HDTV x264-SVA (826.92 MB) uploaded! Download: https://hd-space.org/download.php?id=207f8b2056ad13d3415c4dfe0f9b43c807c2d7c2-->
+				<!-- New Torrent in category [Movies 1080] James.Bond.PACK.1962-2012.1080p.BluRay.x264-MiSC (399.35 GB) uploaded! Download: https://hd-space.org/download.php?id=ce2b8b05ba48526887a410e2b72561481216e714-->
+				<!--<regex value="^ New Torrent in category \[(.*)\] (.*) \((.*)\) uploaded! Download: https?\:\/\/([^\/]+\/)\S*[&amp;\?]id=(.+)"/>-->
+				<regex value="New Torrent in category \[([^\]]*)\] (.*) \(([^\)]*)\) uploaded! Download\: https?\:\/\/([^\/]+\/).*[&amp;\?]id=([a-f0-9]+)"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="torrentSize"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<!--https://hd-space.org/download.php?id=ce2b8b05ba48526887a410e2b72561481216e714&f=James.Bond.PACK.1962-2012.1080p.BluRay.x264-MiSC.torrent-->
+			<var name="torrentUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="/download.php?id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;f="/>
+				<varenc name="torrentName"/>
+				<string value=".torrent"/>
+			</var>
+		</linematched>
+		<ignore>
+			<regex value="/download\.php" expected="false"/>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
