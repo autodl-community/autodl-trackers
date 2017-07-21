@@ -1,0 +1,51 @@
+<trackerinfo
+	type="ar"
+	shortName="AR"
+	longName="AlphaRatio"
+	siteName="alpharatio.cc">
+
+	<settings>
+		<gazelle_description/>
+		<gazelle_authkey/>
+		<gazelle_torrent_pass/>
+	</settings>
+
+	<servers>
+		<server
+			network="AlphaRatio"
+			serverNames="irc.alpharatio.cc"
+			channelNames="#Announce"
+			announcerNames="Voyager"
+			/>
+</servers>
+
+
+^^^^^^^^^^ Same ^^^^^^^^^^
+
+
+Basically a whole rewrite of the regex for the announce line.
+
+[New Release]-[category]-[torrentname]-[URL]-[baseurl]-[torrentID] - *[pretime]*
+[AutoDL]-[category]-[torrentid]-[ scene | size(mb) | freeleech | uploader ]-[torrentname]
+
+Examples:
+
+[New Release]-[TvHD]-[Doctor.Who.2005.S10E10.1080p.BluRay.x264-SHORTBREHD]-[URL]-[https://alpharatio.cc/torrents.php?id=599202 ]-[ 599173 ]                                          
+[AutoDL]-[TvHD]-[599173]-[ 1 | 3353 | 0 | 1 ]-[Doctor.Who.2005.S10E10.1080p.BluRay.x264-SHORTBREHD]
+
+[New Release]-[Music]-[Orbital-Satan_Live_CD_One-(LIECD37)-CDS-FLAC-1996-dL]-[URL]-[ https://alpharatio.cc/torrents.php?id=599207 ]-[ 599178 ]-[ Uploaded 40 Days, 17 Hours, 24 Mins, 35 Secs after pre. ]
+[AutoDL]-[Music]-[599178]-[ 1 | 162 | 0 | 1 ]-[Orbital-Satan_Live_CD_One-(LIECD37)-CDS-FLAC-1996-dL]
+
+[New Release]-[TvSD]-[Private.Eyes.S02E09.HDTV.x264-KILLERS]-[URL]-[ https://alpharatio.cc/torrents.php?id=599208 ]-[ 599179 ]-[ Uploaded 4 Secs after pre. ]                                                                      
+[AutoDL]-[TvSD]-[599179]-[ 1 | 325 | 0 | 1 ]-[Private.Eyes.S02E09.HDTV.x264-KILLERS]                             
+
+[New Release]-[TvPackHD]-[Orange.Is.the.New.Black.S05.2160p.NF.WEBRip.DD5.1.x264-NTb]-[URL]-[ https://alpharatio.cc/torrents.php?id=599237 ]-[ 599208 ]                                                       
+[AutoDL]-[TvPackHD]-[599208]-[ 0 | 261526 | 1 | 0 ]-[Orange.Is.the.New.Black.S05.2160p.NF.WEBRip.DD5.1.x264-NTb]
+
+[New Release]-[0dayXXX]-[LarasPlayground.17.07.21.Holly.Kiss.Good.Golly.Its.Holly.XXX.1080p.MP4-KTR]-[URL]-[ https://alpharatio.cc/torrents.php?id=599236 ]-[ 599207 ]-[ Uploaded 21 Secs after pre. ]                   
+[AutoDL]-[0dayXXX]-[599207]-[ 1 | 1893 | 0 | 1 ]-[LarasPlayground.17.07.21.Holly.Kiss.Good.Golly.Its.Holly.XXX.1080p.MP4-KTR]                                                             
+
+
+
+[ 0 | 28483 | 1 | 0 ]
+[scene | size(mb) | freeleech | uploader ]
