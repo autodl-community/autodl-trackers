@@ -24,51 +24,51 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="nr"
-	shortName="nr"
-	longName="Nordic-Rls"
-	siteName="nordic-rls.org">
+    type="nr"
+    shortName="nr"
+    longName="Nordic-Rls"
+    siteName="nordic-rls.org">
 
-	<settings>
-		<description text="Paste (Ctrl+V) any Nordic-Rls RSS link into the box below to automatically extrart the passkey"/>
-		<passkey pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32})" tooltiptext="Paste your Nordic-RLs RSS link here."/>
-	</settings>
+    <settings>
+	<description text="Paste (Ctrl+V) any Nordic-Rls RSS link into the box below to automatically extrart the passkey"/>
+	<passkey pasteRegex="[&amp;]torrent_pass=([\da-fA-F]{32})" tooltiptext="Paste your Nordic-RLs RSS link here."/>
+    </settings>
 
-	<servers> 
-		<server
-			network="Nordic-Rls.org"
-			serverNames="irc.nordic-rls.org"
-			channelNames="#Announce"
-			announcerNames="NordicRls"
-		/>
-	</servers>
+    <servers> 
+	<server
+	    network="Nordic-Rls.org"
+       	    serverNames="irc.nordic-rls.org"
+	    channelNames="#Announce"
+	    announcerNames="NordicRls"
+	/>
+    </servers>
 
-	<parseinfo>
-		<linepatterns>
-			<extract>
-				<!-- NYT UPLOAD: Paa.Landevejen.S01E04.DANiSH.HDTV.x264-RCDiVX .:. Kategori: TV - Size: 207.96 MB .:. https://nordic-rls.org/details.php?id=3798 -->
-				<regex value="NYT UPLOAD: (.+?) \.:\. Kategori: (.+?) - Size: (.+?) \.:\. (https?:\/\/[^\/]+\/)[^=]+=(\d+)"/>
-				<vars>
-					<var name="torrentName"/>
-					<var name="category"/>
+    <parseinfo>
+        <linepatterns>
+	    <extract>
+		<!-- NYT UPLOAD: Paa.Landevejen.S01E04.DANiSH.HDTV.x264-RCDiVX .:. Kategori: TV - Size: 207.96 MB .:. https://nordic-rls.org/details.php?id=3798 -->
+		<regex value="NYT UPLOAD: (.+?) \.:\. Kategori: (.+?) - Size: (.+?) \.:\. (https?:\/\/[^\/]+\/)[^=]+=(\d+)"/>
+		<vars>
+		    <var name="torrentName"/>
+		    <var name="category"/>
                     <var name="torrentSize"/>
-					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
-				</vars>
-			</extract>
-		</linepatterns>
-		<linematched>
-			<!-- https://www.nordic-rls.org/download.php?torrent=1398&passkey= -->
-			<!-- https://nordic-rls.org/download.php?torrent=1435&torrent_pass= -->
-			<var name="torrentUrl">
-				<var name="$baseUrl"/>
-				<string value="download.php?torrent="/>
-				<var name="$torrentId"/>
-				<string value="&amp;torrent_pass="/>
-				<var name="passkey"/>
-			</var>
-		</linematched>
-		<ignore>
-		</ignore>
+	            <var name="$baseUrl"/>
+                    <var name="$torrentId"/>
+		</vars>
+	    </extract>
+	</linepatterns>
+	<linematched>
+	    <!-- https://www.nordic-rls.org/download.php?torrent=1398&passkey= -->
+	    <!-- https://nordic-rls.org/download.php?torrent=1435&torrent_pass= -->
+	    <var name="torrentUrl">
+		<var name="$baseUrl"/>
+		<string value="download.php?torrent="/>
+		<var name="$torrentId"/>
+		<string value="&amp;torrent_pass="/>
+		<var name="passkey"/>
+	    </var>
+	</linematched>
+	<ignore>
+	</ignore>
 	</parseinfo>
 </trackerinfo>
