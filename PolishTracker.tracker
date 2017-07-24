@@ -76,7 +76,17 @@
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
-
+			<var name="torrentSslUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="downloaddssl.php/"/>
+				<var name="$torrentId"/>
+				<string value="/"/>
+				<var name="rsskey"/>
+				<string value="/"/>
+				<varenc name="torrentName"/>
+				<string value=".torrent"/>
+			</var>
 		</linematched>
 		<ignore>
 		</ignore>
