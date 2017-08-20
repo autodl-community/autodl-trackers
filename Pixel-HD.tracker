@@ -60,15 +60,18 @@
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^Uploader:(.*)\| Release Group:(.*)\| Format:(.*)$"/>
+				<regex value="^Uploader:(.*)\| Release Group:(.*)\| Format:(.*)\| Genre\(s\):(.*)$"/>
 				<vars>
 					<var name="uploader"/>
 					<var name="releaseGroup"/>
 					<var name="category"/>
+					<var name="tags"/>
 				</vars>
 			</extract>
 		</multilinepatterns>
 		<linematched>
+			<!-- Just in case of seperators -->
+			<varreplace name="tags" srcvar="tags" regex="[._]" replace=" "/>
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
