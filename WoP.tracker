@@ -26,7 +26,7 @@
 <trackerinfo
 	type="wop"
 	shortName="WoP"
-	longName="World of P2P"
+	longName="WorldOfP2P"
 	siteName="www.worldofp2p.net">
 
 	<settings>
@@ -38,9 +38,9 @@
 
 	<servers>
 		<server
-			network="P2P-Network"
-			serverNames="irc.p2p-network.net"
-			channelNames="#wop-announce"
+			network="WorldOfP2P"
+			serverNames="irc.worldofp2p.net"
+			channelNames="#announce"
 			announcerNames="HODOR"
 			/>
 	</servers>
