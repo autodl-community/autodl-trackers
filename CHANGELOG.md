@@ -3,6 +3,28 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v265](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v265) (2017-08-30)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v264...community-v265)
+
+### Added
+
+* Add HD-Space.
+* Add Nordic Releases.
+* Add SSL URL to PolishTracker.
+* Add genre filter option to Pixel-HD.
+
+### Changed
+
+* TtN has changed to Nebulance.
+
+### Updated
+
+* Update IRC information for filelist.ro.
+* Update announcer name for TehConnection.eu.
+* Update IRC information for WoP.
+
+
 ## [community-v264](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v264) (2017-05-09)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v263...community-v264)
