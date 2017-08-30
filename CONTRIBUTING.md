@@ -39,6 +39,3 @@ Each commit should encompass the smallest logical changeset (e.g. changing two u
 
 [fb]: https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/#creating-a-branch
 [fork]: https://help.github.com/articles/fork-a-repo
-
-## Misc
-For anything else, contact us by e-mail at autodl.community@gmail.com or on IRC in ``#autodl-community`` on ``irc.p2p-network.net``. You can use the preconfigured web-based client [Mibbit](http://widget.mibbit.com/?settings=acc887926984c5c6e62412b13d9fbfbc&server=irc.p2p-network.net&channel=%23autodl-community&nick=autodler%3F%3F).
