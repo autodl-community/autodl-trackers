@@ -37,7 +37,7 @@
 			tooltiptext="The rsskey in your PolishTracker RSS feed link."
 			emptytext="PolishTracker rsskey"
 			pasteGroup="rsskey"
-			pasteRegex="([\da-fA-F]{32})"
+			pasteRegex="([\w]{43})"
 			/>
 	</settings>
 
@@ -53,8 +53,9 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--  ::: PolishTracker :::  Torrent ( Brodka-Granda-PL-2010-mP )  ||  Kategoria: ( Music )  ||  Rozmiar: ( 61.17 MB )  ||  Link: ( http://polishtracker.net:81/details.php?id=278171 )-->
-				<regex value="^.*\:\:\: PolishTracker \:\:\:.*Torrent\s\((.*)\).*\|\|.*Kategoria:\s\((.*)\).*\|\|.*Rozmiar:\s\((.*)\).*\|\|.*Link:\s\(\shttps?\:\/\/([^\/]+\/)\S*[&amp;\?]id=(\d+)"/>
+				<!--::: PolishTracker :::  Torrent ( Rough.Night.2017.PLSUB.1080p.BDRip.x264-NiNa )  ||  Kategoria: ( movies HD )  ||  Rozmiar: ( 2.14 GB )  ||  Link: ( https://pte.nu/torrents/427113 )    ||  Wiecej: ( http://www.filmweb.pl/film?id=773378 )-->
+				<!--::: PolishTracker :::  Torrent ( 20170912-FLAC.PACK-PT )  ||  Kategoria: ( music )  ||  Rozmiar: ( 16.07 GB )  ||  Link: ( https://pte.nu/torrents/427114 )-->
+				<regex value="::: PolishTracker :::  Torrent \( (.*) \)  \|\|  Kategoria: \( (.*) \)  \|\|  Rozmiar: \( (.*) \)  \|\|  Link: \( https://(.*)/torrents/(\d+) \)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
@@ -66,26 +67,12 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="http://"/>
-				<var name="$baseUrl"/>
-				<string value="downloadd.php/"/>
-				<var name="$torrentId"/>
-				<string value="/"/>
-				<var name="rsskey"/>
-				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
-			</var>
-			<var name="torrentSslUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="downloaddssl.php/"/>
-				<var name="$torrentId"/>
-				<string value="/"/>
+				<string value="/downrss/"/>
 				<var name="rsskey"/>
 				<string value="/"/>
-				<varenc name="torrentName"/>
-				<string value=".torrent"/>
+				<var name="$torrentId"/>
 			</var>
 		</linematched>
 		<ignore>
