@@ -47,33 +47,29 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[New Release]-[AppsPC]-[Spice_Road_v1.002-FAS]-[URL]-[ https://alpharatio.cc/torrents.php?id=3273 ]-[ 3265 ]-[ Uploaded 53 Secs after pre. ]-->
-				<!--[New Release]-[AppsMAC]-[Angvik_v1.4_MacOSX-SPLATTER]-[URL]-[ https://alpharatio.cc/torrents.php?id=3280 ]-[ 3272 ]-[ Uploaded 14 Mins, 12 Secs after pre. ]-->
-				<regex value= "^\[New Release\]-\[(\S+)\]-\[(\S+)\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=\d+.*\[\s*(\d+) \].*Uploaded (.*) after pre"/>
+				<!--[AutoDL]-[$category]-[$torrentid]-[ $scene | $size | $freeleech | $auto ]-[$torrentname]-->
+				<regex value= "^\[AutoDL\]-\[(\S+)\]-\[([0-9]+)\]-\[ ([01]) \| ([0-9]+) \| ([01]) \| ([10]) \]-\[(.+)\]"/>
 				<vars>
 					<var name="category"/>
-					<var name="torrentName"/>
-					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
-					<var name="preTime"/>
-				</vars>
-			</extract>
-			<extract>
-				<!--[New Release]-[MovieHD]-[The Hobbit Desolation Of Smaug 2013 1080p Bluray DTS x264 - SiMPLE]-[URL]-[ https://alpharatio.cc/torrents.php?id=3822 ]-[ 3807 ]-->
-				<regex value= "^\[New Release\]-\[(\S+)\]-\[(.+)\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=\d+.*\[\s*(\d+) \]"/>
-				<vars>
-					<var name="category"/>
+					<var name="$scene"/>
+					<var name="$size"/>
+					<var name="$free"/>
+					<var name="$auto"/>
 					<var name="torrentName"/>
-					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<setregex srcvar="$free" regex="1" varName="freeleech" newValue="true"/>
+			<setregex srcvar="$scene" regex="1" varName="scene" newValue="true"/>
+			<setregex srcvar="$auto" regex="1" varName="uploader" newValue="Anonymous"/>
+			<var name="torrentSize">
+				<var name="$size"/>
+				<string value="MB"/>
+			</var>
 			<var name="torrentUrl">
-				<string value="https://"/>
-				<var name="$baseUrl"/>
-				<string value="torrents.php?action=download&amp;id="/>
+				<string value="https://alpharatio.cc/torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
@@ -82,6 +78,7 @@
 			</var>
 		</linematched>
 		<ignore>
+			<regex value="^\[New Release]"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
