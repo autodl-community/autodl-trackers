@@ -53,7 +53,7 @@
 					<var name="category"/>
 					<var name="$torrentId"/>
 					<var name="$scene"/>
-					<var name="torrentSize"/>
+					<var name="$size"/>
 					<var name="$free"/>
 					<var name="$auto"/>
 					<var name="torrentName"/>
@@ -63,6 +63,11 @@
 		<linematched>
 			<setregex srcvar="$free" regex="1" varName="freeleech" newValue="true"/>
 			<setregex srcvar="$scene" regex="1" varName="scene" newValue="true"/>
+			<setregex srcvar="$auto" regex="1" varName="uploader" newValue="Anonymous"/>
+			<var name="torrentSize">
+				<var name="$size"/>
+				<string value="MB"/>
+			</var>
 			<var name="torrentUrl">
 				<string value="https://alpharatio.cc/torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
@@ -73,6 +78,7 @@
 			</var>
 		</linematched>
 		<ignore>
+			<regex value="^\[New Release]"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
