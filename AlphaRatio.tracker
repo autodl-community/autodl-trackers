@@ -76,6 +76,10 @@
 				<string value="&amp;torrent_pass="/>
 				<var name="torrent_pass"/>
 			</var>
+			<var name="$free"></var>
+			<var name="$scene"></var>
+			<var name="$auto"></var>
+			<var name="$size"></var>
 		</linematched>
 		<ignore>
 			<regex value="^\[New Release]"/>
