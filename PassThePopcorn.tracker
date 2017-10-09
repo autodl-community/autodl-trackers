@@ -40,7 +40,7 @@
 		<server
 			network="PassThePopcorn"
 			serverNames="irc.passthepopcorn.me"
-			channelNames="#ptp-announce,#ptp-announce-ssl"
+			channelNames="#ptp-announce"
 			announcerNames="Hummingbird"
 			/>
 	</servers>
