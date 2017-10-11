@@ -3,6 +3,36 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v266](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v266) (2017-10-11)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v265...community-v266)
+
+### Added
+
+* Add release-group filter option to AnimeBytes.
+* Add shows/artist and album filter options to AnimeBytes
+
+### Removed
+
+* Remove SceneAccess.
+* Remove defunct SSL announce channel for PassThePopcorn.
+* Remove TehConnection.eu.
+
+### Changed
+
+* Force SSL for PassThePopcorn
+
+### Fixed
+
+* Fix HD-Space.
+
+### Updated
+
+* Update IRC server for PolishTracker.
+* Update PolishTracker for site move.
+* Update announce channel for PTFiles.
+
+
 ## [community-v265](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v265) (2017-08-30)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v264...community-v265)
