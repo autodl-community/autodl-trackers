@@ -19,7 +19,7 @@
    - Portions created by the Initial Developer are Copyright (C) 2010, 2011
    - the Initial Developer. All Rights Reserved.
    -
-   - Contributor(s):
+   - Contributor(s): pdx
    -
    - ***** END LICENSE BLOCK ***** -->
 
@@ -45,10 +45,18 @@
 	</servers>
 
 	<parseinfo>
-		<linepatterns>
+		<multilinepatterns>
+			<!-- [New Release]-[MovieHD]-[War.For.The.Planet.Of.The.Apes.2017.INTERNAL.1080p.BluRay.CRF.x264-SAPHiRE]-[URL]-[ https://alpharatio.cc/torrents.php?id=699463 ]-[ 699434 ]-[ Uploaded 2 Mins, 59 Secs after pre. ] -->
+			<!-- [AutoDL]-[MovieHD]-[699434]-[ 1 | 10659 | 1 | 1 ]-[War.For.The.Planet.Of.The.Apes.2017.INTERNAL.1080p.BluRay.CRF.x264-SAPHiRE] -->
 			<extract>
-				<!--[AutoDL]-[$category]-[$torrentid]-[ $scene | $size | $freeleech | $auto ]-[$torrentname]-->
-				<regex value= "^\[AutoDL\]-\[(\S+)\]-\[([0-9]+)\]-\[ ([01]) \| ([0-9]+) \| ([01]) \| ([10]) \]-\[(.+)\]"/>
+				<regex value="^\[New Release\]-\[\S+\]-\[\S+\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[\?]id=\d+ \]-\[ \d+ \](?:-\[ Uploaded (.*) after pre. \])?"/>
+				<vars>
+					<var name="$baseUrl"/>
+					<var name="preTime"/>
+				</vars>
+			</extract>
+			<extract>
+				<regex value= "^\[AutoDL\]-\[(\S+)\]-\[(\d+)\]-\[ ([01]) \| (\d+) \| ([01]) \| ([10]) \]-\[(.+)\]"/>
 				<vars>
 					<var name="category"/>
 					<var name="$torrentId"/>
@@ -59,7 +67,7 @@
 					<var name="torrentName"/>
 				</vars>
 			</extract>
-		</linepatterns>
+		</multilinepatterns>
 		<linematched>
 			<setregex srcvar="$free" regex="1" varName="freeleech" newValue="true"/>
 			<setregex srcvar="$scene" regex="1" varName="scene" newValue="true"/>
@@ -69,7 +77,9 @@
 				<string value="MB"/>
 			</var>
 			<var name="torrentUrl">
-				<string value="https://alpharatio.cc/torrents.php?action=download&amp;id="/>
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="torrents.php?action=download&amp;id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
@@ -80,9 +90,9 @@
 			<var name="$scene"></var>
 			<var name="$auto"></var>
 			<var name="$size"></var>
+			<var name="$baseUrl"></var>
 		</linematched>
 		<ignore>
-			<regex value="^\[New Release]"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
