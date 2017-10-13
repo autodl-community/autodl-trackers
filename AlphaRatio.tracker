@@ -19,7 +19,7 @@
    - Portions created by the Initial Developer are Copyright (C) 2010, 2011
    - the Initial Developer. All Rights Reserved.
    -
-   - Contributor(s):
+   - Contributor(s): pdx
    -
    - ***** END LICENSE BLOCK ***** -->
 
@@ -45,31 +45,37 @@
 	</servers>
 
 	<parseinfo>
-		<linepatterns>
+		<multilinepatterns>
+			<!-- [New Release]-[MovieHD]-[War.For.The.Planet.Of.The.Apes.2017.INTERNAL.1080p.BluRay.CRF.x264-SAPHiRE]-[URL]-[ https://alpharatio.cc/torrents.php?id=699463 ]-[ 699434 ]-[ Uploaded 2 Mins, 59 Secs after pre. ] -->
+			<!-- [AutoDL]-[MovieHD]-[699434]-[ 1 | 10659 | 1 | 1 ]-[War.For.The.Planet.Of.The.Apes.2017.INTERNAL.1080p.BluRay.CRF.x264-SAPHiRE] -->
 			<extract>
-				<!--[New Release]-[AppsPC]-[Spice_Road_v1.002-FAS]-[URL]-[ https://alpharatio.cc/torrents.php?id=3273 ]-[ 3265 ]-[ Uploaded 53 Secs after pre. ]-->
-				<!--[New Release]-[AppsMAC]-[Angvik_v1.4_MacOSX-SPLATTER]-[URL]-[ https://alpharatio.cc/torrents.php?id=3280 ]-[ 3272 ]-[ Uploaded 14 Mins, 12 Secs after pre. ]-->
-				<regex value= "^\[New Release\]-\[(\S+)\]-\[(\S+)\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=\d+.*\[\s*(\d+) \].*Uploaded (.*) after pre"/>
+				<regex value="^\[New Release\]-\[\S+\]-\[\S+\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[\?]id=\d+ \]-\[ \d+ \](?:-\[ Uploaded (.*) after pre. \])?"/>
 				<vars>
-					<var name="category"/>
-					<var name="torrentName"/>
 					<var name="$baseUrl"/>
-					<var name="$torrentId"/>
 					<var name="preTime"/>
 				</vars>
 			</extract>
 			<extract>
-				<!--[New Release]-[MovieHD]-[The Hobbit Desolation Of Smaug 2013 1080p Bluray DTS x264 - SiMPLE]-[URL]-[ https://alpharatio.cc/torrents.php?id=3822 ]-[ 3807 ]-->
-				<regex value= "^\[New Release\]-\[(\S+)\]-\[(.+)\]-\[URL\]-\[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=\d+.*\[\s*(\d+) \]"/>
+				<regex value= "^\[AutoDL\]-\[(\S+)\]-\[(\d+)\]-\[ ([01]) \| (\d+) \| ([01]) \| ([10]) \]-\[(.+)\]"/>
 				<vars>
 					<var name="category"/>
-					<var name="torrentName"/>
-					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="$scene"/>
+					<var name="$size"/>
+					<var name="$free"/>
+					<var name="$auto"/>
+					<var name="torrentName"/>
 				</vars>
 			</extract>
-		</linepatterns>
+		</multilinepatterns>
 		<linematched>
+			<setregex srcvar="$free" regex="1" varName="freeleech" newValue="true"/>
+			<setregex srcvar="$scene" regex="1" varName="scene" newValue="true"/>
+			<setregex srcvar="$auto" regex="1" varName="uploader" newValue="Anonymous"/>
+			<var name="torrentSize">
+				<var name="$size"/>
+				<string value="MB"/>
+			</var>
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
@@ -80,6 +86,11 @@
 				<string value="&amp;torrent_pass="/>
 				<var name="torrent_pass"/>
 			</var>
+			<var name="$free"></var>
+			<var name="$scene"></var>
+			<var name="$auto"></var>
+			<var name="$size"></var>
+			<var name="$baseUrl"></var>
 		</linematched>
 		<ignore>
 		</ignore>
