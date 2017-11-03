@@ -38,7 +38,7 @@
 		<server
 			network="thehorde"
 			serverNames="irc.revolutiontt.me"
-			channelNames="#vip"
+			channelNames="#vip,#announce"
 			announcerNames="RevoTT"
 			/>
 	</servers>
@@ -47,7 +47,7 @@
 		<linepatterns>
 			<extract>
 				<!--[NEWmTORRENT]jinfTV/XViDY->HBones.S05E12.The.Proof.in.the.Pudding.HDTV.XviD-FQMA| https://www.revolutiontt.net/details.php?id=pyK9laiE&hit=1-->
-				<regex value="^\[NEW.TORRENT\].in.(.*).->.(.*).\| https?\:\/\/([^\/]+\/).*[&amp;\?]id=([0-9a-zA-Z]+)"/>
+				<regex value="\[NEW.TORRENT\].in.(.*).->.(.*).\| (https?://.*/).*id=([0-9a-zA-Z]+)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
@@ -57,7 +57,7 @@
 			</extract>
 			<extract>
 				<!--[NEWyREQUESTEDOTORRENT]CindTV/PacksY->v[REQ]BOneTTreeaHillHSeasonJ6z| https://www.revolutiontt.net/details.php?id=pAKvOOfg&hit=1-->
-				<regex value="^\[NEW.REQUESTED.TORRENT\].in.(.*).->.(.*).\| https?\:\/\/([^\/]+\/).*[&amp;\?]id=([0-9a-zA-Z]+)"/>
+				<regex value="\[NEW.REQUESTED.TORRENT\].in.(.*).->.(.*).\| (https?://.*/).*id=([0-9a-zA-Z]+)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
@@ -65,10 +65,19 @@
 					<var name="$torrentId"/>
 				</vars>
 			</extract>
+			<extract>
+				<!--!new Elizabeth.Is.Secret.Agents.S01E01.1080p.HDTV.H264-QPEL | TV/HDx264 | https://revolutiontt.me/details.php?id=pA6oPRsg&hit=1-->>
+				<regex value="!new (.*) \| (.*) \| (https?://.*/).*id=([0-9a-zA-Z]+)"/>
+				<vars>
+					<var name="torrentName"/>
+					<var name="category"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+				</vars>
+			</extract>
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="download.php/"/>
 				<var name="$torrentId"/>
