@@ -3,6 +3,22 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v267](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v267) (2017-11-7)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v266...community-v267)
+
+### Added
+
+* Add h264 remux encoder captures to Awesome-HD.
+* Add 2160p resolution capture to Awesome-HD.
+* Add Fuzer.
+
+### Updated
+
+* Update AlphaRatio for new multi-line announce.
+* Update RevolutionTT for new announce channel.
+
+
 ## [community-v266](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v266) (2017-10-11)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v265...community-v266)
@@ -10,7 +26,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 ### Added
 
 * Add release-group filter option to AnimeBytes.
-* Add shows/artist and album filter options to AnimeBytes
+* Add shows/artist and album filter options to AnimeBytes.
 
 ### Removed
 
@@ -20,7 +36,7 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 ### Changed
 
-* Force SSL for PassThePopcorn
+* Force SSL for PassThePopcorn.
 
 ### Fixed
 
