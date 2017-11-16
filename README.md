@@ -1,14 +1,9 @@
 # autodl-trackers
 
-[autodl-trackers](https://github.com/autodl-community/autodl-trackers) is the official repository of tracker files for the [community fork](https://github.com/autodl-community/autodl-irssi) of [autodl-irssi](http://sourceforge.net/projects/autodl-irssi/).
-These files are not guaranteed to be compatible with the original [autodl-irssi](http://sourceforge.net/projects/autodl-irssi/).
-They are licensed under the [Mozilla Public License 1.1](https://www.mozilla.org/MPL/1.1/)
-
-See [CHANGELOG.md](https://github.com/autodl-community/autodl-trackers/blob/master/CHANGELOG.md) for a history of the project.
+[autodl-trackers](https://github.com/autodl-community/autodl-trackers) is the repository of tracker files for [autodl-irssi](https://github.com/autodl-community/autodl-irssi).
 
 ## Getting Started
 
-* Download current and previous releases from the [release archives](http:/releases.autodl-community.com).
 * Find help in the IRC channel: ``#autodl-community`` on ``irc.p2p-network.net``
 
 ## Appreciation
