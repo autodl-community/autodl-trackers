@@ -37,7 +37,7 @@
 
 	<servers>
 		<server
-			network="Scratch Network"
+			network="Scratch-Network"
 			serverNames="irc.scratch-network.net"
 			channelNames="#red-announce"
 			announcerNames="Drone"
