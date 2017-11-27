@@ -37,7 +37,7 @@
 
 	<servers>
 		<server
-			network="ANONAMOUSE"
+			network="MYANONAMOUSE"
 			serverNames="irc.myanonamouse.net"
 			channelNames="#announce"
 			announcerNames="MouseBot"
