@@ -3,7 +3,31 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
-## [community-v267](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v267) (2017-11-7)
+## [community-v268](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v268) (2017-12-12)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v267...community-v268)
+
+### Added
+
+* Add 2160p resolution to AnimeBytes.
+* Add 2160p resolution to BIT-HDTV.
+* Add 2160p resolution to BTN.
+* Add 2160p resolution to Morethan.tv.
+* Add 2160p resolution to Nebulance.
+* Add 2160p resolution to PassThePopcorn.
+* Add 2160p resolution to SWARM.
+
+### Updated
+
+* Update network name for My Anonamouse.
+* Update network name for Redacted.
+
+### Removed
+
+* Remove The Dark Syndicate.
+
+
+## [community-v267](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v267) (2017-11-07)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v266...community-v267)
 
