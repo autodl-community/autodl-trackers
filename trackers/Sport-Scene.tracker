@@ -50,7 +50,7 @@
 				<regex value="^Sport-Scene.net.*Torrents:\s*\((.*)Size:\s*\((.*)\)\s*Link:\s*\(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>

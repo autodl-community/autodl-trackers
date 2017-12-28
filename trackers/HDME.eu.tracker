@@ -72,7 +72,7 @@
 			<extract>
 				<regex value="^Size:\s*(.*)"/>
 				<vars>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 				</vars>
 			</extract>
 			<extract>

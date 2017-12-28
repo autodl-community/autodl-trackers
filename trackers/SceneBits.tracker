@@ -52,7 +52,7 @@
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="preTime"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>

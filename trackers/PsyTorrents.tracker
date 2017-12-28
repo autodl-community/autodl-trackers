@@ -63,7 +63,7 @@
 				<regex value="Tags: \[(.*)\] - (.*) - Torrent: .* - DL: (https?://.*id=\d+)"/>
 				<vars>
 					<var name="tags"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 				</vars>
 			</extract>

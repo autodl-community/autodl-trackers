@@ -49,7 +49,7 @@
 				<regex value="^\[Ny Uppladdning]\s\[.*]\s(.*)\[\s(.*)\]\s\[\shttp:\/\/www.starbits.nu\/details.php\?id=([0-9]{1,6})\s]?"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$torrentId"/>
 				</vars>
 			</extract>

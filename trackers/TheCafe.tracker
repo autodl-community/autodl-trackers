@@ -58,7 +58,7 @@
 				<regex value="^TheCafe\s-\s(.*)Size:\s(.*)\sCategory:\s(.*)\sLink:\shttps?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="category"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>

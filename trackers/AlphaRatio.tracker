@@ -86,11 +86,6 @@
 				</var>
 			</if>
 
-			<var name="torrentSize">
-				<var name="$size"/>
-				<string value="MB"/>
-			</var>
-
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
 				<string value="action=download&amp;id="/>

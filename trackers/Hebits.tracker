@@ -50,7 +50,7 @@
 				<vars>
 					<var name="name1"/>
 					<var name="category"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 				</vars>
 			</extract>
 			<extract>

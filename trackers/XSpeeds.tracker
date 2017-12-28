@@ -53,7 +53,7 @@
 				<regex value="^\s*xspeeds.eu\s*-\s*New Torrent:\s*\((.*)\) Size: \(([^)]*)\)\s*Category:\s*\(([^)]*)\)\s*Uploader:\s*\(([^)]*)\)\s*Link:\s*\(\s*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="category"/>
 					<var name="uploader"/>
 					<var name="$baseUrl"/>

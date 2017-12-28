@@ -62,7 +62,7 @@
 			<extract>
 				<regex value="Size:\s*(.*)\s*\.:\.\s*URL:\s*https?\:\/\/([^\/]+\/).*tid=(.*)"/>
 				<vars>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>

@@ -51,7 +51,7 @@
 				<regex value="^BitMeTV.ORG Torrents: \[ (.*) \] Size: \[ (.*) \] Link: \[ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+).* \]"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>

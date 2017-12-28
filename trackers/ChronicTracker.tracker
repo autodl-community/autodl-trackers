@@ -58,7 +58,7 @@
 				<regex value="^=- Cat:(.*)=-= Size(.*)in (\d+) Files -="/>
 				<vars>
 					<var name="category"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$numFiles"/>
 				</vars>
 			</extract>

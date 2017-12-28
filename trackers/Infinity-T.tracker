@@ -56,7 +56,7 @@
 					<var name="category"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$freeleech"/>
 				</vars>
 			</extract>

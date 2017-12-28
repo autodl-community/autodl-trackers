@@ -52,7 +52,7 @@
 					<var name="torrentName"/>
 					<var name="uploader"/>
 					<var name="category"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>

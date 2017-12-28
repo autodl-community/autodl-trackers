@@ -52,7 +52,7 @@
 				<regex value="^(.*)\s+-\s+\[\s*([\d.,]*\s*\S*)\s*in\s*\d*\s*F\s*\]\s+-\s+(.*)\s+-\s+https?:.*[&amp;\?]id=.*https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)\s*-\s*(.*)"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="releaseTags"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>

@@ -53,7 +53,7 @@
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
 					<var name="freeleechPercent"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 				</vars>
 			</extract>

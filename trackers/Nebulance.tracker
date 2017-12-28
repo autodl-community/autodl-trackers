@@ -55,7 +55,7 @@
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="uploader"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>

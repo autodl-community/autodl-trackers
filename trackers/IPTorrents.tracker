@@ -55,7 +55,7 @@
 					<var name="torrentName"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 				</vars>
 			</extract>
 		</linepatterns>
