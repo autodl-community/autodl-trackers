@@ -42,7 +42,7 @@
 			network="APOLLO"
 			serverNames="irc.apollo.rip"
 			channelNames="#announce"
-			announcerNames="APOLLO"
+			announcerNames="hermes"
 			/>
 	</servers>
 
