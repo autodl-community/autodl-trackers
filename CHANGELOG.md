@@ -3,6 +3,23 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v269](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v269) (2018-01-19)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v268...community-v269)
+
+### Added
+
+* Add SuperBits.
+
+### Updated
+
+* Update announcer name for Apollo.
+
+### Removed
+
+* Remove torrent size captures.
+
+
 ## [community-v268](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v268) (2017-12-12)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v267...community-v268)
