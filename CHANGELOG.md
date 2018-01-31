@@ -3,6 +3,14 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [community-v269](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v270) (2018-01-30)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v269...community-v270)
+
+### Added
+
+* Add NordicBits.
+
 ## [community-v269](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v269) (2018-01-19)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v268...community-v269)
