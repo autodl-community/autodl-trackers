@@ -3,27 +3,27 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
-## [community-v271](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v271) (2018-02-06)
+## [v271](https://github.com/autodl-community/autodl-trackers/releases/tag/v271) (2018-02-06)
 
-[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v270...community-v271)
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v270...v271)
 
 ### Updated
 
 * Update UltimateGamerClub to use Gazelle settings.
 
 
-## [community-v270](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v270) (2018-01-30)
+## [v270](https://github.com/autodl-community/autodl-trackers/releases/tag/v270) (2018-01-30)
 
-[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v269...community-v270)
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v269...v270)
 
 ### Added
 
 * Add NordicBits.
 
 
-## [community-v269](https://github.com/autodl-community/autodl-trackers/releases/tag/community-v269) (2018-01-19)
+## [v269](https://github.com/autodl-community/autodl-trackers/releases/tag/v269) (2018-01-19)
 
-[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v268...community-v269)
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/community-v268...v269)
 
 ### Added
 
