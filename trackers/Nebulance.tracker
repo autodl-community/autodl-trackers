@@ -38,8 +38,8 @@
 
 	<servers>
 		<server
-			network="DigitalIRC"
-			serverNames="irc.nebulance.io"
+			network="Nebulance"
+			serverNames="irc.nebulance.cc"
 			channelNames="#nbl-announce"
 			announcerNames="DRADIS"
 			/>
