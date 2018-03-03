@@ -14,6 +14,7 @@ Preferably, this information should be provided using a pastebin site. More info
 ## Submitting an issue
 
 Bug reports and feature requests can be submitted to our [Issue Tracker](https://github.com/autodl-community/autodl-trackers/issues).
+For support, use [Discord](http://discord.autodl.community).
 
 Some general guidelines to follow:
 
