@@ -51,7 +51,7 @@
 			<extract>
 				<!--Various Artists - Samurai Girl Real Bout High School Official Soundtrack [2003] :: MP3 / 320 / CD || https://tracker.url/torrents2.php?id=14923&torrentid=50957 || soundtrack || Uploaded by: Username-->
 				<!--Yume Kui: Tsurumiku Shiki Game Seisaku - OVA [2011] :: DVD / MKV / h264 / 704x396 / AAC / Softsubs (SubDESU-H) / Hentai (Censored) || https://tracker.url/torrents.php?id=8370&torrentid=50958 || nudity, sex, rape, virgins, erotic.game || Uploaded by: Username-->
-				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\/torrents2?\.php\?.*[&amp;\?]torrentid=(\d+) \|\| (.*) \|\|\s+Uploaded by: (.*)"/>
+				<regex value="(.*) :: (.*) \|\| https?\:\/\/(.*)\/torrents2?\.php\?.*[&amp;\?]torrentid=(\d+) \|\| ([\w\,\.\s]*) \|\|\s+Uploaded by: (.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
@@ -84,16 +84,22 @@
 			<varreplace name="$releaseTags" srcvar="$releaseTags" regex="[\|]" replace="/"/>
 
 			<extracttags srcvar="$releaseTags" split="/">
-				<setvarif varName="container" regex="^(?:AVI|MKV|VOB|MPEG|MP4|ISO|WMV|TS|M4V)$"/>
-				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEBRip|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
-				<setvarif varName="encoder" regex="^(?:XviD|DivX|x264|h\.264|h264|mpeg2|VC\-1|VC1|WMV)$"/>
-
-				<setvarif varName="format" regex="^(?:MP3|FLAC|Ogg|AAC|AC3|DTS)$"/>
-				<setvarif varName="bitrate" regex="Lossless$"/>
+				<setvarif varName="source" regex="^(?:TV|DVD|Blu\-ray|UHD Blu\-ray|HD DVD|VHS|VCD|LD|Web)$"/>
+				<setvarif varName="container" regex="^(?:AVI|MKV|MP4|OGM|WMV|MPG|ISO|VOB|VOB IFO|TS|M2TS(?:\s\([\w\s]+\))?)$"/>
+				<setvarif varName="container" regex="^MPEG$"/>
+				<setvarif varName="encoder" regex="^(?:h264|h264 10\-bit|h265|h265 10\-bit|XviD|DivX|WMV|MPEG|VC\-1|MPEG\-TS|DVD5|DVD9)$"/>
+				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i|2160p|4K)$"/>
+				
+				<setvarif varName="format" regex="^(?:MP3|Vorbis|Opus|AAC|AC3|TrueHD|DTS[\s\-]?[A-Za-z\s]*|FLAC|PCM|WMA|Real Audio)\s?[\.0-9]*$"/>
+				<setvarif varName="bitrate" regex="Lossless.*"/>
 				<setvarif varName="bitrate" regex="^(?:vbr|aps|apx|v\d|\d{2,4}|\d+\.\d+|q\d+\.[\dx]+|Other)?(?:\s*kbps|\s*kbits?|\s*k)?(?:\s*\(?(?:vbr|cbr)\)?)?$"/>
-				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|WEB)$"/>
-				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i|2160p)$"/>
-				<setvarif varName="$releaseGroupString" regex="^(?:RAW|Softsubs|Hardsubs)?\s\(.+\)$"/>
+				<setvarif varName="media" regex="^(?:CD|DVD|Vinyl|Soundboard|SACD|DAT|Cassette|Web)$"/>
+				<setvarif varName="log" value="Log" newValue="true"/>
+				<setvarif varName="cue" value="Cue" newValue="true"/>
+
+				<setvarif varName="$resolution" regex="^[0-9]{3,4}x[0-9]{3,4}.*$"/>
+				<setvarif varName="$hentai" regex="^Hentai.*"/>
+				<setvarif varName="$releaseGroupString" regex="^(?:RAW|Softsubs|Hardsubs|Translated)?\s\(.+\)$"/>
 				<setvarif varName="$episodeString" regex="^Episode \d+$"/>
 				<setvarif varName="freeleech" value="Freeleech" newValue="true"/>
 
@@ -102,11 +108,94 @@
 			</extracttags>
 
 			<extract srcvar="torrentName" optional="true">
-				<regex value="^(.+)\s-\s(.+)\s\[(\d{4})\]"/>
+				<regex value="^(.+)\s-\s(.+)\s\s\[(\d{4})\]"/>
 				<vars>
 					<var name="name1"/>
 					<var name="name2"/>
 					<var name="year"/>
+				</vars>
+			</extract>
+			
+			<!-- Remove Extra DTS Information -->
+			<varreplace name="format" srcvar="format" regex="DTS.*" replace="DTS"/>
+			<!-- Remove Channel Information -->
+			<varreplace name="format" srcvar="format" regex="\s[0-9\.]+" replace=""/>
+			<!-- Remove Extra M2TS Information -->
+			<varreplace name="container" srcvar="container" regex="M2TS\s\(\w+\)" replace="M2TS"/>
+			<!-- Add Hentai Tag -->
+			<if srcvar="$hentai" regex="Hentai.*">
+				<varreplace name="tags" srcvar="tags" regex="$" replace=", hentai"/>
+			</if>
+
+			<!-- Custom resolutions -->
+			<setregex srcvar="$resolution" regex="[0-9]{3,4}x57[0-9]{1}.*" varName="resolution" newValue="576p"/>
+			<setregex srcvar="$resolution" regex="[0-9]{3,4}x48[0-9]{1}.*" varName="resolution" newValue="480p"/>
+			<setregex srcvar="$resolution" regex="[0-9]{3,4}x[1-3][0-9]{2}.*" varName="resolution" newValue="SD"/>
+			<!-- Anime Category Implementation -->
+			<setregex srcvar="name2" regex="TV Series" varName="category" newValue="TV Series"/>
+			<setregex srcvar="name2" regex="TV Special" varName="category" newValue="TV Special"/>
+			<setregex srcvar="name2" regex="Movie" varName="category" newValue="Movie"/>
+			<setregex srcvar="name2" regex="OVA" varName="category" newValue="OVA"/>
+			<setregex srcvar="name2" regex="ONA" varName="category" newValue="ONA"/>
+			<setregex srcvar="name2" regex="DVD Special" varName="category" newValue="DVD Special"/>
+			<setregex srcvar="name2" regex="BD Special" varName="category" newValue="BD Special"/>
+			<!-- Manga Category Implementation -->
+			<setregex srcvar="name2" regex="Manga" varName="category" newValue="Manga"/>
+			<setregex srcvar="name2" regex="Oneshot" varName="category" newValue="Oneshot"/>
+			<setregex srcvar="name2" regex="Anthology" varName="category" newValue="Anthology"/>
+			<setregex srcvar="name2" regex="Manhwa" varName="category" newValue="Manhwa"/>
+			<setregex srcvar="name2" regex="Manhua" varName="category" newValue="Manhua"/>
+			<setregex srcvar="name2" regex="Light Novel" varName="category" newValue="Light Novel"/>
+			<setregex srcvar="name2" regex="Artbook" varName="category" newValue="Artbook"/>
+			<!-- Game Category Implementation -->
+			<setregex srcvar="name2" regex="Game" varName="category" newValue="Game"/>
+			<setregex srcvar="name2" regex="Visual Novel" varName="category" newValue="Visual Novel"/>
+			<!-- Other Categories -->
+			<setregex srcvar="name2" regex="Live Action TV Series" varName="category" newValue="Live Action TV Series"/>
+			<setregex srcvar="name2" regex="Live Action Movie" varName="category" newValue="Live Action Movie"/>
+			<!-- Music Category Implementations -->
+			<if srcvar="name2" regex="^(?!(TV Series|TV Special|Movie|OVA|ONA|DVD Special|BD Special|Manga|Oneshot|Anthology|Manhwa|Manhua|Light Novel|Artbook|Game|Visual Novel|Live Action TV Series|Live Action Movie)$)[\w\W\s]+$">
+				<var name="category">
+					<string value="Music"/>
+				</var>
+			</if>
+
+			<!-- Fix Web on music stuff -->
+			<if srcvar="category" regex="Music">
+				<if srcvar="source" regex="Web">
+					<var name="media">
+						<string value="Web"/>
+					</var>
+					<varreplace name="source" srcvar="source" regex=".*" replace=""/>
+				</if>
+			</if>
+
+			<extract srcvar="$releaseGroupString" optional="true">
+				<regex value="(RAW|Softsubs|Hardsubs|Translated)\s\((.+)\)"/>
+				<vars>
+					<var name="$subsType"/>
+					<var name="releaseGroup"/>
+				</vars>
+			</extract>
+
+			<!-- Add Sub Type to Tags -->
+			<if srcvar="$subsType" regex="RAW">
+				<varreplace name="tags" srcvar="tags" regex="$" replace=", raw"/>
+			</if>
+			<if srcvar="$subsType" regex="Softsubs">
+				<varreplace name="tags" srcvar="tags" regex="$" replace=", softsubs"/>
+			</if>
+			<if srcvar="$subsType" regex="Hardsubs">
+				<varreplace name="tags" srcvar="tags" regex="$" replace=", hardsubs"/>
+			</if>
+			<if srcvar="$subsType" regex="Translated">
+				<varreplace name="tags" srcvar="tags" regex="$" replace=", translated"/>
+			</if>
+
+			<extract srcvar="$episodeString" optional="true">
+				<regex value="Episode (\d+)"/>
+				<vars>
+					<var name="episode"/>
 				</vars>
 			</extract>
 
@@ -118,20 +207,6 @@
 				<string value="/download/"/>
 				<var name="passkey"/>
 			</var>
-
-			<extract srcvar="$releaseGroupString" optional="true">
-				<regex value="(?:RAW|Softsubs|Hardsubs)\s\((.+)\)"/>
-				<vars>
-					<var name="releaseGroup"/>
-				</vars>
-			</extract>
-
-			<extract srcvar="$episodeString" optional="true">
-				<regex value="Episode (\d+)"/>
-				<vars>
-					<var name="episode"/>
-				</vars>
-			</extract>
 		</linematched>
 		<ignore>
 		</ignore>
