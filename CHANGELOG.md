@@ -3,6 +3,19 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v272](https://github.com/autodl-community/autodl-trackers/releases/tag/v272) (2018-03-15)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v271...v272)
+
+### Added
+
+* Add JPopsuki.
+
+### Updated
+
+* Update IRC server for Nebulance.
+
+
 ## [v271](https://github.com/autodl-community/autodl-trackers/releases/tag/v271) (2018-02-06)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v270...v271)
