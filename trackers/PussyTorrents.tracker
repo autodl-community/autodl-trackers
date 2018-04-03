@@ -65,6 +65,9 @@
 			</extract>
 		</linepatterns>
 		<linematched>
+			<!-- Torrent name is with space but URL expects "." -->
+			<varreplace name="torrentName" srcvar="torrentName" regex="[ ]" replace="."/>
+		
 			<var name="torrentUrl">
 				<string value="http://"/>
 				<var name="$baseUrl"/>
