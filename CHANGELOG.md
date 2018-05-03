@@ -3,6 +3,23 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v273](https://github.com/autodl-community/autodl-trackers/releases/tag/v273) (2018-05-03)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v272...v273)
+
+### Added
+
+* Add HQBits.
+
+### Removed
+
+* Remove GFTracker.
+
+### Fixed
+
+* Replace spaces with periods in torrentName for PussyTorrents.
+
+
 ## [v272](https://github.com/autodl-community/autodl-trackers/releases/tag/v272) (2018-03-15)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v271...v272)
