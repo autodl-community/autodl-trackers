@@ -24,8 +24,8 @@
 - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="atomic"
-	shortName="AH"
+	type="athd"
+	shortName="ATHD"
 	longName="AtomicHD"
 	siteName="atomichd.org">
 
@@ -39,7 +39,7 @@
 			netowrk="AtomicHD"
 			serverNames="irc.atomichd.org"
 			channelNames="#ahd.announce"
-			announcerNames="AHD"
+			announcerNames="ATHD"
 			/>
 	</servers>
 
