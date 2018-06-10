@@ -38,7 +38,7 @@
 		<server
 			netowrk="AtomicHD"
 			serverNames="irc.atomichd.org"
-			channelNames="#ahd.announce"
+			channelNames="#athd.announce"
 			announcerNames="ATHD"
 			/>
 	</servers>
