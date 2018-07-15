@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v275](https://github.com/autodl-community/autodl-trackers/releases/tag/v275) (2018-07-15)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v274...v275)
+
+### Added
+
+* Add AtomicHD.
+
+
 ## [v274](https://github.com/autodl-community/autodl-trackers/releases/tag/v274) (2018-05-12)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v273...v274)
