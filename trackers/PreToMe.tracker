@@ -42,7 +42,7 @@
 			network="PreToMe"
 			serverNames="irc.pretome.info"
 			channelNames="#announce,#pretome"
-			announcerNames="tehDude"
+			announcerNames="PTMBot"
 			/>
 	</servers>
 
