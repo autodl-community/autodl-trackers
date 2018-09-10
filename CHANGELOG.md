@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v276](https://github.com/autodl-community/autodl-trackers/releases/tag/v276) (2018-9-11)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v275...v276)
+
+### Changed
+
+* Update announcer name for PreToMe.
+
+
 ## [v275](https://github.com/autodl-community/autodl-trackers/releases/tag/v275) (2018-07-15)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v274...v275)
