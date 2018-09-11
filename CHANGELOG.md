@@ -7,6 +7,10 @@ Notable changes for the [autodl-trackers](https://github.com/autodl-community/au
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v275...v276)
 
+### Removed
+
+* Remove RetroWithin.
+
 ### Changed
 
 * Update announcer name for PreToMe.
