@@ -71,7 +71,7 @@
 
 			<extracttags srcvar="$releaseTags" split="/">
 				<setvarif varName="resolution" regex="^(?:720p|1080p|1080i|2160p)$"/>
-				<setvarif varName="source" regex="^(?:HDTV|UHD BluRay|BluRay|Blu\-Ray|WEB\-DL|WEB|HDDVD|HD\-DVD)$"/>
+				<setvarif varName="source" regex="^(?:HDTV|UHD Blu\-ray|BluRay|Blu\-Ray|WEB\-DL|WEB|HDDVD|HD\-DVD)$"/>
 				<setvarif varName="encoder" regex="^(?:h\.264 Remux|VC\-1 Remux|h\.265 Remux|Remux|h\.264|x264|x265|mpeg2|VC\-1)$"/>
 
 				<!--Ignored-->
