@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v279](https://github.com/autodl-community/autodl-trackers/releases/tag/v279) (2018-10-27)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v278...v279)
+
+### Fixed
+
+* Should've been UHD Blu-Ray. Reading is funDUHmental.
+
+
 ## [v278](https://github.com/autodl-community/autodl-trackers/releases/tag/v278) (2018-10-27)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v277...v278)
