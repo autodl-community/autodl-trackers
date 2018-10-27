@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v277](https://github.com/autodl-community/autodl-trackers/releases/tag/v277) (2018-10-27)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v276...v277)
+
+### Added
+
+* Add x265 encoder to Awesome-HD.
+
+
 ## [v276](https://github.com/autodl-community/autodl-trackers/releases/tag/v276) (2018-9-11)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v275...v276)
