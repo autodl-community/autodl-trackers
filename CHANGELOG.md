@@ -3,6 +3,15 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v278](https://github.com/autodl-community/autodl-trackers/releases/tag/v278) (2018-10-27)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v277...v278)
+
+### Added
+
+* Add UHD BluRay source to Awesome-HD.
+
+
 ## [v277](https://github.com/autodl-community/autodl-trackers/releases/tag/v277) (2018-10-27)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v276...v277)
