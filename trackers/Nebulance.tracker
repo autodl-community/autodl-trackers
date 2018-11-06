@@ -21,6 +21,7 @@
    ^tammy^
    MrRandom
    Alastor
+	 kzmgd
 
    ***** END LICENSE BLOCK ***** -->
 
@@ -48,9 +49,9 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[Episodes] The Vet Life - S02E08 [WebRip / x264 / MKV / 720p / HD / VLAD / The.Vet.Life.S02E08.Tuskegee.Reunion.720p.ANPL.WEBRip.AAC2.0.x264-VLAD.mkv] [702.00 MB - Uploader: Zoe] - http://nebulance.io/torrents.php?id=147-->
-				<!--[Seasons] Police Interceptors - S10 [HDTV / x264 / MKV / MP4 / 480p / SD / BTN / Police.Interceptors.S10.HDTV.x264-BTN] [5.27 GB - Uploader: partwish031] - http://nebulance.io/torrents.php?id=1472-->
-				<regex value="\[(.*?)\] (.*?) \[(.*?)\] \[(.*?) - Uploader: (.*?)\] - (https?://.*)id=(\d+)"/>
+				<!--[Episodes] The Vet Life - S02E08 [WebRip / x264 / MKV / 720p / HD / VLAD / The.Vet.Life.S02E08.Tuskegee.Reunion.720p.ANPL.WEBRip.AAC2.0.x264-VLAD.mkv] [702.00 MB - Uploader: Zoe] - http://nebulance.io/torrents.php?id=147 [Tags: comedy,subtitles,cbs] -->
+				<!--[Seasons] Police Interceptors - S10 [HDTV / x264 / MKV / MP4 / 480p / SD / BTN / Police.Interceptors.S10.HDTV.x264-BTN] [5.27 GB - Uploader: partwish031] - http://nebulance.io/torrents.php?id=1472 [Tags: comedy,subtitles,cbs]-->
+				<regex value="\[(.*?)\] (.*?) \[(.*?)\] \[(.*?) - Uploader: (.*?)\] - (https?://.*)id=(\d+) \[Tags: (.*)\]"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
@@ -59,6 +60,7 @@
 					<var name="uploader"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="tags"/>
 				</vars>
 			</extract>
 		</linepatterns>
