@@ -21,54 +21,55 @@
    -
    - Contributor(s):
    -
-   - ***** END LICENSE BLOCK ***** 
+   - ***** END LICENSE BLOCK *****
 -->
-<trackerinfo 
-  type="pbay" 
-  shortName="pbay" 
-  longName="PornBay" 
-  siteName="pornbay.org">
-  
-  <settings>
-    <gazelle_description/>
-    <gazelle_authkey/>
-    <gazelle_torrent_pass/>
-  </settings>
-  
-  <servers>
-    <server 
-      network="DigitalIRC" 
-      serverNames="irc.pornbay.org" 
-      channelNames="#pornbay-announce" 
-      announcerNames="PB-Announcer"/>
-  </servers>
-  
-  <parseinfo>
-    <linepatterns>
-      <extract>
-      <regex value="^\[(.*?)\] (.*?) \[([0-9]+?.*?)- Uploader: (.*?)\] - http?\:\/\/([^\/]+\/).*[&\?]id=(.*)$"/>
-      <vars>
-        <var name="category"/>
-        <var name="torrentName"/>
-        <var name="torrentSize"/>
-        <var name="uploader"/>
-        <var name="$baseUrl"/>
-        <var name="$torrentId"/>
-      </vars>
-      </extract>
-    </linepatterns>
-    <linematched>
-      <var name="torrentSslUrl">
-      <string value="https://"/>
-      <var name="$baseUrl"/>
-      <string value="torrents.php?action=download&id="/>
-      <var name="$torrentId"/>
-      <string value="&authkey="/>
-      <var name="authkey"/>
-      <string value="&torrent_pass="/>
-      <var name="torrent_pass"/>
-      </var>
-    </linematched>
-    <ignore> </ignore>
-  </parseinfo>
+<trackerinfo
+	type="pbay"
+	shortName="pbay"
+	longName="PornBay"
+	siteName="pornbay.org">
+
+	<settings>
+		<gazelle_description/>
+		<gazelle_authkey/>
+		<gazelle_torrent_pass/>
+	</settings>
+
+	<servers>
+		<server
+			network="DigitalIRC"
+			serverNames="irc.pornbay.org"
+			channelNames="#pornbay-announce"
+			announcerNames="PB-Announcer"/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+			<regex value="^\[(.*?)\] (.*?) \[([0-9]+?.*?)- Uploader: (.*?)\] - http?\:\/\/([^\/]+\/).*[&amp;\?]id=(.*)$"/>
+			<vars>
+				<var name="category"/>
+				<var name="torrentName"/>
+				<var name="torrentSize"/>
+				<var name="uploader"/>
+				<var name="$baseUrl"/>
+				<var name="$torrentId"/>
+			</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="torrentSslUrl">
+			<string value="https://"/>
+			<var name="$baseUrl"/>
+			<string value="torrents.php?action=download&amp;id="/>
+			<var name="$torrentId"/>
+			<string value="&amp;authkey="/>
+			<var name="authkey"/>
+			<string value="&amp;torrent_pass="/>
+			<var name="torrent_pass"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
 </trackerinfo>
