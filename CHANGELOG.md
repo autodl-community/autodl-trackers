@@ -3,6 +3,22 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v280](https://github.com/autodl-community/autodl-trackers/releases/tag/v280) (2018-12-05)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v279...v280)
+
+### Added
+
+* Orpheus tracker.
+* Tag support to Nebulance.
+* Anthelion tracker.
+* PornBay tracker.
+
+### Removed
+
+* Apollo tracker.
+
+
 ## [v279](https://github.com/autodl-community/autodl-trackers/releases/tag/v279) (2018-10-27)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v278...v279)
