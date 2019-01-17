@@ -46,7 +46,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-			<regex value="^\[(.*?)\] (.*?) \[([0-9]+?.*?)- Uploader: (.*?)\] - http?\:\/\/([^\/]+\/).*[&amp;\?]id=(.*)$"/>
+			<regex value="^\[(.*?)\] (.*?) \[([0-9]+?.*?) - Uploader: (.*?)\] - https?\:\/\/([^\/]+\/).*[&amp;\?]id=(.*)$"/>
 			<vars>
 				<var name="category"/>
 				<var name="torrentName"/>
@@ -58,7 +58,7 @@
 			</extract>
 		</linepatterns>
 		<linematched>
-			<var name="torrentSslUrl">
+			<var name="torrentUrl">
 			<string value="https://"/>
 			<var name="$baseUrl"/>
 			<string value="torrents.php?action=download&amp;id="/>
