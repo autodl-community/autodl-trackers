@@ -36,10 +36,10 @@
 
 	<servers>
 		<server
-			network="TorrenNTDay"
+			network="TorrenNTDaY"
 			serverNames="irc.torrentday.com"
 			channelNames="#td.announce, #td.announce2"
-			announcerNames="TD_Announce, SimonSays"
+			announcerNames="TD_Announce, SimonSaysBot"
 			/>
 	</servers>
 
