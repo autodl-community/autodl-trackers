@@ -62,11 +62,11 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?torrent="/>
+				<string value="torrent/download/auto."/>
 				<var name="$torrentId"/>
-				<string value="&amp;torrent_pass="/>
+				<string value="."/>
 				<var name="passkey"/>
 			</var>
 		</linematched>
