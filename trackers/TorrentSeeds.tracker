@@ -46,14 +46,15 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- New: Ronja.the.Robbers.Daughter.S01E03.DUBBED.720p.BluRay.x264-ANiHLS .:. Category: TV/BluRay .:. Size: 889.45 MB .:. URL:  https://www.torrentseeds.org/details.php?id=288372 -->
-				<regex value="^New: (.*) .:. Category: (.*) .:. Size: (.*) .:. URL:  (https?\:\/\/[^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!-- New: Batman.1989.REMASTERED.MULTi.1080p.BluRay.x264-Ulysse .:. Category: Movies/HD-Foreign .:. Size: 8.02 GB .:. URL:  https://www.torrentseeds.org/details.php?id=825984 .:. Uploaded by: Anonymous. -->
+				<regex value="^New: (.*) .:. Category: (.*) .:. Size: (.*) .:. URL:  (https?\:\/\/[^\/]+\/).*[&amp;\?]id=(\d+) .:. Uploaded by: (.*)."/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
 					<var name="$torrentSize"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="uploader"/>
 				</vars>
 			</extract>
 		</linepatterns>
