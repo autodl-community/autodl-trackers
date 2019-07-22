@@ -27,7 +27,7 @@
 	type="NB"
 	shortName="NB"
 	longName="NordicBits"
-	siteName="https://nordicbits.eu">
+	siteName="https://nordicb.org">
 
 	<settings>
 		<description text="Paste (Ctrl+V) any NordicBits torrent direct download (RSS) link into the text box below to automatically extract passkey."/>
@@ -37,7 +37,7 @@
 	<servers>
 		<server
 			network="Nordicbits"
-			serverNames="irc.nordicbits.eu"
+			serverNames="irc.nordicb.org"
 			channelNames="#Nordicbits-announce"
 			announcerNames="Servus"
 			/>
@@ -46,7 +46,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- Nyt Upload: Elton.John-Diamonds-Limited.Deluxe.Edition.3CD.2017 .:. Kategori: MP3  .:. Size:  537.02 MB .:. https://nordicbits.eu/details.php?id=52536 -->
+				<!-- Nyt Upload: Elton.John-Diamonds-Limited.Deluxe.Edition.3CD.2017 .:. Kategori: MP3  .:. Size:  537.02 MB .:. https://nordicb.org/details.php?id=52536 -->
 				<regex value="Nyt Upload: (.*) .:. Kategori: (.*)  .:. Size:  (.*) .:. https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
