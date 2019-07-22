@@ -54,7 +54,7 @@
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="$torrentId"/>
-					<var name="torrentSize"/>
+					<var name="$torrentSize"/>
 					<var name="freeleech"/>
 					<var name="scene"/>
 					<var name="preTime"/>
