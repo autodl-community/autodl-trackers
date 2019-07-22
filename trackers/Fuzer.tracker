@@ -74,7 +74,7 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="https://"/>
+				<string value="https://www."/>
 				<var name="$baseUrl"/>
 				<string value="/"/>
 				<string value="rss/torrent.php/"/>
