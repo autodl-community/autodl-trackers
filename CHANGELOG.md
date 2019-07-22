@@ -3,6 +3,29 @@
 Notable changes for the [autodl-trackers](https://github.com/autodl-community/autodl-trackers) project.
 
 
+## [v282](https://github.com/autodl-community/autodl-trackers/releases/tag/v282) (2019-07-22)
+
+[Commits](https://github.com/autodl-community/autodl-trackers/compare/v281...v282)
+
+### Added
+
+* Milkie.
+* Asgaard.
+
+### Changed
+
+* Update FunFile announce regex.
+* Force SSL for Fuzer.
+* Update domain for NordicBits.
+* Update regex for TorrentSeeds.
+* Update IRC info for TorrentDay.
+* Update torrentUrl for BeyondHD.
+
+### Removed
+
+* UltimateGamerClub.
+
+
 ## [v281](https://github.com/autodl-community/autodl-trackers/releases/tag/v281) (2019-02-06)
 
 [Commits](https://github.com/autodl-community/autodl-trackers/compare/v280...v281)
