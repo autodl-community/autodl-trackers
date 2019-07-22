@@ -48,12 +48,14 @@
 		<multilinepatterns>
 			<extract>
 				<!--[New Shit] S.W.A.T.Firefight.2011.PROPER.NTSC.MULTi.DVDR-BonG [Movies] @ https://www.funfile.org/details.php?id=131267-->
-				<regex value="^\[New Shit\] (.*) \[([^\]]+)\] @ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<regex value="^\[New Shit\] (.*) \[([^\]]+)\] @ https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+) \[(.*?)\](?: \[(.*)\])?"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
+					<var name="$torrentSize"/>
+					<var name="$freeleech"/>
 				</vars>
 			</extract>
 			<extract optional="true">
@@ -66,10 +68,15 @@
 			</extract>
 		</multilinepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
 			<var name="scene">
 				<string value="false"/>
 			</var>
 
+			<setregex srcvar="$freeleech" regex="FL" varName="freeleech" newValue="true"/>
 			<setregex srcvar="$scene" regex="Scene" varName="scene" newValue="true"/>
 
 			<var name="torrentUrl">
