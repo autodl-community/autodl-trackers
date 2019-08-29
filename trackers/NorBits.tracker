@@ -46,7 +46,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="Ny torrent: (.*) :: Kategori: (.*) :: Scene: (.*) :: St[&#248;]rrelse: (.*) :: http?\:\/\/([^\/]+\/).*[\?]id=(\d+)"/>
+				<regex value="Ny torrent: (.*) :: Kategori: (.*) :: Scene: (.*) :: St[&#248;]rrelse: (.*) :: https?\:\/\/([^\/]+\/).*[\?]id=(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
