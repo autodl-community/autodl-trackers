@@ -63,7 +63,7 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="/download.php?id="/>
+				<string value="download.php?id="/>
 				<var name="$torrentId"/>
 				<string value="&amp;f="/>
 				<varenc name="torrentName"/>
