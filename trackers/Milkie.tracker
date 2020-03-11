@@ -39,7 +39,7 @@
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net"
 			channelNames="#milkie-announce"
-			announcerNames="the_cow,the_cow1"/>
+			announcerNames="the_cow,the_cow1,the_cow2"/>
 	</servers>
 
 	<parseinfo>
