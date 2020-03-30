@@ -31,9 +31,10 @@
 	follow302links="true">
 
 	<settings>
-		<gazelle_description/>
+		<cookie_description/>
 		<gazelle_authkey/>
 		<gazelle_torrent_pass/>
+		<cookie/>
 
 	</settings>
 
@@ -132,6 +133,10 @@
 				<string value="&amp;torrent_pass="/>
 				<var name="torrent_pass"/>
 			</var>
+			
+			<http name="cookie">
+                                <var name="cookie"/>
+                        </http>
 		</linematched>
 		<ignore>
 		</ignore>
