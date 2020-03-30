@@ -135,8 +135,8 @@
 			</var>
 			
 			<http name="cookie">
-                                <var name="cookie"/>
-                        </http>
+				<var name="cookie"/>
+			</http>
 		</linematched>
 		<ignore>
 		</ignore>
