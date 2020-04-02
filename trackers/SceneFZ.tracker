@@ -27,7 +27,7 @@
 	type="sfz"
 	shortName="SFZ"
 	longName="SceneFZ"
-	siteName="www.scenefz.net">
+	siteName="scenefz.me">
 
 	<settings>
 		<description text="Copy your passkey from the profile and paste it in the field below."/>
@@ -36,18 +36,18 @@
 
 	<servers>
 		<server
-			network="SFZ"
-			serverNames="irc.scenefz.net"
-			channelNames="#SFZ-announce"
-			announcerNames="Arrow"
+			network="P2P-NET"
+			serverNames="irc.p2p-network.net"
+			channelNames="#scenefz"
+			announcerNames="scenefz-announcer"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--NEW Torrent! -> Movies/HD-RO .:. True.Romance.1993.1080p.Bluray.x264.AAC-WWII .:. 2.98GB .:. URL: http://scenefz.net/details.php?id=235128 -->
-				<regex value="^NEW Torrent! -> (.*) .:. (.*) .:. (.*B) .:. URL: https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!--New! (TV HD) - Swamp.People.Serpent.Invasion.S01E02.720p.WEB.h264-TRUMP - (945.72 MB) - https://scenefz.me/browse/134953/t/swamp-people-serpent-invasion-s01e02-720p-web-h264-trump -->
+				<regex value="^New! \((.*)\) - (.*) - \((.*)\) - https?:\/\/(.*\/)browse.*?(\d+).*"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
@@ -59,12 +59,14 @@
 		</linepatterns>
 		<linematched>
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="download.php?id="/>
+				<string value="download.php/"/>
 				<var name="$torrentId"/>
-				<string value="&amp;unique="/>
-				<varenc name="passkey"/>
+				<string value="/"/>
+				<var name="torrentName"/>
+                <string value=".torrent?passkey="/>
+                <var name="passkey"/>
 			</var>
 		</linematched>
 		<ignore>
