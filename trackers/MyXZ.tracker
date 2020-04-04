@@ -26,7 +26,7 @@
     type="myxz"
     shortName="MyXZ"
     longName="Xtreme Zone"
-    siteName="www.myxz.org">
+    siteName="myxz.eu">
 
     <settings>
         <description text="Copy your passkey from the profile and paste it in the field below."/>
@@ -38,36 +38,35 @@
             network="P2P-NET"
             serverNames="irc.p2p-network.net,irc.p2p-irc.net"
             channelNames="#myxz"
-            announcerNames="Announcer"
+            announcerNames="myxz-announcer"
             />
     </servers>
 
     <parseinfo>
         <linepatterns>
             <extract>
-                <!--New! (TV HD-RO) - Supernatural.S12E17.720p.HDTV.X264-xHD - (742.17 MB) - https://www.myxz.org/details.php?id=356491-->
-                <regex value="New!.(\(.*\)).-.(.*).-.(\(.*\)).-.https?:\/\/(.*\/).*(\d{6})"/>
-                <vars>
-                    <var name="category"/>
-                    <var name="torrentName"/>
-                    <var name="$torrentSize"/>
-                    <var name="$baseUrl"/>
-                    <var name="$torrentId"/>
-
-                </vars>
+              <!--New! (TV HD) - Swamp.People.Serpent.Invasion.S01E02.720p.WEB.h264-TRUMP - (945.72 MB) - https://myxz.eu/browse/134953/t/swamp-people-serpent-invasion-s01e02-720p-web-h264-trump -->
+              <regex value="^New! \((.*)\) - (.*) - \((.*)\) - https?:\/\/(.*\/)browse.*?(\d+).*"/>
+              <vars>
+                <var name="category"/>
+                <var name="torrentName"/>
+                <var name="$torrentSize"/>
+                <var name="$baseUrl"/>
+                <var name="$torrentId"/>
+              </vars>
             </extract>
         </linepatterns>
         <linematched>
-            <var name="torrentUrl">
-                    <string value="https://"/>
-                    <var name="$baseUrl"/>
-                    <string value="download.php/"/>
-                    <var name="$torrentId"/>
-                    <string value="/"/>
-                    <var name="torrentName"/>
-                    <string value=".torrent?passkey="/>
-                    <var name="passkey"/>
-            </var>
+          <var name="torrentUrl">
+            <string value="https://"/>
+            <var name="$baseUrl"/>
+            <string value="download.php/"/>
+            <var name="$torrentId"/>
+            <string value="/"/>
+            <var name="torrentName"/>
+            <string value=".torrent?passkey="/>
+            <var name="passkey"/>
+          </var>
         </linematched>
         <ignore>
         </ignore>
