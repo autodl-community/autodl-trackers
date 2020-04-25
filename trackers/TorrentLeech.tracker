@@ -55,17 +55,22 @@
 		<linepatterns>
 			<extract>
 				<!--New Torrent Announcement: <Games :: Wii>  Name:'PokePark Pikachus Adventure REPACK USA WII-dumpTruck' uploaded by 'Anonymous' -  http://www.torrentleech.org/torrent/263302-->
-				<regex value="^New Torrent Announcement:\s*&lt;([^&gt;]*)&gt;\s*Name:'(.*)' uploaded by '([^']*)'\s*-\s*https?\:\/\/([^\/]+\/)torrent/(\d+)"/>
+				<!--New Torrent Announcement: <Games :: Wii>  Name:'PokePark Pikachus Adventure REPACK USA WII-dumpTruck' uploaded by 'Anonymous' freeleech -  http://www.torrentleech.org/torrent/263302-->
+				<regex value="New Torrent Announcement:\s*&lt;([^&gt;]*)&gt;\s*Name:'(.*)' uploaded by '([^']*)'\s*(freeleech)*\s*-\s*https?\:\/\/([^\/]+\/)torrent\/(\d+)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
 					<var name="uploader"/>
+					<var name="$freeleech"/>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
@@ -77,6 +82,7 @@
 				<varenc name="torrentName"/>
 				<string value=".torrent"/>
 			</var>
+			<setregex srcvar="$freeleech" regex="freeleech" varName="freeleech" newValue="true"/>
 		</linematched>
 		<ignore>
 		</ignore>
