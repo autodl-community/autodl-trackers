@@ -47,7 +47,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="^(.*?) - Size: ([0-9]+?.*?) - Uploader: (.*?) - Tags: (.*?) -  (https://.*torrents.php\?)id=(.*)$"/>
+				<regex value="^(.*?) - Size: ([0-9]+?.*?) - Uploader: (.*?) - Tags: (.*?) - (https://.*torrents.php\?)id=(.*)$"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$torrentSize"/>
