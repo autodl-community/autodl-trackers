@@ -26,18 +26,18 @@
 <trackerinfo
 	type="flr"
 	shortName="FLR"
-	longName="filelist.ro"
-	siteName="filelist.ro">
+	longName="filelist.io"
+	siteName="filelist.io">
 
 	<settings>
-		<description text="Go to http://filelist.ro/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
+		<description text="Go to http://filelist.io/getrss.php to get the RSS feed link. Paste it (Ctrl+V) into the text box below to automatically extract passkey."/>
 		<passkey/>
 	</settings>
 
 	<servers>
 		<server
 			network="FileList"
-			serverNames="irc.filelist.ro"
+			serverNames="irc.filelist.io"
 			channelNames="#announce"
 			announcerNames="Announce"
 			/>
@@ -46,7 +46,7 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<regex value="New Torrent: (.*?) (?:-- (.*) )?-- \[(.*)] \[(.*)] -- (https?://filelist.ro/).*id=(.*) -- by (.*)"/>
+				<regex value="New Torrent: (.*?) (?:-- (.*) )?-- \[(.*)] \[(.*)] -- (https?://filelist.io/).*id=(.*) -- by (.*)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="$releaseTags"/>
