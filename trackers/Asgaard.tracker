@@ -46,21 +46,27 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- Nyt Upload: Valhalla.1986.NORDiC.ENG.1080p.WEB-DL.H.264-AGKiDZ .:. Kategori: Kidz::Movies  .:. Size:  2.59 GB .:. https://asgrd.org/details.php?id=827 -->
-				<regex value="Nyt Upload: (.*) .:. Kategori: (.*)  .:. Size:  (.*) .:. https?\:\/\/([^\/]+\/).*[&amp;\?]id=(\d+)"/>
+				<!-- [Movies/1080p] Why.Him.2016.NORDiC.1080p.BRRip.x264-TWA FREELEECH || 7501 || 3.04GB -->
+				<!-- [Movies/1080p] Why.Him.2016.NORDiC.1080p.BRRip.x264-TWA || 7501 || 3.04GB -->
+				<regex value="\[(.*?)\] (.*?) \|\| (\d+) \|\| (.*)"/>
 				<vars>
-					<var name="torrentName"/>
 					<var name="category"/>
-					<var name="$torrentSize"/>
-					<var name="$baseUrl"/>
+					<var name="torrentName"/>
 					<var name="$torrentId"/>
+					<var name="$torrentSize"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="torrentName" regex="FREELEECH" varName="freeleech" newValue="true"/>
+			<varreplace name="torrentName" srcvar="torrentName" regex="FREELEECH\s*" replace=""/>
+
 			<var name="torrentUrl">
-				<string value="http://"/>
-				<var name="$baseUrl"/>
+				<string value="https://asgrd.org/"/>
 				<string value="download.php?torrent="/>
 				<var name="$torrentId"/>
 				<string value="&amp;torrent_pass="/>
@@ -68,6 +74,7 @@
 			</var>
 		</linematched>
 		<ignore>
+			<regex value="details\.php\?id=\d+" expected="false"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>

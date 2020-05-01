@@ -39,7 +39,7 @@
 			emptytext="PussyTorrents rsskey"
 			pasteGroup="rsskey"
 			pasteRegex="/([\da-fA-F]{20})"
-			/>
+		/>
 	</settings>
 
 	<servers>
@@ -48,14 +48,15 @@
 			serverNames="irc.pussytorrents.org"
 			channelNames="#pussytorrents"
 			announcerNames="_PussyBot_"
-			/>
+		/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
 				<!--New Torrent Announcement: Name:'ClaraG COMPLETE SITERIP XXX WMV-PRONCLIPS' uploaded by 'Anonymous' -  http://www.pussytorrents.org/torrent/43718-->
-				<regex value="^New Torrent Announcement:\s*Name:'(.*)' uploaded by '([^']*)'\s*-\s*https?\:\/\/([^\/]+\/)torrent/(\d+)"/>
+				<!-- old regex value="^New Torrent Announcement:\s*Name:'(.*)' uploaded by '([^']*)'\s*-\s*https?\:\/\/([^\/]+\/)torrent/(\d+)"/-->
+				<regex value="^New Torrent Announcement:\s*Name:'(.*)' uploaded by '([^']*)'\s*-\s*https?\:\/\/www.([^\/]+\/)torrent/(\d+)"/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="uploader"/>
@@ -67,9 +68,9 @@
 		<linematched>
 			<!-- Torrent name is with space but URL expects "." -->
 			<varreplace name="torrentName" srcvar="torrentName" regex="[ ]" replace="."/>
-		
+
 			<var name="torrentUrl">
-				<string value="http://"/>
+				<string value="https://"/>
 				<var name="$baseUrl"/>
 				<string value="rss/download/"/>
 				<var name="$torrentId"/>
