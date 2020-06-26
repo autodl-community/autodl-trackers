@@ -50,7 +50,7 @@
 				<!-- Uploader :-: Nintendo 3DS :-: Yo-Kai.Watch.KOR.3DS-BigBlueBox in Yo-kai Watch [2013] ::Korean, Multi-Region, Scene:: https://gazellegames.net/torrents.php?torrentid=78851 - adventure, role_playing_game, nintendo; -->
 				<!-- Uploader :-: Windows :-: Warriors.Wrath.Evil.Challenge-HI2U in Warriors' Wrath [2016] ::English, Scene:: FREELEECH! :: https://gazellegames.net/torrents.php?torrentid=78902 - action, adventure, casual, indie, role.playing.game; -->
 
-				<regex value="^(.+) :-: (.+) :-: (.+) \[(\d+)\] ::(.+?):: ?(.+? ::)? https?:\/\/([^\/]+\/)torrents.php\?torrentid=(\d+) ?-? ?(.*?)?;?$"/>
+				<regex value="^(.+) :-: (.+) :-: (.+) \[(\d*)\] ::(.*):: ?(.+? ::)? https?:\/\/([^\/]+\/)torrents.php\?torrentid=(\d+) ?-? ?(.*?)?;?$"/>
 
 				<vars>
 					<var name="uploader"/>
