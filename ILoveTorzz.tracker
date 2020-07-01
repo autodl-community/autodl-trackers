@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="ilt"
+	shortName="ILT"
+	longName="ILoveTorzz"
+	siteName="ilovetorzz.net">
+
+	<settings>
+		<description text="Listed on account-details page."/>
+		<passkey tooltiptext="Copy your passkey from your account-details page"/>
+	</settings>
+
+	<servers>
+		<server
+			network="ilovetorzz!"
+			serverNames="irc.ilovetorzz.net"
+			channelNames="#t.announce"
+			announcerNames="Announce"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!--[Music/Audio] D.Trance 90 Incl D Techno 47 (2020) - https://ilovetorzz.net/torrents-details.php?id=204998 - 586.74 MiB -->
+				<!--[Music/Audio] Electronic Dance Remixes Program (2019) [FreeLeech] - https://ilovetorzz.net/torrents-details.php?id=199904 - 1.16 GiB-->
+				<regex value="^\[([^\]]*)](.*)-\s+https?\:\/\/([^\/]+).*[&amp;\?]id=(\d+)\s*-(.*)"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+					<var name="$torrentSize"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="torrentName" regex="FREELEECH" varName="freeleech" newValue="true"/>
+			<varreplace name="torrentName" srcvar="torrentName" regex="FREELEECH\s*" replace=""/>
+
+			<var name="torrentUrl">
+				<string value="https://"/>
+				<var name="$baseUrl"/>
+				<string value="/download.php?id="/>
+				<var name="$torrentId"/>
+				<string value="&amp;name="/>
+				<varenc name="torrentName"/>
+				<string value=".torrent&amp;passkey="/>
+				<var name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+			<regex value="details\.php\?id=\d+" expected="false"/>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
