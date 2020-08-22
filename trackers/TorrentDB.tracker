@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<trackerinfo
+	type="tdb"
+	shortName="TDB"
+	longName="TorrentDB"
+	siteName="www.torrentdb.net"
+	follow302links="true"
+>
+	<settings>
+		<description text="Go to TorrentDB and click Settings or your profile, copy your PID."/>
+		<passkey tooltiptext="Copy the PID from your settings or profile page"/>
+	</settings>
+
+	<servers>
+		<server
+			network="TorrentDB"
+			serverNames="irc.torrentdb.net"
+			channelNames="#announce"
+			announcerNames="TDBot"
+			/>
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!--New Torrent Announcement: <TV : Pack> Name:'Community S01-S06 COMPLETE 1080p BluRay DD5 1 (With Commentary) x265-POIASD' Size:'42.92 GB' Freeleech Uploaded by:'Anonymous Uploader' - https://torrentdb.net/torrent/community-s01-s06-complete-1080p-bluray-dd5-1-with-commentary-x265-poiasd-->
+				<!--New Torrent Announcement: <Games : PC> Name:'Bendy and the Ink Machine + All DLCs-CODEX' Size:'2.65 GB' Uploaded by:'fronx' - https://torrentdb.net/torrent/bendy-and-the-ink-machine-all-dlcs-codex-->
+				<regex value="^New Torrent Announcement: &lt;([^&gt;]+)&gt; Name:'(.*?)' Size:'(.*?)' (.*)- https?\:\/\/([^\/]+)\/torrent\/(.+)$"/>
+				<vars>
+					<var name="category"/>
+					<var name="torrentName"/>
+					<var name="torrentSize"/>
+					<var name="torrentExtras"/> <!-- contains Freeleech if applicable, also uploader name -->
+					<var name="baseUrl"/>
+					<var name="torrentPath"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+
+			<setregex srcvar="torrentExtras" regex="Freeleech" varName="freeleech" newValue="true"/>
+			<!-- https://torrentdb.net/torrent/download/irssi/[Torrent Name]/[Your Passkey] -->
+			<!-- https://torrentdb.net/torrent/download/irssi/bendy-and-the-ink-machine-all-dlcs-codex/1234abcd...ef09 -->
+			<var name="torrentUrl">
+				<string value="https://"/>
+				<var name="baseUrl"/>
+				<string value="/torrent/download/irssi/"/>
+				<var name="torrentPath"/>
+				<string value="/"/>
+				<var name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
