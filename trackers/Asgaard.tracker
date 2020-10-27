@@ -48,10 +48,11 @@
 			<extract>
 				<!-- [Movies/1080p] Why.Him.2016.NORDiC.1080p.BRRip.x264-TWA FREELEECH || 7501 || 3.04GB -->
 				<!-- [Movies/1080p] Why.Him.2016.NORDiC.1080p.BRRip.x264-TWA || 7501 || 3.04GB -->
-				<regex value="\[(.*?)\] (.*?) \|\| (\d+) \|\| (.*)"/>
+				<regex value="\[(.*?)\] (.*?) (FREELEECH)? ?\|\| (\d+) \|\| (.*)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
+					<var name="$freeleech"/>
 					<var name="$torrentId"/>
 					<var name="$torrentSize"/>
 				</vars>
@@ -61,9 +62,10 @@
 			<var name="freeleech">
 				<string value="false"/>
 			</var>
-
-			<setregex srcvar="torrentName" regex="FREELEECH" varName="freeleech" newValue="true"/>
-			<varreplace name="torrentName" srcvar="torrentName" regex="FREELEECH\s*" replace=""/>
+			
+			<extracttags srcvar="$freeleech" split=" ">
+				<setvarif varName="freeleech" value="FREELEECH" newValue="true"/>
+			</extracttags>
 
 			<var name="torrentUrl">
 				<string value="https://asgrd.org/"/>
