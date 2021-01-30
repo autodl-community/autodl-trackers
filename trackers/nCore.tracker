@@ -27,7 +27,7 @@
 	type="nc"
 	shortName="nc"
 	longName="nCore"
-	siteName="ncore.cc">
+	siteName="ncore.pro">
 
 	<settings>
 		<description text="Check a torrent download link. key='value' is your passkey."/>
@@ -46,8 +46,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--[NEW TORRENT in xvidser_hun] The.Scooby-Doo.Show.S02.WEB-DL.HUN.ENG.x264-DenZo > 2.33 GB in 10F > https://ncore.cc/torrents.php?action=details&id=1843212-->
-				<regex value="\[NEW TORRENT in (.*)\] (.*) > (.*) in .* > (https?://ncore.cc.*action=).*id=(.*)"/>
+				<!--[NEW TORRENT in xvidser_hun] The.Scooby-Doo.Show.S02.WEB-DL.HUN.ENG.x264-DenZo > 2.33 GB in 10F > https://ncore.pro/torrents.php?action=details&id=1843212-->
+				<regex value="\[NEW TORRENT in (.*)\] (.*) > (.*) in .* > (https?://ncore.pro.*action=).*id=(.*)"/>
 				<vars>
 					<var name="category"/>
 					<var name="torrentName"/>
