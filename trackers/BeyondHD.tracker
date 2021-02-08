@@ -41,7 +41,7 @@
 			network="BeyondHD-IRC"
 			serverNames="irc.beyond-hd.me"
 			channelNames="#bhd_announce"
-			announcerNames="Willie"
+			announcerNames="Willie,Millie"
 			/>
 	</servers>
 
