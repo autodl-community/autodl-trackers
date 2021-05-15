@@ -30,8 +30,9 @@
 	siteName="">
 
 	<settings>
-		<description text="Go to Hebits site and enter Edit Profile to find your passkey."/>
-		<passkey tooltiptext="Copy the passkey from your Edit Profile page"/>
+		<gazelle_description/>
+		<gazelle_authkey/>
+		<gazelle_torrent_pass/>
 	</settings>
 
 	<servers>
@@ -46,7 +47,7 @@
 	<parseinfo>
 		<multilinepatterns>
 			<extract>
-				<regex value="^New: \((.*)\)  Category: (.*) Size: ([\d\.,]+ \w+) Seeders: .+ Leechers: .+"/>
+				<regex value="^New: \((.*)\) Category: (.*) Size: ([\d\.,]+ \w+) Seeders: .+ Leechers: .+"/>
 				<vars>
 					<var name="name1"/>
 					<var name="category"/>
@@ -54,7 +55,7 @@
 				</vars>
 			</extract>
 			<extract>
-				<regex value="^Link: https?\:\/\/?[w{3}.]*([^\/]+).*[&amp;\?]id=(\d+)"/>
+				<regex value="^Link: https?\:\/\/?[w{3}.]*([^\/]+).*(?:&amp;|\?)torrentid=(\d+)"/>
 				<vars>
 					<var name="$baseUrl"/>
 					<var name="$torrentId"/>
@@ -72,11 +73,13 @@
 			<var name="torrentUrl">
 				<string value="https://"/>
 				<var name="$baseUrl"/>
-				<string value="/"/>
-				<string value="downloadRss.php?id="/>
+				<string value="/torrents.php?action=download"/>
+				<string value="&amp;authkey="/>
+				<var name="authkey"/>
+				<string value="&amp;torrent_pass="/>
+				<var name="torrent_pass"/>
+				<string value="&amp;id="/>
 				<var name="$torrentId"/>
-				<string value="&amp;passkey="/>
-				<varenc name="passkey"/>
 			</var>
 		</linematched>
 		<ignore>
