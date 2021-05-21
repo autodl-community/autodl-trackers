@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="rfx"
+	shortName="rfx"
+	longName="Retroflix"
+	siteName="retroflix.club">
+
+	<settings>
+		<description text="Copy your passkey from the profile and paste it in the field below."/>
+		<passkey/>
+	</settings>
+
+	<servers>
+		<server
+			network="P2P-NET"
+			serverNames="irc.p2p-network.net"
+			channelNames="#retroflix"
+			announcerNames="retroflix-announcer"
+			/>
+	</servers>
+
+	<parseinfo>
+        <linepatterns>
+            <extract>
+              <!--New! (Movies) - Kojak.-.Season.5 - (841.64 MB) - https://retroflix.club/details.php?id=16875 -->
+              <regex value="^New! \((.*)\) - (.*) - \((.*)\) - https?:\/\/(.*\/)details.*?(\d+).*"/>
+              <vars>
+                <var name="category"/>
+                <var name="torrentName"/>
+                <var name="$torrentSize"/>
+                <var name="$baseUrl"/>
+                <var name="$torrentId"/>
+              </vars>
+            </extract>
+        </linepatterns>
+        <linematched>
+          <var name="torrentUrl">
+            <string value="https://"/>
+            <var name="$baseUrl"/>
+            <string value="download.php?id="/>
+            <var name="$torrentId"/>
+            <string value="&passkey="/>
+            <var name="passkey"/>
+          </var>
+        </linematched>
+        <ignore>
+        </ignore>
+    </parseinfo>
+</trackerinfo>
