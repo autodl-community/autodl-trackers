@@ -22,28 +22,27 @@
    - Contributor(s):
    -
    - ***** END LICENSE BLOCK ***** -->
-
 <trackerinfo
-	type="sfz"
-	shortName="SFZ"
-	longName="SceneFZ"
-	siteName="speedapp.io">
+    type="spd"
+    shortName="SPD"
+    longName="SpeedApp"
+    siteName="speedapp.io">
 
-	<settings>
-		<description text="Copy your passkey from the profile and paste it in the field below."/>
-		<passkey/>
-	</settings>
+    <settings>
+        <description text="Copy your passkey from the profile and paste it in the field below."/>
+        <passkey/>
+    </settings>
 
-	<servers>
-		<server
-			network="P2P-NET"
-			serverNames="irc.p2p-network.net"
-			channelNames="#speedapp"
-			announcerNames="speedapp-announcer"
-			/>
-	</servers>
+    <servers>
+        <server
+            network="P2P-NET"
+            serverNames="irc.p2p-network.net,irc.p2p-irc.net"
+            channelNames="#speedapp"
+            announcerNames="speedapp-announcer"
+            />
+    </servers>
 
-	<parseinfo>
+    <parseinfo>
         <linepatterns>
             <extract>
               <!--New! (XXX HD) - FakeTaxi.21.05.19.Jessy.Jey.XXX.1080p.MP4-WRB - (841.64 MB) - https://speedapp.io/browse/317842/t/faketaxi-21-05-19-jessy-jey-xxx-1080p-mp4-wrb -->

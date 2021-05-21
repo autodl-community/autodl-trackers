@@ -24,10 +24,10 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="sfz"
-	shortName="SFZ"
-	longName="SceneFZ"
-	siteName="speedapp.io">
+	type="rfx"
+	shortName="rfx"
+	longName="Retroflix"
+	siteName="retroflix.club">
 
 	<settings>
 		<description text="Copy your passkey from the profile and paste it in the field below."/>
@@ -38,16 +38,16 @@
 		<server
 			network="P2P-NET"
 			serverNames="irc.p2p-network.net"
-			channelNames="#speedapp"
-			announcerNames="speedapp-announcer"
+			channelNames="#retroflix"
+			announcerNames="retroflix-announcer"
 			/>
 	</servers>
 
 	<parseinfo>
         <linepatterns>
             <extract>
-              <!--New! (XXX HD) - FakeTaxi.21.05.19.Jessy.Jey.XXX.1080p.MP4-WRB - (841.64 MB) - https://speedapp.io/browse/317842/t/faketaxi-21-05-19-jessy-jey-xxx-1080p-mp4-wrb -->
-              <regex value="^New! \((.*)\) - (.*) - \((.*)\) - https?:\/\/(.*\/)browse.*?(\d+).*"/>
+              <!--New! (Movies) - Kojak.-.Season.5 - (841.64 MB) - https://retroflix.club/details.php?id=16875 -->
+              <regex value="^New! \((.*)\) - (.*) - \((.*)\) - https?:\/\/(.*\/)details.*?(\d+).*"/>
               <vars>
                 <var name="category"/>
                 <var name="torrentName"/>
@@ -61,11 +61,9 @@
           <var name="torrentUrl">
             <string value="https://"/>
             <var name="$baseUrl"/>
-            <string value="rss/download/"/>
+            <string value="download.php?id="/>
             <var name="$torrentId"/>
-            <string value="/"/>
-            <var name="torrentName"/>
-            <string value=".torrent?passkey="/>
+            <string value="&passkey="/>
             <var name="passkey"/>
           </var>
         </linematched>
