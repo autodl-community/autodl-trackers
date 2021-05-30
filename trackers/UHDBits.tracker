@@ -40,7 +40,7 @@
 			network="P2P-Network"
 			serverNames="irc.p2p-network.net"
 			channelNames="#uhd.announce"
-			announcerNames="UHDBot"
+			announcerNames="cr0nusbot"
 			/>
 	</servers>
 
