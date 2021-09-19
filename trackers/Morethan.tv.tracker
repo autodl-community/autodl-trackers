@@ -24,10 +24,10 @@
    - ***** END LICENSE BLOCK ***** -->
 
 <trackerinfo
-	type="morethan.tv"
-	shortName="Morethan.tv"
-	longName="Morethan.tv"
-	siteName="morethan.tv">
+	type="mtv"
+	shortName="MTV"
+	longName="MoreThanTV"
+	siteName="morethantv.me">
 
 	<settings>
 		<gazelle_description/>
@@ -37,50 +37,32 @@
 
 	<servers>
 		<server
-			network="morethan.tv"
-			serverNames="irc.morethan.tv"
-			channelNames="#Announce"
-			announcerNames="X"
+			network="DigitalIRC"
+			serverNames="irc.digitalirc.org"
+			channelNames="#mtv-announce"
+			announcerNames="Jarvis"
 			/>
 	</servers>
 
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!--Black.Sails.S02E01.720p.HDTV.x264-KILLERS [] - x264 / Other /  / Freeleech! - https://www.morethan.tv/torrents.php?id=3998 / https://www.morethan.tv/torrents.php?action=download&id=3554 - tv-->
-				<!--Penguins.Of.Madagascar.2014.WEB-DL.XviD.MP3-RARBG.5 [2014] - XviD / 720p / Web-DL / Freeleech! - https://www.morethan.tv/torrents.php?id=3999 / https://www.morethan.tv/torrents.php?action=download&id=3555 - comedy, animation-->
-				<!--Pride 2014 1080p BluRay DD5.1 x264-EbP [2014] - x264 / 1080p / BluRay / Freeleech! - https://www.morethan.tv/torrents.php?id=4000 / https://www.morethan.tv/torrents.php?action=download&id=3556 - comedy, drama-->
-				<regex value="(.*) - (.*) - https?://.* / (https?://.*id=\d+) - (.*)"/>
+				<regex value="^(.*?) - Size: ([0-9]+?.*?) - Uploader: (.*?) - Tags: (.*?) - (https://.*torrents.php\?)torrentid=(.*)$"/>
 				<vars>
 					<var name="torrentName"/>
-					<var name="$releaseTags"/>
-					<var name="$baseUrl"/>
+					<var name="$torrentSize"/>
+					<var name="uploader"/>
 					<var name="tags"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
 				</vars>
 			</extract>
 		</linepatterns>
 		<linematched>
-			<var name="freeleech">
-				<string value="false"/>
-			</var>
-
-			<extract srcvar="torrentName" optional="true">
-				<regex value=".* \[(\d+)?]"/>
-				<vars>
-					<var name="year"/>
-				</vars>
-			</extract>
-
-			<extracttags srcvar="$releaseTags" split="/">
-				<setvarif varName="resolution" regex="^(?:SD|Standard?Def.*|480i|480p|576p|720p|810p|1080p|1080i|2160p|PD|Portable Device)$"/>
-				<setvarif varName="source" regex="^(?:R5|DVDScr|BRRip|CAM|TS|TELESYNC|TC|TELECINE|DSR|PDTV|HDTV|DVDRip|BDRip|DVDR|DVD|BluRay|Blu\-Ray|WEBRip|WEB\-DL|WEB|TVRip|HDDVD|HD\-DVD)$"/>
-				<setvarif varName="encoder" regex="^(?:XviD|DivX|x264|x264\-Hi10p|h\.264|h264|mpeg2|VC\-1|VC1|WMV)$"/>
-
-				<setvarif varName="freeleech" value="Freeleech!" newValue="true"/>
-			</extracttags>
-
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
+				<string value="action=download&amp;id="/>
+				<var name="$torrentId"/>
 				<string value="&amp;authkey="/>
 				<var name="authkey"/>
 				<string value="&amp;torrent_pass="/>
@@ -88,6 +70,7 @@
 			</var>
 		</linematched>
 		<ignore>
+			<regex value="^\[News\]"/>
 		</ignore>
 	</parseinfo>
 </trackerinfo>
