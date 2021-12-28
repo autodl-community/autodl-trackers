@@ -46,8 +46,8 @@
 	<parseinfo>
 		<linepatterns>
 			<extract>
-				<!-- New: Batman.1989.REMASTERED.MULTi.1080p.BluRay.x264-Ulysse .:. Category: Movies/HD-Foreign .:. Size: 8.02 GB .:. URL:  https://www.torrentseeds.org/details.php?id=825984 .:. Uploaded by: Anonymous. -->
-				<regex value="^New: (.*) .:. Category: (.*) .:. Size: (.*) .:. URL:  (https?\:\/\/[^\/]+\/).*[&amp;\?]id=(\d+) .:. Uploaded by: (.*)."/>
+				<!-- New: Batman.1989.REMASTERED.MULTi.1080p.BluRay.x264-Ulysse .:. Category: Movies/HD-Foreign .:. Size: 8.02 GB .:. URL:  https://www.torrentseeds.org/details.php?id=825984 .:. Uploaded by: anonymous. -->
+				<regex value="^New: (.*) .:. Category: (.*) .:. Size: (.*) .:. URL:  (https?\:\/\/[^\/]+\/).*\/(\d+) .:. Uploaded by: (.*)."/>
 				<vars>
 					<var name="torrentName"/>
 					<var name="category"/>
@@ -61,9 +61,9 @@
 		<linematched>
 			<var name="torrentUrl">
 				<var name="$baseUrl"/>
-				<string value="download.php?torrent="/>
+				<string value="torrent/download/"/>
 				<var name="$torrentId"/>
-				<string value="&amp;torrent_pass="/>
+				<string value="."/>
 				<var name="passkey"/>
 			</var>
 		</linematched>
