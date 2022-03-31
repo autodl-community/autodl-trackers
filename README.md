@@ -1,3 +1,9 @@
+# NOTE
+
+**@thebigmunch** stopped support for this repo. Therefor I have forked it, and will soon update the tracker list.
+
+**All credits for the system goes to @thebigmunch :heart:**
+
 # autodl-trackers
 
 [autodl-trackers](https://github.com/autodl-community/autodl-trackers) is the repository of tracker files for [autodl-irssi](https://github.com/autodl-community/autodl-irssi).
