@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is IRC Auto Downloader.
+   -
+   - The Initial Developer of the Original Code is
+   - David Nilsson.
+   - Portions created by the Initial Developer are Copyright (C) 2010, 2011
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<trackerinfo
+	type="dby"
+	shortName="DBy"
+	longName="DanishBytes"
+	siteName="danishbytes.org"
+	ignore404="true">
+
+	<settings>
+		<description text="Paste (Ctrl+V) any DanishBytes RSS link into the text box below to automatically extract RSS Key (RID)"/>
+		<passkey pasteRegex="([^.]{32})$" tooltiptext="Paste your DanishBytes RSS link or RSS Key (RID) here."/>
+	</settings>
+
+	<servers>
+		<server
+			network="DanishBytes"
+			serverNames="irc.danishbytes.org,irc.danishbytes2.org,irc.danishbytes.club,irc.dbytes.org,irc.danishbytes.art"
+			channelNames="#Announce"
+			announcerNames="DBBot"
+			/>
+		<!--Mirrors updated 17/02/2022-->
+	</servers>
+
+	<parseinfo>
+		<linepatterns>
+			<extract>
+				<!--:[N]-[TV & Serier]-[MP4]-[720p]-[11.9 GiB]-[The Boys 2020 S2 Multisubs]-[Anonymous]-[https://danishbytes.org/torrents/4825]-[FL: 0]-[DU: 0];-->
+				<!--:[N]-[Film]-[Encode]-[720p]-[797 MiB]-[Fury.Of.The.Wolfman.1972.720p.BluRay.x264.AAC-[YTS.MX]]-[Anonymous]-[https://danishbytes.org/torrents/4846]-[FL: 0]-[DU: 0];-->
+				<!--:[N]-[Spil]-[Windows]-[]-[6.46 GiB]-[Ashes.of.the.Singularity-CODEX]-[Anonymous]-[https://danishbytes.org/torrents/4847]-[FL: 0]-[DU: 0];-->
+				<!--:[N]-[Musik]-[MP3]-[]-[338.21 MiB]-[Joe. Cocker-Gold.(2006)-2CD-[MP3]-320]-[Anonymous]-[https://danishbytes.org/torrents/4848]-[FL: 0]-[DU: 0];-->
+				<!--:['releaseType']-['category']-['type']-['resolution']-['$torrentSize']-['torrentName']-['uploader']-['$baseurl'torrents/'$torrentId']-['$freeleech']-['$doubleupload'];-->
+				<regex value="^:\[(.*)\]-\[(.*)\]-\[(.*)\]-\[(.*)\]-\[(.*)\]-\[(.*)\]-\[(.*)\]-\[(.*\/)(?:.*\/)(.*)\]-\[(.*)\]-\[(.*)\];$"/>
+				<vars>
+					<var name="releaseType"/>
+					<var name="category"/>
+					<var name="container"/>
+					<var name="resolution"/>
+					<var name="$torrentSize"/>
+					<var name="torrentName"/>
+					<var name="uploader"/>
+					<var name="$baseUrl"/>
+					<var name="$torrentId"/>
+					<var name="$freeleech"/>
+					<var name="$doubleupload"/>
+				</vars>
+			</extract>
+		</linepatterns>
+		<linematched>
+			<var name="freeleech">
+				<string value="false"/>
+			</var>
+			<setregex srcvar="$freeleech" regex="1" varName="freeleech" newValue="true"/>
+			
+			<!--base.url/torrent/download/torrentid.passkey-->
+			<var name="torrentUrl">
+				<var name="$baseUrl"/>
+				<string value="torrent/download/"/>
+				<var name="$torrentId"/>
+				<string value="."/>
+				<var name="passkey"/>
+			</var>
+		</linematched>
+		<ignore>
+		</ignore>
+	</parseinfo>
+</trackerinfo>
