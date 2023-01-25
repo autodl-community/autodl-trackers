@@ -42,7 +42,7 @@
 			network="Nebulance"
 			serverNames="irc.nebulance.cc"
 			channelNames="#nbl-announce"
-			announcerNames="DRADIS"
+			announcerNames="Muffit"
 			/>
 	</servers>
 
